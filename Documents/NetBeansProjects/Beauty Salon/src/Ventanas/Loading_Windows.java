@@ -33,7 +33,7 @@ public class Loading_Windows extends javax.swing.JFrame {
 
         panel_login = new javax.swing.JPanel();
         label_Nombre_Salon = new javax.swing.JLabel();
-        btn_Inicio_session = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         btnCerrar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
@@ -47,19 +47,15 @@ public class Loading_Windows extends javax.swing.JFrame {
         panel_login.setEnabled(false);
         panel_login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        label_Nombre_Salon.setBackground(new java.awt.Color(0, 0, 0));
         label_Nombre_Salon.setFont(new java.awt.Font("Times New Roman", 0, 120)); // NOI18N
-        label_Nombre_Salon.setForeground(new java.awt.Color(255, 255, 255));
         label_Nombre_Salon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Nombre_Salon.setText("<html><p>Beauty salon </p><p>&nbsp; &nbsp;&nbsp;& Spa</p></html>");
+        label_Nombre_Salon.setText("<html><p>Beauty Salon </p><p>&nbsp; &nbsp;&nbsp;& Spa</p></html>");
         label_Nombre_Salon.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         panel_login.add(label_Nombre_Salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 690, 390));
 
-        btn_Inicio_session.setBackground(new java.awt.Color(128, 76, 45));
-        btn_Inicio_session.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Inicio_session.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(128, 76, 46), 5, true));
-        btn_Inicio_session.setBorderPainted(false);
-        btn_Inicio_session.setLabel("Iniciar Sessión");
-        panel_login.add(btn_Inicio_session, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 150, 40));
+        jButton1.setText("ACCEDER");
+        panel_login.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 200, 30));
 
         getContentPane().add(panel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
 
@@ -149,7 +145,7 @@ public class Loading_Windows extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btnCerrar;
-    private javax.swing.JButton btn_Inicio_session;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel label_Nombre_Salon;
     private javax.swing.JPanel panel_login;
     // End of variables declaration//GEN-END:variables
