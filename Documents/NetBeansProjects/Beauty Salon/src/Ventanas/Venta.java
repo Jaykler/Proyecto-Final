@@ -147,7 +147,7 @@ public class Venta extends javax.swing.JFrame {
         });
         panel_transparent.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 300, 40));
 
-        Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Label_Fecha.setText("FECHA:");
         panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 60, 40));
 
