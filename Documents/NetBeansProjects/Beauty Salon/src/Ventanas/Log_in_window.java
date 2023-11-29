@@ -90,6 +90,9 @@ public class Log_in_window extends javax.swing.JFrame {
         btn_Iniciar_Ses.setMinimumSize(new java.awt.Dimension(204, 36));
         btn_Iniciar_Ses.setPreferredSize(new java.awt.Dimension(200, 36));
         btn_Iniciar_Ses.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Iniciar_SesMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Iniciar_SesMouseEntered(evt);
             }
@@ -189,6 +192,11 @@ public class Log_in_window extends javax.swing.JFrame {
         //btn_Iniciar_Ses.setBorder(RoundRectangle2D);
         btn_Iniciar_Ses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Iniciar_Session_Exit.png")));
     }//GEN-LAST:event_btn_Iniciar_SesMouseExited
+
+    private void btn_Iniciar_SesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Iniciar_SesMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_Iniciar_SesMouseClicked
 
     /**
      * @param args the command line arguments
