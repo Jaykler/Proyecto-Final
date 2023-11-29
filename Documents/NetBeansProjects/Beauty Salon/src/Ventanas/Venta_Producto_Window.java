@@ -22,7 +22,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         panel_Transparent2.setBackground(new Color (255,255,255,200));
-        panel_Transparent3.setBackground(new Color (255,255,255,200));
+        Panel_Busqueda_Cliente.setBackground(new Color (212,176,155,200));
     }
 
     /**
@@ -35,25 +35,25 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_transparent = new javax.swing.JPanel();
-        label_Nombre = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
-        label_No_contacto = new javax.swing.JLabel();
         panel_Transparent1 = new javax.swing.JPanel();
-        label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
+        label_titulo2 = new javax.swing.JLabel();
+        Panel_Busqueda_Cliente = new javax.swing.JPanel();
+        label_Nombre = new javax.swing.JLabel();
+        label_No_contacto = new javax.swing.JLabel();
+        jLabel_Direccion = new javax.swing.JLabel();
+        textField_Client_Name_input = new javax.swing.JTextField();
         TextField_No_contacto = new javax.swing.JTextField();
-        Label_Fecha = new javax.swing.JLabel();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
+        jTextField_Direccion = new javax.swing.JTextField();
+        Label_Email = new javax.swing.JLabel();
+        jTextField_Email = new javax.swing.JTextField();
+        btn_Buscar = new javax.swing.JLabel();
+        Panel_Tabla = new javax.swing.JPanel();
+        Label_Lista_Clientes = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tab_R_Client = new javax.swing.JTable();
         label_Borered = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
-        panel_Transparent3 = new javax.swing.JPanel();
-        label_titulo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField_Email = new javax.swing.JTextField();
-        jLabel_Hora = new javax.swing.JLabel();
-        jTextField_Hora = new javax.swing.JTextField();
-        jTextField_Direccion = new javax.swing.JTextField();
-        jLabel_Direccion = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,31 +75,8 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         });
         panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Nombre.setText("NOMBRE:");
-        label_Nombre.setFocusable(false);
-        label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 187, 110, 40));
-
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 300, 40));
-
-        label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto.setText("NO. CONTACTO:");
-        panel_transparent.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 130, 40));
-
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
-
-        label_titulo1.setBackground(new java.awt.Color(105, 87, 86));
-        label_titulo1.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
-        label_titulo1.setForeground(new java.awt.Color(105, 87, 86));
-        label_titulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo1.setText("BEAUTY SALON & SPA");
-        label_titulo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel_Transparent1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HOME_ICON.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
@@ -116,47 +93,136 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
                 HOME_ICONMouseExited(evt);
             }
         });
+        panel_Transparent1.add(HOME_ICON, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 47, 50));
 
-        javax.swing.GroupLayout panel_Transparent1Layout = new javax.swing.GroupLayout(panel_Transparent1);
-        panel_Transparent1.setLayout(panel_Transparent1Layout);
-        panel_Transparent1Layout.setHorizontalGroup(
-            panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
-                .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(269, 269, 269))
-        );
-        panel_Transparent1Layout.setVerticalGroup(
-            panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        label_titulo2.setBackground(new java.awt.Color(105, 87, 86));
+        label_titulo2.setFont(new java.awt.Font("Palatino Linotype", 1, 40)); // NOI18N
+        label_titulo2.setForeground(new java.awt.Color(105, 87, 86));
+        label_titulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo2.setText("Productos ");
+        label_titulo2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        label_titulo2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel_Transparent1.add(label_titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 16, 370, 32));
 
-        panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
+        panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1140, 70));
+
+        Panel_Busqueda_Cliente.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("")), "Cliente"));
+        Panel_Busqueda_Cliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Nombre.setText("NOMBRE:");
+        label_Nombre.setFocusable(false);
+        label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        Panel_Busqueda_Cliente.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 110, 40));
+
+        label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_contacto.setText("NO. CONTACTO:");
+        Panel_Busqueda_Cliente.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 130, 40));
+
+        jLabel_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel_Direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Direccion.setText("DIRECCIÓN:");
+        Panel_Busqueda_Cliente.add(jLabel_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 130, 40));
+
+        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Client_Name_input.setText(" ");
+        textField_Client_Name_input.setBorder(null);
+        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Panel_Busqueda_Cliente.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 750, 40));
 
         TextField_No_contacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextField_No_contactoActionPerformed(evt);
             }
         });
-        panel_transparent.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 300, 40));
+        Panel_Busqueda_Cliente.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 300, 40));
 
-        Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        Label_Fecha.setText("FECHA:");
-        panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 60, 40));
+        jTextField_Direccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_DireccionActionPerformed(evt);
+            }
+        });
+        Panel_Busqueda_Cliente.add(jTextField_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 500, 40));
 
-        jDateChooser.setDateFormatString("d,MMMM,y");
-        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 170, 40));
+        Label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Label_Email.setText("CORREO ELECTRONICO:");
+        Panel_Busqueda_Cliente.add(Label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, 40));
+
+        jTextField_Email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_EmailActionPerformed(evt);
+            }
+        });
+        Panel_Busqueda_Cliente.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 240, 40));
+
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
+        btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseExited(evt);
+            }
+        });
+        Panel_Busqueda_Cliente.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 210, 40));
+
+        Panel_Tabla.setBackground(new java.awt.Color(128, 76, 46));
+
+        Label_Lista_Clientes.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Label_Lista_Clientes.setForeground(new java.awt.Color(255, 255, 255));
+        Label_Lista_Clientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Lista_Clientes.setText("LISTA DE CLIENTES");
+
+        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+
+        Tab_R_Client.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Cliente_Nombre", "Numero_tel", "Correo_electronico", "Direccion"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(Tab_R_Client);
+
+        javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
+        Panel_Tabla.setLayout(Panel_TablaLayout);
+        Panel_TablaLayout.setHorizontalGroup(
+            Panel_TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_TablaLayout.createSequentialGroup()
+                .addGap(204, 204, 204)
+                .addComponent(Label_Lista_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(251, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
+        );
+        Panel_TablaLayout.setVerticalGroup(
+            Panel_TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TablaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_Lista_Clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130))
+        );
+
+        Panel_Busqueda_Cliente.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, 130));
+
+        panel_transparent.add(Panel_Busqueda_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 990, 360));
+
+        getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 720));
 
         label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar cita", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
-        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 1000, 390));
+        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
+        getContentPane().add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 1000, 400));
 
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -171,67 +237,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1130, -1));
-
-        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
-
-        label_titulo.setBackground(new java.awt.Color(105, 87, 86));
-        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
-        label_titulo.setForeground(new java.awt.Color(105, 87, 86));
-        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText(" Citas");
-        label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
-        panel_Transparent3.setLayout(panel_Transparent3Layout);
-        panel_Transparent3Layout.setHorizontalGroup(
-            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel_Transparent3Layout.setVerticalGroup(
-            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel1.setText("CORREO ELECTRONICO:");
-        panel_transparent.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, -1, 40));
-
-        jTextField_Email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_EmailActionPerformed(evt);
-            }
-        });
-        panel_transparent.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 240, 40));
-
-        jLabel_Hora.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel_Hora.setText("HORA:");
-        panel_transparent.add(jLabel_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, -1, 40));
-        panel_transparent.add(jTextField_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 190, 90, 40));
-
-        jTextField_Direccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_DireccionActionPerformed(evt);
-            }
-        });
-        panel_transparent.add(jTextField_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 300, 40));
-
-        jLabel_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel_Direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Direccion.setText("DIRECCIÓN:");
-        panel_transparent.add(jLabel_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 130, 40));
-
-        getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
+        getContentPane().add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1130, -1));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
@@ -288,6 +294,16 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         cw.setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
+
+    private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
+        // TODO add your handling code here:
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Brown.png")));
+    }//GEN-LAST:event_btn_BuscarMouseEntered
+
+    private void btn_BuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseExited
+        // TODO add your handling code here:
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png")));
+    }//GEN-LAST:event_btn_BuscarMouseExited
     
    
     /**
@@ -454,24 +470,24 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HOME_ICON;
-    private javax.swing.JLabel Label_Fecha;
+    private javax.swing.JLabel Label_Email;
+    private javax.swing.JLabel Label_Lista_Clientes;
+    private javax.swing.JPanel Panel_Busqueda_Cliente;
+    private javax.swing.JPanel Panel_Tabla;
+    private javax.swing.JTable Tab_R_Client;
     private javax.swing.JTextField TextField_No_contacto;
     private javax.swing.JLabel bgImage;
-    private com.toedter.calendar.JDateChooser jDateChooser;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel jLabel_Direccion;
-    private javax.swing.JLabel jLabel_Hora;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField_Direccion;
     private javax.swing.JTextField jTextField_Email;
-    private javax.swing.JTextField jTextField_Hora;
     private javax.swing.JLabel label_Borered;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
-    private javax.swing.JLabel label_titulo;
-    private javax.swing.JLabel label_titulo1;
+    private javax.swing.JLabel label_titulo2;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
-    private javax.swing.JPanel panel_Transparent3;
     private javax.swing.JPanel panel_transparent;
     private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables
