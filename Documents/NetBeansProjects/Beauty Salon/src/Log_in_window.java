@@ -17,7 +17,7 @@ public class Log_in_window extends javax.swing.JFrame {
      */
     public Log_in_window() {
         initComponents();
-        panel_login.setBackground(new Color (212,176,155,160));
+        panel_login.setBackground(new Color (212,176,155,200));
     }
 
     /**
@@ -30,28 +30,75 @@ public class Log_in_window extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_login = new javax.swing.JPanel();
+        label_Nombre_Salon = new javax.swing.JLabel();
+        label_contrasena = new javax.swing.JLabel();
+        label_Bienvenido1 = new javax.swing.JLabel();
+        label_Usuario = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
+        textField_Username_input = new javax.swing.JTextField();
+        btn_Inicio_session = new javax.swing.JButton();
         btnCerrar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(50, 50));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_login.setBackground(new java.awt.Color(212, 176, 155));
+        panel_login.setEnabled(false);
+        panel_login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout panel_loginLayout = new javax.swing.GroupLayout(panel_login);
-        panel_login.setLayout(panel_loginLayout);
-        panel_loginLayout.setHorizontalGroup(
-            panel_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
-        );
-        panel_loginLayout.setVerticalGroup(
-            panel_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-        );
+        label_Nombre_Salon.setFont(new java.awt.Font("Serif", 0, 70)); // NOI18N
+        label_Nombre_Salon.setForeground(new java.awt.Color(255, 255, 255));
+        label_Nombre_Salon.setText("<html><p>Beauty salon </p><p>& Spa</p></html>");
+        label_Nombre_Salon.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        panel_login.add(label_Nombre_Salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 380, 180));
 
-        getContentPane().add(panel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 690, 560));
+        label_contrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_contrasena.setForeground(new java.awt.Color(0, 0, 0));
+        label_contrasena.setText("Contraseña");
+        panel_login.add(label_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 90, 30));
+
+        label_Bienvenido1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_Bienvenido1.setForeground(new java.awt.Color(0, 0, 0));
+        label_Bienvenido1.setText("!Bienvenido! Por favor, ingrese a su cuenta...");
+        panel_login.add(label_Bienvenido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 320, 30));
+
+        label_Usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label_Usuario.setForeground(new java.awt.Color(0, 0, 0));
+        label_Usuario.setText("Usuario");
+        panel_login.add(label_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 70, 30));
+
+        passwordField.setBackground(new java.awt.Color(255, 255, 255));
+        passwordField.setForeground(new java.awt.Color(0, 0, 0));
+        passwordField.setText("jPasswordField1");
+        passwordField.setBorder(null);
+        passwordField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_login.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 370, 40));
+
+        textField_Username_input.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Username_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Username_input.setForeground(new java.awt.Color(0, 0, 0));
+        textField_Username_input.setText(" ");
+        textField_Username_input.setBorder(null);
+        textField_Username_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textField_Username_input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField_Username_inputActionPerformed(evt);
+            }
+        });
+        panel_login.add(textField_Username_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 370, 40));
+
+        btn_Inicio_session.setBackground(new java.awt.Color(128, 76, 45));
+        btn_Inicio_session.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Inicio_session.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(128, 76, 46), 5, true));
+        btn_Inicio_session.setBorderPainted(false);
+        btn_Inicio_session.setLabel("Iniciar Sessión");
+        panel_login.add(btn_Inicio_session, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 150, 40));
+
+        getContentPane().add(panel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
 
         btnCerrar.setBackground(new java.awt.Color(0, 0, 0));
         btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -61,6 +108,9 @@ public class Log_in_window extends javax.swing.JFrame {
         btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCerrarMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCerrarMousePressed(evt);
             }
         });
         getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 30, 30));
@@ -76,7 +126,7 @@ public class Log_in_window extends javax.swing.JFrame {
                 bgImageMousePressed(evt);
             }
         });
-        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 780));
+        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,9 +136,18 @@ public class Log_in_window extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bgImageMousePressed
 
+    private void textField_Username_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Username_inputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField_Username_inputActionPerformed
+
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
-        dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnCerrarMouseClicked
+
+    private void btnCerrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMousePressed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnCerrarMousePressed
 
     /**
      * @param args the command line arguments
@@ -129,6 +188,13 @@ public class Log_in_window extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btnCerrar;
+    private javax.swing.JButton btn_Inicio_session;
+    private javax.swing.JLabel label_Bienvenido1;
+    private javax.swing.JLabel label_Nombre_Salon;
+    private javax.swing.JLabel label_Usuario;
+    private javax.swing.JLabel label_contrasena;
     private javax.swing.JPanel panel_login;
+    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField textField_Username_input;
     // End of variables declaration//GEN-END:variables
 }
