@@ -50,7 +50,7 @@ public class Loading_Windows extends javax.swing.JFrame {
         label_Nombre_Salon.setFont(new java.awt.Font("Times New Roman", 0, 120)); // NOI18N
         label_Nombre_Salon.setForeground(new java.awt.Color(255, 255, 255));
         label_Nombre_Salon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Nombre_Salon.setText("<html><p>Beauty salon </p><p>&nbsp; &nbsp;&nbsp;& Spa</p></html>");
+        label_Nombre_Salon.setText("<html><p>Beauty Salon </p><p>&nbsp; &nbsp;&nbsp;& Spa</p></html>");
         label_Nombre_Salon.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         panel_login.add(label_Nombre_Salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 690, 390));
 
@@ -69,9 +69,6 @@ public class Loading_Windows extends javax.swing.JFrame {
         btnCerrar.setText("X");
         btnCerrar.setToolTipText("");
         btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseClicked(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnCerrarMousePressed(evt);
             }
@@ -84,24 +81,10 @@ public class Loading_Windows extends javax.swing.JFrame {
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
-        bgImage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                bgImageMousePressed(evt);
-            }
-        });
-        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 750));
+        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bgImageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgImageMousePressed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_bgImageMousePressed
-
-    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCerrarMouseClicked
 
     private void btnCerrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMousePressed
         // TODO add your handling code here:
