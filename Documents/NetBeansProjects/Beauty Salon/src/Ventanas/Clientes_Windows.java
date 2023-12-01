@@ -12,12 +12,12 @@ import java.awt.Color;
  *
  * @author Hilda
  */
-public class Reservacion extends javax.swing.JFrame {
+public class Clientes_Windows extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Reservacion() {
+    public Clientes_Windows() {
         initComponents();
         panel_Transparent1.setBackground(new Color (212,176,155,200));
         panel_Transparent2.setBackground(new Color (255,255,255,100));
@@ -35,7 +35,7 @@ public class Reservacion extends javax.swing.JFrame {
 
         panel_Transparent1 = new javax.swing.JPanel();
         panel_Transparent2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        label_title = new javax.swing.JLabel();
         panel_Transparent3 = new javax.swing.JPanel();
         btn_Cliente_Nuevo = new javax.swing.JLabel();
         btn_Cliente_Registrado = new javax.swing.JLabel();
@@ -54,12 +54,12 @@ public class Reservacion extends javax.swing.JFrame {
         panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         panel_Transparent2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Palatino Linotype", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Reservación");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panel_Transparent2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, 70));
+        label_title.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
+        label_title.setForeground(new java.awt.Color(105, 87, 86));
+        label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_title.setText("Clientes");
+        label_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel_Transparent2.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, 70));
 
         panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 860, 70));
 
@@ -110,7 +110,7 @@ public class Reservacion extends javax.swing.JFrame {
         });
         panel_Transparent1.add(btn_Cliente_Registrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 280, 200));
 
-        getContentPane().add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 860, 560));
+        getContentPane().add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 860, 560));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
@@ -174,14 +174,22 @@ public class Reservacion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Reservacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Reservacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Reservacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Reservacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clientes_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -194,7 +202,7 @@ public class Reservacion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reservacion().setVisible(true);
+                new Clientes_Windows().setVisible(true);
             }
         });
     }
@@ -203,7 +211,7 @@ public class Reservacion extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Cliente_Nuevo;
     private javax.swing.JLabel btn_Cliente_Registrado;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_title;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent3;

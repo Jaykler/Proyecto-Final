@@ -20,8 +20,8 @@ public class Registration_Window extends javax.swing.JFrame {
     public Registration_Window() {
         initComponents();
         panel_Registration.setBackground(new Color (212,176,155,200));
-        panel_Registrationgb.setBackground(new Color (255,255,255,100));
-        panel_Registrationgb1.setBackground(new Color (255,255,255,100));
+        panel_Transparent1.setBackground(new Color (255,255,255,100));
+        panel_Transparent2.setBackground(new Color (255,255,255,100));
     }
 
     /**
@@ -34,18 +34,18 @@ public class Registration_Window extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_Registration = new javax.swing.JPanel();
-        label_No_Contacto = new javax.swing.JLabel();
-        textField_No_contacto_input = new javax.swing.JTextField();
         label_Nombre = new javax.swing.JLabel();
         textField_Client_Name_input = new javax.swing.JTextField();
-        textField_Email_input = new javax.swing.JTextField();
+        label_No_Contacto = new javax.swing.JLabel();
+        textField_No_contacto_input = new javax.swing.JTextField();
         label_Email = new javax.swing.JLabel();
+        textField_Email_input = new javax.swing.JTextField();
         label_Direccion = new javax.swing.JLabel();
         textField_Direccion_Input = new javax.swing.JTextField();
         btn_Registra = new javax.swing.JLabel();
-        panel_Registrationgb = new javax.swing.JPanel();
+        panel_Transparent1 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
-        panel_Registrationgb1 = new javax.swing.JPanel();
+        panel_Transparent2 = new javax.swing.JPanel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,24 +57,6 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Registration.setAutoscrolls(true);
         panel_Registration.setEnabled(false);
         panel_Registration.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_Contacto.setText("NO. CONTACTO:");
-        panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, 30));
-
-        textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_No_contacto_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_No_contacto_input.setText(" ");
-        textField_No_contacto_input.setBorder(null);
-        textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_No_contacto_input.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_No_contacto_inputActionPerformed(evt);
-            }
-        });
-        panel_Registration.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 390, 40));
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
@@ -94,6 +76,29 @@ public class Registration_Window extends javax.swing.JFrame {
         });
         panel_Registration.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 390, 40));
 
+        label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
+        label_No_Contacto.setText("NO. CONTACTO:");
+        panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, 30));
+
+        textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
+        textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_No_contacto_input.setForeground(new java.awt.Color(0, 0, 0));
+        textField_No_contacto_input.setText(" ");
+        textField_No_contacto_input.setBorder(null);
+        textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textField_No_contacto_input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField_No_contacto_inputActionPerformed(evt);
+            }
+        });
+        panel_Registration.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 390, 40));
+
+        label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Email.setForeground(new java.awt.Color(0, 0, 0));
+        label_Email.setText("CORREO ELECTRONICO:");
+        panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, 30));
+
         textField_Email_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Email_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         textField_Email_input.setForeground(new java.awt.Color(0, 0, 0));
@@ -106,11 +111,6 @@ public class Registration_Window extends javax.swing.JFrame {
             }
         });
         panel_Registration.add(textField_Email_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 390, 40));
-
-        label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Email.setForeground(new java.awt.Color(0, 0, 0));
-        label_Email.setText("CORREO ELECTRONICO:");
-        panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, 30));
 
         label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Direccion.setForeground(new java.awt.Color(0, 0, 0));
@@ -131,7 +131,7 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Registration.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 390, 40));
 
         btn_Registra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png"))); // NOI18N
+        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Registrar.png"))); // NOI18N
         btn_Registra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_Registra.setDoubleBuffered(true);
         btn_Registra.setFocusable(false);
@@ -152,23 +152,23 @@ public class Registration_Window extends javax.swing.JFrame {
         });
         panel_Registration.add(btn_Registra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 210, 40));
 
-        panel_Registrationgb.setBackground(new java.awt.Color(255, 255, 255));
-        panel_Registrationgb.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        panel_Registrationgb.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Transparent1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        panel_Transparent1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_titulo.setFont(new java.awt.Font("Palatino Linotype", 0, 48)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(0, 0, 0));
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_titulo.setText("Registrar Cliente");
         label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panel_Registrationgb.add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 390, 70));
+        panel_Transparent1.add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 390, 70));
 
-        panel_Registration.add(panel_Registrationgb, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 750, 80));
+        panel_Registration.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 750, 80));
 
-        panel_Registrationgb1.setBackground(new java.awt.Color(255, 255, 255));
-        panel_Registrationgb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        panel_Registrationgb1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panel_Registration.add(panel_Registrationgb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 750, 60));
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        panel_Transparent2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_Registration.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 750, 60));
 
         getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 750, 540));
 
@@ -227,13 +227,13 @@ public class Registration_Window extends javax.swing.JFrame {
 
     private void btn_RegistraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseEntered
         // TODO add your handling code here:
-        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar_Entered.png")));
+        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Registrar_Entered.png")));
     }//GEN-LAST:event_btn_RegistraMouseEntered
 
     private void btn_RegistraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseExited
         // TODO add your handling code here:
         //btn_Iniciar_Ses.setBorder(RoundRectangle2D);
-        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png")));
+        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Registrar.png")));
     }//GEN-LAST:event_btn_RegistraMouseExited
 
     private void btn_RegistraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseClicked
@@ -295,8 +295,8 @@ public class Registration_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JPanel panel_Registration;
-    private javax.swing.JPanel panel_Registrationgb;
-    private javax.swing.JPanel panel_Registrationgb1;
+    private javax.swing.JPanel panel_Transparent1;
+    private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JTextField textField_Client_Name_input;
     private javax.swing.JTextField textField_Direccion_Input;
     private javax.swing.JTextField textField_Email_input;
