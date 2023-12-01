@@ -19,7 +19,9 @@ public class Reservacion extends javax.swing.JFrame {
      */
     public Reservacion() {
         initComponents();
-        panel_login.setBackground(new Color (212,176,155,200));
+        panel_Transparent1.setBackground(new Color (212,176,155,200));
+        panel_Transparent2.setBackground(new Color (255,255,255,100));
+        panel_Transparent3.setBackground(new Color (255,255,255,100));
     }
 
     /**
@@ -31,87 +33,129 @@ public class Reservacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_login = new javax.swing.JPanel();
-        panel_reservacion = new javax.swing.JPanel();
+        panel_Transparent1 = new javax.swing.JPanel();
+        panel_Transparent2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btn_clienteNuevo = new javax.swing.JLabel();
-        btnCerrar = new javax.swing.JLabel();
+        panel_Transparent3 = new javax.swing.JPanel();
+        btn_Cliente_Nuevo = new javax.swing.JLabel();
+        btn_Cliente_Registrado = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(50, 50));
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_login.setBackground(new java.awt.Color(212, 176, 155));
-        panel_login.setEnabled(false);
-        panel_login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_Transparent1.setBackground(new java.awt.Color(212, 176, 155));
+        panel_Transparent1.setEnabled(false);
+        panel_Transparent1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Poor Richard", 0, 48)); // NOI18N
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        panel_Transparent2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Palatino Linotype", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Reservación");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel_Transparent2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, 70));
 
-        javax.swing.GroupLayout panel_reservacionLayout = new javax.swing.GroupLayout(panel_reservacion);
-        panel_reservacion.setLayout(panel_reservacionLayout);
-        panel_reservacionLayout.setHorizontalGroup(
-            panel_reservacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_reservacionLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(31, 31, 31))
-        );
-        panel_reservacionLayout.setVerticalGroup(
-            panel_reservacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_reservacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(17, 17, 17))
-        );
+        panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 860, 70));
 
-        panel_login.add(panel_reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 280, 70));
+        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Transparent3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        panel_Transparent3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_Transparent1.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 860, 60));
 
-        btn_clienteNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnClienten_nuevo_Cover.png"))); // NOI18N
-        btn_clienteNuevo.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Cliente_Nuevo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_Entered.png"))); // NOI18N
+        btn_Cliente_Nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Cliente_Nuevo.setFocusable(false);
+        btn_Cliente_Nuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Cliente_Nuevo.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Cliente_Nuevo.setMinimumSize(new java.awt.Dimension(204, 36));
+        btn_Cliente_Nuevo.setPreferredSize(new java.awt.Dimension(200, 36));
+        btn_Cliente_Nuevo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_clienteNuevoMouseClicked(evt);
+                btn_Cliente_NuevoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Cliente_NuevoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Cliente_NuevoMouseExited(evt);
             }
         });
-        panel_login.add(btn_clienteNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 282, 340, 200));
+        panel_Transparent1.add(btn_Cliente_Nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 280, 200));
 
-        getContentPane().add(panel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
-
-        btnCerrar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrar.setText("X");
-        btnCerrar.setToolTipText("");
-        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCerrarMousePressed(evt);
+        btn_Cliente_Registrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Cliente_Registrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/Btn_Cliente_Registrado.png"))); // NOI18N
+        btn_Cliente_Registrado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Cliente_Registrado.setFocusable(false);
+        btn_Cliente_Registrado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Cliente_Registrado.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Cliente_Registrado.setMinimumSize(new java.awt.Dimension(204, 36));
+        btn_Cliente_Registrado.setPreferredSize(new java.awt.Dimension(200, 36));
+        btn_Cliente_Registrado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Cliente_RegistradoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Cliente_RegistradoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Cliente_RegistradoMouseExited(evt);
             }
         });
-        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 30, 30));
+        panel_Transparent1.add(btn_Cliente_Registrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 280, 200));
+
+        getContentPane().add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 860, 560));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\Proyecto-Final-Java\\Proyecto-Final-Java\\Programacion I\\Proyecto final\\Salon\\bg_Registros.jpg")); // NOI18N
-        bgImage.setText("jLabel1");
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
         getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 720));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCerrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMousePressed
+    private void btn_Cliente_RegistradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_RegistradoMouseClicked
         // TODO add your handling code here:
+
+        //btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png")));
+    }//GEN-LAST:event_btn_Cliente_RegistradoMouseClicked
+
+    private void btn_Cliente_RegistradoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_RegistradoMouseEntered
+        // TODO add your handling code here:
+        btn_Cliente_Registrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_Registrado_Entered.png")));
+    }//GEN-LAST:event_btn_Cliente_RegistradoMouseEntered
+
+    private void btn_Cliente_RegistradoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_RegistradoMouseExited
+        // TODO add your handling code here:
+        //btn_Iniciar_Ses.setBorder(RoundRectangle2D);
+        btn_Cliente_Registrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_Registrado.png"))); 
+    }//GEN-LAST:event_btn_Cliente_RegistradoMouseExited
+
+    private void btn_Cliente_NuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseClicked
+        // TODO add your handling code here:
+        Registration_Window RW = new Registration_Window();
+        RW.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnCerrarMousePressed
+    }//GEN-LAST:event_btn_Cliente_NuevoMouseClicked
 
-    private void btn_clienteNuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_clienteNuevoMouseClicked
+    private void btn_Cliente_NuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseEntered
+        // TODO add your handling code here:
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo.png")));
+    }//GEN-LAST:event_btn_Cliente_NuevoMouseEntered
 
-        btn_clienteNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnClienten_nuevo.png")));
-    }//GEN-LAST:event_btn_clienteNuevoMouseClicked
+    private void btn_Cliente_NuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseExited
+        // TODO add your handling code here:
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_Entered.png")));
+    }//GEN-LAST:event_btn_Cliente_NuevoMouseExited
 
     /**
      * @param args the command line arguments
@@ -157,10 +201,11 @@ public class Reservacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgImage;
-    private javax.swing.JLabel btnCerrar;
-    private javax.swing.JLabel btn_clienteNuevo;
+    private javax.swing.JLabel btn_Cliente_Nuevo;
+    private javax.swing.JLabel btn_Cliente_Registrado;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel panel_login;
-    private javax.swing.JPanel panel_reservacion;
+    private javax.swing.JPanel panel_Transparent1;
+    private javax.swing.JPanel panel_Transparent2;
+    private javax.swing.JPanel panel_Transparent3;
     // End of variables declaration//GEN-END:variables
 }
