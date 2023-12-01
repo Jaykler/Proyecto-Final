@@ -20,6 +20,8 @@ public class Registration_Window extends javax.swing.JFrame {
     public Registration_Window() {
         initComponents();
         panel_Registration.setBackground(new Color (212,176,155,200));
+        panel_Registrationgb.setBackground(new Color (255,255,255,100));
+        panel_Registrationgb1.setBackground(new Color (255,255,255,100));
     }
 
     /**
@@ -32,7 +34,6 @@ public class Registration_Window extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_Registration = new javax.swing.JPanel();
-        label_titulo = new javax.swing.JLabel();
         label_No_Contacto = new javax.swing.JLabel();
         textField_No_contacto_input = new javax.swing.JTextField();
         label_Nombre = new javax.swing.JLabel();
@@ -40,31 +41,27 @@ public class Registration_Window extends javax.swing.JFrame {
         textField_Email_input = new javax.swing.JTextField();
         label_Email = new javax.swing.JLabel();
         label_Direccion = new javax.swing.JLabel();
-        textField_Email_input1 = new javax.swing.JTextField();
-        btnCerrar = new javax.swing.JLabel();
+        textField_Direccion_Input = new javax.swing.JTextField();
+        btn_Registra = new javax.swing.JLabel();
+        panel_Registrationgb = new javax.swing.JPanel();
+        label_titulo = new javax.swing.JLabel();
+        panel_Registrationgb1 = new javax.swing.JPanel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(50, 50));
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_Registration.setBackground(new java.awt.Color(212, 176, 155));
+        panel_Registration.setAutoscrolls(true);
         panel_Registration.setEnabled(false);
         panel_Registration.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 0, 40)); // NOI18N
-        label_titulo.setForeground(new java.awt.Color(0, 0, 0));
-        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText("Registrar Cliente");
-        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        panel_Registration.add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 470, 60));
 
         label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_Contacto.setText("NO. CONTACTO:");
-        panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 221, 110, 30));
+        panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, 30));
 
         textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -82,7 +79,7 @@ public class Registration_Window extends javax.swing.JFrame {
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre.setText("NOMBRE:");
-        panel_Registration.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 161, 70, 30));
+        panel_Registration.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 90, 30));
 
         textField_Client_Name_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -113,42 +110,67 @@ public class Registration_Window extends javax.swing.JFrame {
         label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Email.setForeground(new java.awt.Color(0, 0, 0));
         label_Email.setText("CORREO ELECTRONICO:");
-        panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 160, 30));
+        panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, 30));
 
         label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Direccion.setForeground(new java.awt.Color(0, 0, 0));
         label_Direccion.setText("DIRECCION:");
-        panel_Registration.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 90, 40));
+        panel_Registration.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 100, 40));
 
-        textField_Email_input1.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Email_input1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input1.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Email_input1.setText(" ");
-        textField_Email_input1.setBorder(null);
-        textField_Email_input1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_Email_input1.addActionListener(new java.awt.event.ActionListener() {
+        textField_Direccion_Input.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Direccion_Input.setForeground(new java.awt.Color(0, 0, 0));
+        textField_Direccion_Input.setText(" ");
+        textField_Direccion_Input.setBorder(null);
+        textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textField_Direccion_Input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_Email_input1ActionPerformed(evt);
+                textField_Direccion_InputActionPerformed(evt);
             }
         });
-        panel_Registration.add(textField_Email_input1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 390, 40));
+        panel_Registration.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 390, 40));
 
-        getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
-
-        btnCerrar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrar.setText("X");
-        btnCerrar.setToolTipText("");
-        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Registra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png"))); // NOI18N
+        btn_Registra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_Registra.setDoubleBuffered(true);
+        btn_Registra.setFocusable(false);
+        btn_Registra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Registra.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Registra.setMinimumSize(new java.awt.Dimension(204, 36));
+        btn_Registra.setPreferredSize(new java.awt.Dimension(200, 36));
+        btn_Registra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseClicked(evt);
+                btn_RegistraMouseClicked(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCerrarMousePressed(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_RegistraMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_RegistraMouseExited(evt);
             }
         });
-        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 30, 30));
+        panel_Registration.add(btn_Registra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 210, 40));
+
+        panel_Registrationgb.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Registrationgb.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        panel_Registrationgb.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 0, 48)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo.setText("Registrar Cliente");
+        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel_Registrationgb.add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 390, 70));
+
+        panel_Registration.add(panel_Registrationgb, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 750, 80));
+
+        panel_Registrationgb1.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Registrationgb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        panel_Registrationgb1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_Registration.add(panel_Registrationgb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 750, 60));
+
+        getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 750, 540));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_bg.jpg"))); // NOI18N
@@ -168,6 +190,7 @@ public class Registration_Window extends javax.swing.JFrame {
         getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     private void bgImageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgImageMousePressed
@@ -180,15 +203,6 @@ public class Registration_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField_No_contacto_inputActionPerformed
 
-    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCerrarMouseClicked
-
-    private void btnCerrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMousePressed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_btnCerrarMousePressed
-
     private void textField_Client_Name_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Client_Name_inputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textField_Client_Name_inputActionPerformed
@@ -197,10 +211,10 @@ public class Registration_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField_Email_inputActionPerformed
 
-    private void textField_Email_input1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Email_input1ActionPerformed
+    private void textField_Direccion_InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Direccion_InputActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_textField_Email_input1ActionPerformed
+    }//GEN-LAST:event_textField_Direccion_InputActionPerformed
 
     private void bgImageMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgImageMouseDragged
         // TODO add your handling code here:
@@ -211,6 +225,29 @@ public class Registration_Window extends javax.swing.JFrame {
 	Registration_Window.this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_bgImageMouseDragged
 
+    private void btn_RegistraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseEntered
+        // TODO add your handling code here:
+        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar_Entered.png")));
+    }//GEN-LAST:event_btn_RegistraMouseEntered
+
+    private void btn_RegistraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseExited
+        // TODO add your handling code here:
+        //btn_Iniciar_Ses.setBorder(RoundRectangle2D);
+        btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png")));
+    }//GEN-LAST:event_btn_RegistraMouseExited
+
+    private void btn_RegistraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseClicked
+        // TODO add your handling code here:
+       
+       clearRegistration_Window();
+         
+    }//GEN-LAST:event_btn_RegistraMouseClicked
+    private void clearRegistration_Window(){
+        textField_Client_Name_input.setText("");
+         textField_Direccion_Input.setText("");
+         textField_No_contacto_input.setText("");
+         textField_Email_input.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -251,16 +288,18 @@ public class Registration_Window extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgImage;
-    private javax.swing.JLabel btnCerrar;
+    private javax.swing.JLabel btn_Registra;
     private javax.swing.JLabel label_Direccion;
     private javax.swing.JLabel label_Email;
     private javax.swing.JLabel label_No_Contacto;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JPanel panel_Registration;
+    private javax.swing.JPanel panel_Registrationgb;
+    private javax.swing.JPanel panel_Registrationgb1;
     private javax.swing.JTextField textField_Client_Name_input;
+    private javax.swing.JTextField textField_Direccion_Input;
     private javax.swing.JTextField textField_Email_input;
-    private javax.swing.JTextField textField_Email_input1;
     private javax.swing.JTextField textField_No_contacto_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
