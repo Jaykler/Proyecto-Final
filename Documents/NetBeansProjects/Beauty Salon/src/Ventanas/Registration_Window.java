@@ -35,12 +35,11 @@ public class Registration_Window extends javax.swing.JFrame {
         label_titulo = new javax.swing.JLabel();
         label_No_Contacto = new javax.swing.JLabel();
         textField_No_contacto_input = new javax.swing.JTextField();
-        btn_Registrar = new javax.swing.JButton();
         label_Nombre = new javax.swing.JLabel();
         textField_Client_Name_input = new javax.swing.JTextField();
         textField_Email_input = new javax.swing.JTextField();
-        label_No_Contacto1 = new javax.swing.JLabel();
-        label_No_Contacto2 = new javax.swing.JLabel();
+        label_Email = new javax.swing.JLabel();
+        label_Direccion = new javax.swing.JLabel();
         textField_Email_input1 = new javax.swing.JTextField();
         btnCerrar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
@@ -53,16 +52,19 @@ public class Registration_Window extends javax.swing.JFrame {
 
         panel_Registration.setBackground(new java.awt.Color(212, 176, 155));
         panel_Registration.setEnabled(false);
+        panel_Registration.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_titulo.setFont(new java.awt.Font("Palatino Linotype", 0, 40)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(0, 0, 0));
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_titulo.setText("Registrar Cliente");
         label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        panel_Registration.add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 470, 60));
 
         label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_Contacto.setText("NO. CONTACTO:");
+        panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 221, 110, 30));
 
         textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -75,16 +77,12 @@ public class Registration_Window extends javax.swing.JFrame {
                 textField_No_contacto_inputActionPerformed(evt);
             }
         });
-
-        btn_Registrar.setBackground(new java.awt.Color(128, 76, 45));
-        btn_Registrar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Registrar.setText("Registrar");
-        btn_Registrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(128, 76, 46), 5, true));
-        btn_Registrar.setBorderPainted(false);
+        panel_Registration.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 390, 40));
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre.setText("NOMBRE:");
+        panel_Registration.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 161, 70, 30));
 
         textField_Client_Name_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -97,6 +95,7 @@ public class Registration_Window extends javax.swing.JFrame {
                 textField_Client_Name_inputActionPerformed(evt);
             }
         });
+        panel_Registration.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 390, 40));
 
         textField_Email_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Email_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -109,14 +108,17 @@ public class Registration_Window extends javax.swing.JFrame {
                 textField_Email_inputActionPerformed(evt);
             }
         });
+        panel_Registration.add(textField_Email_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 390, 40));
 
-        label_No_Contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_Contacto1.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_Contacto1.setText("CORREO ELECTRONICO:");
+        label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Email.setForeground(new java.awt.Color(0, 0, 0));
+        label_Email.setText("CORREO ELECTRONICO:");
+        panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 160, 30));
 
-        label_No_Contacto2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_Contacto2.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_Contacto2.setText("DIRECCION:");
+        label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Direccion.setForeground(new java.awt.Color(0, 0, 0));
+        label_Direccion.setText("DIRECCION:");
+        panel_Registration.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 90, 40));
 
         textField_Email_input1.setBackground(new java.awt.Color(255, 255, 255));
         textField_Email_input1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -129,65 +131,7 @@ public class Registration_Window extends javax.swing.JFrame {
                 textField_Email_input1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout panel_RegistrationLayout = new javax.swing.GroupLayout(panel_Registration);
-        panel_Registration.setLayout(panel_RegistrationLayout);
-        panel_RegistrationLayout.setHorizontalGroup(
-            panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_RegistrationLayout.createSequentialGroup()
-                .addGroup(panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_RegistrationLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(label_No_Contacto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textField_No_contacto_input, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_RegistrationLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(label_No_Contacto1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textField_Email_input, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_RegistrationLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(label_No_Contacto2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textField_Email_input1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_RegistrationLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(label_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(label_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-                            .addComponent(textField_Client_Name_input))))
-                .addGap(110, 110, 110))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_RegistrationLayout.createSequentialGroup()
-                .addComponent(btn_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179))
-        );
-        panel_RegistrationLayout.setVerticalGroup(
-            panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_RegistrationLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField_Client_Name_input, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField_No_contacto_input, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_No_Contacto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField_Email_input, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_No_Contacto1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(panel_RegistrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField_Email_input1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_No_Contacto2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(btn_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
+        panel_Registration.add(textField_Email_input1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 390, 40));
 
         getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
 
@@ -308,10 +252,9 @@ public class Registration_Window extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btnCerrar;
-    private javax.swing.JButton btn_Registrar;
+    private javax.swing.JLabel label_Direccion;
+    private javax.swing.JLabel label_Email;
     private javax.swing.JLabel label_No_Contacto;
-    private javax.swing.JLabel label_No_Contacto1;
-    private javax.swing.JLabel label_No_Contacto2;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JPanel panel_Registration;

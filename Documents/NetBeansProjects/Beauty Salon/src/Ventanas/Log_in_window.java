@@ -52,21 +52,21 @@ public class Log_in_window extends javax.swing.JFrame {
         panel_login.setEnabled(false);
         panel_login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_Nombre_Salon.setFont(new java.awt.Font("Times New Roman", 0, 70)); // NOI18N
-        label_Nombre_Salon.setForeground(new java.awt.Color(255, 255, 255));
-        label_Nombre_Salon.setText("<html><p>Beauty salon </p><p>& Spa</p></html>");
+        label_Nombre_Salon.setFont(new java.awt.Font("Poor Richard", 0, 80)); // NOI18N
+        label_Nombre_Salon.setForeground(new java.awt.Color(0, 0, 0));
+        label_Nombre_Salon.setText("<html><p>Beauty salon </p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;& Spa</p></html>");
         label_Nombre_Salon.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        panel_login.add(label_Nombre_Salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 380, 170));
+        panel_login.add(label_Nombre_Salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 400, 180));
 
         label_Bienvenido1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label_Bienvenido1.setForeground(new java.awt.Color(0, 0, 0));
         label_Bienvenido1.setText("!Bienvenido! Por favor, ingrese a su cuenta...");
-        panel_login.add(label_Bienvenido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 320, 30));
+        panel_login.add(label_Bienvenido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 320, 30));
 
         label_Usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label_Usuario.setForeground(new java.awt.Color(0, 0, 0));
         label_Usuario.setText("Usuario");
-        panel_login.add(label_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 70, 30));
+        panel_login.add(label_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 70, 30));
 
         textField_Username_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Username_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -74,26 +74,26 @@ public class Log_in_window extends javax.swing.JFrame {
         textField_Username_input.setText(" ");
         textField_Username_input.setBorder(null);
         textField_Username_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_login.add(textField_Username_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 370, 40));
+        panel_login.add(textField_Username_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 410, 40));
 
         label_contrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label_contrasena.setForeground(new java.awt.Color(0, 0, 0));
         label_contrasena.setText("Contraseña");
-        panel_login.add(label_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 90, 30));
+        panel_login.add(label_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 90, 30));
 
         passwordField.setBackground(new java.awt.Color(255, 255, 255));
         passwordField.setForeground(new java.awt.Color(0, 0, 0));
         passwordField.setText("jPasswordField1");
         passwordField.setBorder(null);
         passwordField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_login.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 370, 40));
+        panel_login.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 410, 40));
 
         btn_Inicio_session.setBackground(new java.awt.Color(128, 76, 45));
         btn_Inicio_session.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Inicio_session.setText("Iniciar Sesión");
         btn_Inicio_session.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(128, 76, 46), 5, true));
         btn_Inicio_session.setBorderPainted(false);
-        btn_Inicio_session.setLabel("Iniciar Sessión");
-        panel_login.add(btn_Inicio_session, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 150, 40));
+        panel_login.add(btn_Inicio_session, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, 150, 40));
 
         getContentPane().add(panel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
 
