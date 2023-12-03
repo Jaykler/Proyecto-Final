@@ -47,7 +47,7 @@ public class Modificar_Citas extends javax.swing.JFrame {
         Label_Lista_clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDateChooser = new com.toedter.calendar.JDateChooser();
         btn_Buscar = new javax.swing.JLabel();
         label_Borered = new javax.swing.JLabel();
         btn_Modificar_Cita1 = new javax.swing.JLabel();
@@ -105,7 +105,19 @@ public class Modificar_Citas extends javax.swing.JFrame {
 
         HOME_ICON.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
+        HOME_ICON.setFocusable(false);
         HOME_ICON.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_Transparent1Layout = new javax.swing.GroupLayout(panel_Transparent1);
         panel_Transparent1.setLayout(panel_Transparent1Layout);
@@ -113,8 +125,8 @@ public class Modificar_Citas extends javax.swing.JFrame {
             panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                 .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(269, 269, 269))
         );
@@ -122,9 +134,9 @@ public class Modificar_Citas extends javax.swing.JFrame {
             panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -186,8 +198,8 @@ public class Modificar_Citas extends javax.swing.JFrame {
 
         panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 297, 920, -1));
 
-        jDateChooser2.setDateFormatString("d,MMMM,y");
-        panel_transparent.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
+        jDateChooser.setDateFormatString("d,MMMM,y");
+        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -218,7 +230,7 @@ public class Modificar_Citas extends javax.swing.JFrame {
                 btn_Modificar_Cita1MouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, 200, -1));
+        panel_transparent.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 570, 200, -1));
 
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -320,6 +332,23 @@ public class Modificar_Citas extends javax.swing.JFrame {
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png")));
     }//GEN-LAST:event_btn_BuscarMouseExited
 
+    private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_LIGHTBROWN.png")));
+    }//GEN-LAST:event_HOME_ICONMouseEntered
+
+    private void HOME_ICONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseExited
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
+    }//GEN-LAST:event_HOME_ICONMouseExited
+
+    private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
+        // TODO add your handling code here:
+        Clientes_Windows cw = new Clientes_Windows();
+        cw.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_HOME_ICONMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -395,7 +424,7 @@ public class Modificar_Citas extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Modificar_Cita1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel label_Borered;
