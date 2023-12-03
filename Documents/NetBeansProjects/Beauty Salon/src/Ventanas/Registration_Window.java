@@ -20,7 +20,7 @@ public class Registration_Window extends javax.swing.JFrame {
     public Registration_Window() {
         initComponents();
         panel_Registration.setBackground(new Color (212,176,155,200));
-        panel_Transparent1.setBackground(new Color (255,255,255,100));
+        panel_Transparent1.setBackground(new Color (255,255,255,200));
         panel_Transparent2.setBackground(new Color (255,255,255,100));
     }
 
@@ -157,7 +157,7 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Transparent1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_titulo.setFont(new java.awt.Font("Palatino Linotype", 0, 48)); // NOI18N
-        label_titulo.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo.setForeground(new java.awt.Color(105, 87, 86));
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_titulo.setText("Registrar Cliente");
         label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

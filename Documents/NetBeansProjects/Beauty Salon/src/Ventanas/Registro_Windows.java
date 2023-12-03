@@ -20,6 +20,7 @@ public class Registro_Windows extends javax.swing.JFrame {
     public Registro_Windows() {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
+        panel_Transparent_White1.setBackground(new Color (255,255,255,200));
     }
 
     /**
@@ -31,42 +32,31 @@ public class Registro_Windows extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCerrar = new javax.swing.JLabel();
         panel_transparent = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
         textField_Client_Name_input = new javax.swing.JTextField();
         label_No_contacto = new javax.swing.JLabel();
         textField_Client_Contacto_input = new javax.swing.JTextField();
-        btn_buscar_Registro = new java.awt.Button();
-        Panel_Registros = new javax.swing.JPanel();
+        label_Email = new javax.swing.JLabel();
+        textField_Email_input = new javax.swing.JTextField();
+        btn_Buscar = new javax.swing.JLabel();
+        label_Borered = new javax.swing.JLabel();
+        panel_Transparent_White1 = new javax.swing.JPanel();
         Registros = new javax.swing.JLabel();
+        Panel_Tabla = new javax.swing.JPanel();
+        Label_Lista_Clientes = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tab_R_Client = new javax.swing.JTable();
         btn_Agendar_Cita = new javax.swing.JLabel();
         btn_Modificar_Cita = new javax.swing.JLabel();
         btn_Eliminar_Cita = new javax.swing.JLabel();
         btn_Comprar_Producto = new javax.swing.JLabel();
-        Panel_Tab = new javax.swing.JPanel();
-        Label_Lista_Clientes = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Tab_R_Client = new javax.swing.JTable();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(50, 50));
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnCerrar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrar.setText("X");
-        btnCerrar.setToolTipText("");
-        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCerrarMousePressed(evt);
-            }
-        });
-        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 30, 30));
 
         panel_transparent.setBackground(new java.awt.Color(212, 176, 155));
         panel_transparent.setEnabled(false);
@@ -80,105 +70,101 @@ public class Registro_Windows extends javax.swing.JFrame {
                 panel_transparentMousePressed(evt);
             }
         });
+        panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre.setText("NOMBRE:");
+        panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
         textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         textField_Client_Name_input.setText(" ");
         textField_Client_Name_input.setBorder(null);
         textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 390, 39));
 
         label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_contacto.setText("NO. CONTACTO:");
+        panel_transparent.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, -1, -1));
 
         textField_Client_Contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         textField_Client_Contacto_input.setText(" ");
         textField_Client_Contacto_input.setBorder(null);
         textField_Client_Contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(textField_Client_Contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 229, 39));
 
-        btn_buscar_Registro.setActionCommand("BUSCAR");
-        btn_buscar_Registro.setBackground(new java.awt.Color(128, 76, 46));
-        btn_buscar_Registro.setForeground(new java.awt.Color(255, 255, 255));
-        btn_buscar_Registro.setLabel("BUSCAR");
+        label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Email.setForeground(new java.awt.Color(0, 0, 0));
+        label_Email.setText("CORREO ELECTRONICO:");
+        panel_transparent.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 180, 30));
 
-        Panel_Registros.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Email_input.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Email_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Email_input.setForeground(new java.awt.Color(0, 0, 0));
+        textField_Email_input.setText(" ");
+        textField_Email_input.setBorder(null);
+        textField_Email_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textField_Email_input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField_Email_inputActionPerformed(evt);
+            }
+        });
+        panel_transparent.add(textField_Email_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 420, 40));
 
-        Registros.setFont(new java.awt.Font("Palatino Linotype", 0, 40)); // NOI18N
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
+        btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, -1, -1));
+
+        label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Borered.setForeground(new java.awt.Color(0, 0, 0));
+        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 890, 380));
+
+        panel_Transparent_White1.setBackground(new java.awt.Color(255, 255, 255));
+
+        Registros.setFont(new java.awt.Font("Palatino Linotype", 1, 40)); // NOI18N
+        Registros.setForeground(new java.awt.Color(105, 87, 86));
         Registros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Registros.setText("Registros");
-        Registros.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Registros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout Panel_RegistrosLayout = new javax.swing.GroupLayout(Panel_Registros);
-        Panel_Registros.setLayout(Panel_RegistrosLayout);
-        Panel_RegistrosLayout.setHorizontalGroup(
-            Panel_RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_RegistrosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout panel_Transparent_White1Layout = new javax.swing.GroupLayout(panel_Transparent_White1);
+        panel_Transparent_White1.setLayout(panel_Transparent_White1Layout);
+        panel_Transparent_White1Layout.setHorizontalGroup(
+            panel_Transparent_White1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
+                .addContainerGap(499, Short.MAX_VALUE)
                 .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(440, 440, 440))
+                .addGap(426, 426, 426))
         );
-        Panel_RegistrosLayout.setVerticalGroup(
-            Panel_RegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_RegistrosLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        panel_Transparent_White1Layout.setVerticalGroup(
+            panel_Transparent_White1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
+                .addGap(0, 19, Short.MAX_VALUE)
+                .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White.png"))); // NOI18N
-        btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Agendar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Agendar_CitaMouseExited(evt);
-            }
-        });
+        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1130, -1));
 
-        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); // NOI18N
-        btn_Modificar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_CitaMouseExited(evt);
-            }
-        });
-
-        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); // NOI18N
-        btn_Eliminar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseExited(evt);
-            }
-        });
-
-        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); // NOI18N
-        btn_Comprar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Comprar_ProductoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Comprar_ProductoMouseExited(evt);
-            }
-        });
-
-        Panel_Tab.setBackground(new java.awt.Color(128, 76, 46));
+        Panel_Tabla.setBackground(new java.awt.Color(128, 76, 46));
 
         Label_Lista_Clientes.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_Lista_Clientes.setForeground(new java.awt.Color(255, 255, 255));
         Label_Lista_Clientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Lista_Clientes.setText("LISTA DE CLIENTES");
 
+        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+
         Tab_R_Client.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -195,86 +181,74 @@ public class Registro_Windows extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tab_R_Client);
 
-        javax.swing.GroupLayout Panel_TabLayout = new javax.swing.GroupLayout(Panel_Tab);
-        Panel_Tab.setLayout(Panel_TabLayout);
-        Panel_TabLayout.setHorizontalGroup(
-            Panel_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TabLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Panel_TabLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+        javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
+        Panel_Tabla.setLayout(Panel_TablaLayout);
+        Panel_TablaLayout.setHorizontalGroup(
+            Panel_TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(Panel_TablaLayout.createSequentialGroup()
+                .addGap(204, 204, 204)
                 .addComponent(Label_Lista_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
-        Panel_TabLayout.setVerticalGroup(
-            Panel_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TabLayout.createSequentialGroup()
+        Panel_TablaLayout.setVerticalGroup(
+            Panel_TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TablaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_Lista_Clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
-        javax.swing.GroupLayout panel_transparentLayout = new javax.swing.GroupLayout(panel_transparent);
-        panel_transparent.setLayout(panel_transparentLayout);
-        panel_transparentLayout.setHorizontalGroup(
-            panel_transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Registros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_transparentLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
-                .addComponent(btn_Agendar_Cita)
-                .addGap(77, 77, 77)
-                .addComponent(btn_Modificar_Cita)
-                .addGap(86, 86, 86)
-                .addComponent(btn_Eliminar_Cita, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(btn_Comprar_Producto)
-                .addGap(85, 85, 85))
-            .addGroup(panel_transparentLayout.createSequentialGroup()
-                .addGroup(panel_transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_transparentLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(label_Nombre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textField_Client_Name_input, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(label_No_contacto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textField_Client_Contacto_input, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(btn_buscar_Registro, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_transparentLayout.createSequentialGroup()
-                        .addGap(271, 271, 271)
-                        .addComponent(Panel_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel_transparentLayout.setVerticalGroup(
-            panel_transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_transparentLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(Panel_Registros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(panel_transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(label_Nombre)
-                        .addComponent(textField_Client_Name_input, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label_No_contacto)
-                        .addComponent(textField_Client_Contacto_input, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_buscar_Registro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(Panel_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addGroup(panel_transparentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_Agendar_Cita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Modificar_Cita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Eliminar_Cita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Comprar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(52, 52, 52))
-        );
+        panel_transparent.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 830, 229));
 
-        btn_buscar_Registro.getAccessibleContext().setAccessibleName("");
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White.png"))); // NOI18N
+        btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Agendar_CitaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Agendar_CitaMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, -1, -1));
+
+        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); // NOI18N
+        btn_Modificar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Modificar_CitaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Modificar_CitaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Modificar_CitaMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, -1, -1));
+
+        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); // NOI18N
+        btn_Eliminar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Eliminar_CitaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Eliminar_CitaMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Eliminar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, -1, -1));
+
+        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); // NOI18N
+        btn_Comprar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Comprar_ProductoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Comprar_ProductoMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Comprar_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 500, -1, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -287,14 +261,10 @@ public class Registro_Windows extends javax.swing.JFrame {
         getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
    
-    private void btnCerrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMousePressed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_btnCerrarMousePressed
-
     private void panel_transparentMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMouseDragged
         // TODO add your handling code here:
         int x = evt.getXOnScreen();
@@ -310,16 +280,16 @@ public class Registro_Windows extends javax.swing.JFrame {
         xy = evt.getY();  
     }//GEN-LAST:event_panel_transparentMousePressed
 
-    private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
+    private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
         // TODO add your handling code here:
-         btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown.png"))); 
-    }//GEN-LAST:event_btn_Agendar_CitaMouseEntered
+         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Brown.png"))); 
+    }//GEN-LAST:event_btn_BuscarMouseEntered
 
-    private void btn_Agendar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseExited
+    private void btn_BuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseExited
         // TODO add your handling code here:
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown.png"))); 
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); 
         
-    }//GEN-LAST:event_btn_Agendar_CitaMouseExited
+    }//GEN-LAST:event_btn_BuscarMouseExited
 
     private void btn_Modificar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseEntered
         // TODO add your handling code here:
@@ -328,7 +298,7 @@ public class Registro_Windows extends javax.swing.JFrame {
 
     private void btn_Modificar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseExited
         // TODO add your handling code here:
-        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown.png"))); 
+        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); 
     }//GEN-LAST:event_btn_Modificar_CitaMouseExited
 
     private void btn_Eliminar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseEntered
@@ -338,7 +308,7 @@ public class Registro_Windows extends javax.swing.JFrame {
 
     private void btn_Eliminar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseExited
         // TODO add your handling code here:
-         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_Brown.png"))); 
+         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); 
     }//GEN-LAST:event_btn_Eliminar_CitaMouseExited
 
     private void btn_Comprar_ProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Comprar_ProductoMouseEntered
@@ -348,8 +318,29 @@ public class Registro_Windows extends javax.swing.JFrame {
 
     private void btn_Comprar_ProductoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Comprar_ProductoMouseExited
         // TODO add your handling code here:
-        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_Brown.png"))); 
+        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); 
     }//GEN-LAST:event_btn_Comprar_ProductoMouseExited
+
+    private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
+        // TODO add your handling code here:
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown.png"))); 
+    }//GEN-LAST:event_btn_Agendar_CitaMouseEntered
+
+    private void btn_Agendar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseExited
+        // TODO add your handling code here:
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White.png"))); 
+    }//GEN-LAST:event_btn_Agendar_CitaMouseExited
+
+    private void textField_Email_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Email_inputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField_Email_inputActionPerformed
+
+    private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
+        // TODO add your handling code here:
+        Modificar_Citas mc = new Modificar_Citas();
+        mc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -395,23 +386,25 @@ public class Registro_Windows extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Label_Lista_Clientes;
-    private javax.swing.JPanel Panel_Registros;
-    private javax.swing.JPanel Panel_Tab;
+    private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JLabel Registros;
     private javax.swing.JTable Tab_R_Client;
     private javax.swing.JLabel bgImage;
-    private javax.swing.JLabel btnCerrar;
     private javax.swing.JLabel btn_Agendar_Cita;
+    private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Comprar_Producto;
     private javax.swing.JLabel btn_Eliminar_Cita;
     private javax.swing.JLabel btn_Modificar_Cita;
-    private java.awt.Button btn_buscar_Registro;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_Borered;
+    private javax.swing.JLabel label_Email;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
+    private javax.swing.JPanel panel_Transparent_White1;
     private javax.swing.JPanel panel_transparent;
     private javax.swing.JTextField textField_Client_Contacto_input;
     private javax.swing.JTextField textField_Client_Name_input;
+    private javax.swing.JTextField textField_Email_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }

@@ -20,7 +20,7 @@ public class Clientes_Windows extends javax.swing.JFrame {
     public Clientes_Windows() {
         initComponents();
         panel_Transparent1.setBackground(new Color (212,176,155,200));
-        panel_Transparent2.setBackground(new Color (255,255,255,100));
+        panel_Transparent2.setBackground(new Color (255,255,255,200));
         panel_Transparent3.setBackground(new Color (255,255,255,100));
     }
 
@@ -125,7 +125,9 @@ public class Clientes_Windows extends javax.swing.JFrame {
 
     private void btn_Cliente_RegistradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_RegistradoMouseClicked
         // TODO add your handling code here:
-
+        Registro_Windows ResgitrosW = new Registro_Windows();
+        ResgitrosW.setVisible(true);
+        dispose();
         //btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png")));
     }//GEN-LAST:event_btn_Cliente_RegistradoMouseClicked
 
