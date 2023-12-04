@@ -12,12 +12,12 @@ import java.awt.Color;
  *
  * @author Hilda
  */
-public class Modificar_Citas extends javax.swing.JFrame {
+public class Eliminar_Cita extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Modificar_Citas() {
+    public Eliminar_Cita() {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
@@ -41,19 +41,19 @@ public class Modificar_Citas extends javax.swing.JFrame {
         panel_Transparent1 = new javax.swing.JPanel();
         label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
+        panel_Transparent3 = new javax.swing.JPanel();
+        label_titulo = new javax.swing.JLabel();
         TextField_No_contacto = new javax.swing.JTextField();
         Label_Fecha = new javax.swing.JLabel();
-        Panel_Tab = new javax.swing.JPanel();
+        Panel_Tabla = new javax.swing.JPanel();
         Label_Lista_clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jDateChooser = new com.toedter.calendar.JDateChooser();
         btn_Buscar = new javax.swing.JLabel();
         label_Borered = new javax.swing.JLabel();
-        btn_Modificar_Cita1 = new javax.swing.JLabel();
+        btn_Eliminar_Cita = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
-        panel_Transparent3 = new javax.swing.JPanel();
-        label_titulo = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,16 +63,6 @@ public class Modificar_Citas extends javax.swing.JFrame {
 
         panel_transparent.setBackground(new java.awt.Color(212, 176, 155));
         panel_transparent.setEnabled(false);
-        panel_transparent.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                panel_transparentMouseDragged(evt);
-            }
-        });
-        panel_transparent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                panel_transparentMousePressed(evt);
-            }
-        });
         panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -142,6 +132,36 @@ public class Modificar_Citas extends javax.swing.JFrame {
 
         panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
 
+        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
+
+        label_titulo.setBackground(new java.awt.Color(105, 87, 86));
+        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(105, 87, 86));
+        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo.setText("Eliminar  Registro");
+        label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
+        panel_Transparent3.setLayout(panel_Transparent3Layout);
+        panel_Transparent3Layout.setHorizontalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        panel_Transparent3Layout.setVerticalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
+
         TextField_No_contacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextField_No_contactoActionPerformed(evt);
@@ -154,7 +174,7 @@ public class Modificar_Citas extends javax.swing.JFrame {
         Label_Fecha.setText("FECHA:");
         panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 60, -1));
 
-        Panel_Tab.setBackground(new java.awt.Color(128, 76, 46));
+        Panel_Tabla.setBackground(new java.awt.Color(128, 76, 46));
 
         Label_Lista_clientes.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Label_Lista_clientes.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,30 +198,30 @@ public class Modificar_Citas extends javax.swing.JFrame {
         jTable1.setToolTipText("");
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout Panel_TabLayout = new javax.swing.GroupLayout(Panel_Tab);
-        Panel_Tab.setLayout(Panel_TabLayout);
-        Panel_TabLayout.setHorizontalGroup(
-            Panel_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
+        Panel_Tabla.setLayout(Panel_TablaLayout);
+        Panel_TablaLayout.setHorizontalGroup(
+            Panel_TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TabLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TablaLayout.createSequentialGroup()
                 .addContainerGap(368, Short.MAX_VALUE)
                 .addComponent(Label_Lista_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(317, 317, 317))
         );
-        Panel_TabLayout.setVerticalGroup(
-            Panel_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TabLayout.createSequentialGroup()
+        Panel_TablaLayout.setVerticalGroup(
+            Panel_TablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TablaLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(Label_Lista_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 297, 920, -1));
+        panel_transparent.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 297, 920, -1));
 
         jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
         jDateChooser.setForeground(new java.awt.Color(0, 0, 0));
-        jDateChooser.setDateFormatString("y,MMMM,d");
+        jDateChooser.setDateFormatString("d,MMMM,y");
         jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
         jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
         panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
@@ -222,20 +242,20 @@ public class Modificar_Citas extends javax.swing.JFrame {
         label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar cita", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 940, 400));
 
-        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
-        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Eliminar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White_Cita.png"))); // NOI18N
+        btn_Eliminar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Eliminar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Eliminar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Eliminar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseEntered(evt);
+                btn_Eliminar_CitaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseExited(evt);
+                btn_Eliminar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 570, 200, -1));
+        panel_transparent.add(btn_Eliminar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 570, 200, -1));
 
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -250,37 +270,7 @@ public class Modificar_Citas extends javax.swing.JFrame {
             .addGap(0, 69, Short.MAX_VALUE)
         );
 
-        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1130, -1));
-
-        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
-
-        label_titulo.setBackground(new java.awt.Color(105, 87, 86));
-        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
-        label_titulo.setForeground(new java.awt.Color(105, 87, 86));
-        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText(" Citas");
-        label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
-        panel_Transparent3.setLayout(panel_Transparent3Layout);
-        panel_Transparent3Layout.setHorizontalGroup(
-            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
-        panel_Transparent3Layout.setVerticalGroup(
-            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
+        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1130, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -297,35 +287,20 @@ public class Modificar_Citas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
    
-    private void panel_transparentMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMouseDragged
-        // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-
-	int y = evt.getYOnScreen();
-
-	Modificar_Citas.this.setLocation(x - xx, y - xy);
-    }//GEN-LAST:event_panel_transparentMouseDragged
-
-    private void panel_transparentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMousePressed
-        // TODO add your handling code here:\
-        xx = evt.getX();
-        xy = evt.getY();  
-    }//GEN-LAST:event_panel_transparentMousePressed
-
     private void TextField_No_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contactoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_No_contactoActionPerformed
 
-    private void btn_Modificar_Cita1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseEntered
+    private void btn_Eliminar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseEntered
         // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown_Cita.png"))); 
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseEntered
+        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_Brown_Cita.png"))); 
+    }//GEN-LAST:event_btn_Eliminar_CitaMouseEntered
 
-    private void btn_Modificar_Cita1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseExited
+    private void btn_Eliminar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseExited
         // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); 
+        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White_Cita.png"))); 
 
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseExited
+    }//GEN-LAST:event_btn_Eliminar_CitaMouseExited
 
     private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
         // TODO add your handling code here:
@@ -371,14 +346,46 @@ public class Modificar_Citas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Modificar_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Modificar_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Modificar_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Modificar_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -415,7 +422,7 @@ public class Modificar_Citas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Modificar_Citas().setVisible(true);
+                new Eliminar_Cita().setVisible(true);
             }
         });
     }
@@ -424,11 +431,11 @@ public class Modificar_Citas extends javax.swing.JFrame {
     private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Lista_clientes;
-    private javax.swing.JPanel Panel_Tab;
+    private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JTextField TextField_No_contacto;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
-    private javax.swing.JLabel btn_Modificar_Cita1;
+    private javax.swing.JLabel btn_Eliminar_Cita;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

@@ -12,12 +12,12 @@ import java.awt.Color;
  *
  * @author Hilda
  */
-public class Registro_Windows extends javax.swing.JFrame {
+public class Actualizar_Cliente_Window extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Registro_Windows() {
+    public Actualizar_Cliente_Window() {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent_White1.setBackground(new Color (255,255,255,200));
@@ -40,17 +40,23 @@ public class Registro_Windows extends javax.swing.JFrame {
         label_Email = new javax.swing.JLabel();
         textField_Email_input = new javax.swing.JTextField();
         btn_Buscar = new javax.swing.JLabel();
-        label_Borered = new javax.swing.JLabel();
         panel_Transparent_White1 = new javax.swing.JPanel();
         Registros = new javax.swing.JLabel();
+        HOME_ICON = new javax.swing.JLabel();
         Panel_Tabla = new javax.swing.JPanel();
         Label_Lista_Clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tab_R_Client = new javax.swing.JTable();
-        btn_Agendar_Cita = new javax.swing.JLabel();
-        btn_Modificar_Cita = new javax.swing.JLabel();
-        btn_Eliminar_Cita = new javax.swing.JLabel();
-        btn_Comprar_Producto = new javax.swing.JLabel();
+        label_Borered = new javax.swing.JLabel();
+        textField_Client_Name_input2 = new javax.swing.JTextField();
+        label_Nombre2 = new javax.swing.JLabel();
+        label_No_Contacto = new javax.swing.JLabel();
+        textField_No_contacto_input = new javax.swing.JTextField();
+        label_Email2 = new javax.swing.JLabel();
+        textField_Email_input2 = new javax.swing.JTextField();
+        label_Direccion = new javax.swing.JLabel();
+        textField_Direccion_Input = new javax.swing.JTextField();
+        btn_Actualizar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,11 +111,6 @@ public class Registro_Windows extends javax.swing.JFrame {
         textField_Email_input.setText(" ");
         textField_Email_input.setBorder(null);
         textField_Email_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_Email_input.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_Email_inputActionPerformed(evt);
-            }
-        });
         panel_transparent.add(textField_Email_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 420, 40));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
@@ -123,33 +124,48 @@ public class Registro_Windows extends javax.swing.JFrame {
         });
         panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, -1, -1));
 
-        label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Borered.setForeground(new java.awt.Color(0, 0, 0));
-        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 890, 380));
-
         panel_Transparent_White1.setBackground(new java.awt.Color(255, 255, 255));
 
         Registros.setFont(new java.awt.Font("Palatino Linotype", 1, 40)); // NOI18N
         Registros.setForeground(new java.awt.Color(105, 87, 86));
         Registros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Registros.setText("Registros");
+        Registros.setText("Perfil Cliente ");
         Registros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        HOME_ICON.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
+        HOME_ICON.setFocusable(false);
+        HOME_ICON.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_Transparent_White1Layout = new javax.swing.GroupLayout(panel_Transparent_White1);
         panel_Transparent_White1.setLayout(panel_Transparent_White1Layout);
         panel_Transparent_White1Layout.setHorizontalGroup(
             panel_Transparent_White1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
-                .addContainerGap(499, Short.MAX_VALUE)
-                .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(426, 426, 426))
+                .addComponent(HOME_ICON)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 410, Short.MAX_VALUE)
+                .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(376, 376, 376))
         );
         panel_Transparent_White1Layout.setVerticalGroup(
             panel_Transparent_White1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
-                .addGap(0, 19, Short.MAX_VALUE)
+                .addGap(0, 20, Short.MAX_VALUE)
                 .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel_Transparent_White1Layout.createSequentialGroup()
+                .addComponent(HOME_ICON)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1130, -1));
@@ -165,14 +181,14 @@ public class Registro_Windows extends javax.swing.JFrame {
 
         Tab_R_Client.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Cliente_Nombre", "Numero_tel", "Correo_electronico"
+                "ID", "Cliente_Nombre", "Numero_tel", "Correo_electronico", "Direccion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -197,61 +213,79 @@ public class Registro_Windows extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Label_Lista_Clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130))
         );
 
-        panel_transparent.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 830, 229));
+        panel_transparent.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 830, 130));
 
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White.png"))); // NOI18N
-        btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+        label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Borered.setForeground(new java.awt.Color(0, 0, 0));
+        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 910, 270));
+
+        textField_Client_Name_input2.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Client_Name_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Client_Name_input2.setForeground(new java.awt.Color(0, 0, 0));
+        textField_Client_Name_input2.setText(" ");
+        textField_Client_Name_input2.setBorder(null);
+        textField_Client_Name_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(textField_Client_Name_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 740, 40));
+
+        label_Nombre2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Nombre2.setForeground(new java.awt.Color(0, 0, 0));
+        label_Nombre2.setText("NOMBRE:");
+        panel_transparent.add(label_Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 90, 30));
+
+        label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
+        label_No_Contacto.setText("NO. CONTACTO:");
+        panel_transparent.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 130, 30));
+
+        textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
+        textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_No_contacto_input.setForeground(new java.awt.Color(0, 0, 0));
+        textField_No_contacto_input.setText(" ");
+        textField_No_contacto_input.setBorder(null);
+        textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 740, 40));
+
+        label_Email2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Email2.setForeground(new java.awt.Color(0, 0, 0));
+        label_Email2.setText("CORREO ELECTRONICO:");
+        panel_transparent.add(label_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 180, 30));
+
+        textField_Email_input2.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Email_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Email_input2.setForeground(new java.awt.Color(0, 0, 0));
+        textField_Email_input2.setText(" ");
+        textField_Email_input2.setBorder(null);
+        textField_Email_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(textField_Email_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 740, 40));
+
+        label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Direccion.setForeground(new java.awt.Color(0, 0, 0));
+        label_Direccion.setText("DIRECCION:");
+        panel_transparent.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 100, 40));
+
+        textField_Direccion_Input.setBackground(new java.awt.Color(255, 255, 255));
+        textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Direccion_Input.setForeground(new java.awt.Color(0, 0, 0));
+        textField_Direccion_Input.setText(" ");
+        textField_Direccion_Input.setBorder(null);
+        textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 740, 40));
+
+        btn_Actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png"))); // NOI18N
+        btn_Actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Agendar_CitaMouseEntered(evt);
+                btn_ActualizarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Agendar_CitaMouseExited(evt);
+                btn_ActualizarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, -1, -1));
-
-        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); // NOI18N
-        btn_Modificar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_Modificar_CitaMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_CitaMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, -1, -1));
-
-        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); // NOI18N
-        btn_Eliminar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Eliminar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, -1, -1));
-
-        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); // NOI18N
-        btn_Comprar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Comprar_ProductoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Comprar_ProductoMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Comprar_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 500, -1, -1));
+        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 640, -1, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
@@ -274,7 +308,7 @@ public class Registro_Windows extends javax.swing.JFrame {
 
 	int y = evt.getYOnScreen();
 
-	Registro_Windows.this.setLocation(x - xx, y - xy);
+	Actualizar_Cliente_Window.this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_panel_transparentMouseDragged
 
     private void panel_transparentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMousePressed
@@ -294,63 +328,30 @@ public class Registro_Windows extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_BuscarMouseExited
 
-    private void btn_Modificar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseEntered
+    private void btn_ActualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ActualizarMouseEntered
         // TODO add your handling code here:
-         btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown.png"))); 
-    }//GEN-LAST:event_btn_Modificar_CitaMouseEntered
+    }//GEN-LAST:event_btn_ActualizarMouseEntered
 
-    private void btn_Modificar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseExited
+    private void btn_ActualizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ActualizarMouseExited
         // TODO add your handling code here:
-        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); 
-    }//GEN-LAST:event_btn_Modificar_CitaMouseExited
+    }//GEN-LAST:event_btn_ActualizarMouseExited
 
-    private void btn_Eliminar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseEntered
+    private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_Brown.png"))); 
-    }//GEN-LAST:event_btn_Eliminar_CitaMouseEntered
-
-    private void btn_Eliminar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseExited
-        // TODO add your handling code here:
-         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); 
-    }//GEN-LAST:event_btn_Eliminar_CitaMouseExited
-
-    private void btn_Comprar_ProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Comprar_ProductoMouseEntered
-        // TODO add your handling code here:
-         btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_Brown.png"))); 
-    }//GEN-LAST:event_btn_Comprar_ProductoMouseEntered
-
-    private void btn_Comprar_ProductoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Comprar_ProductoMouseExited
-        // TODO add your handling code here:
-        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); 
-    }//GEN-LAST:event_btn_Comprar_ProductoMouseExited
-
-    private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
-        // TODO add your handling code here:
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown.png"))); 
-    }//GEN-LAST:event_btn_Agendar_CitaMouseEntered
-
-    private void btn_Agendar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseExited
-        // TODO add your handling code here:
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White.png"))); 
-    }//GEN-LAST:event_btn_Agendar_CitaMouseExited
-
-    private void textField_Email_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Email_inputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField_Email_inputActionPerformed
-
-    private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
-        // TODO add your handling code here:
-        Modificar_Citas mc = new Modificar_Citas();
-        mc.setVisible(true);
+        Home_Windows cw = new Home_Windows();
+        cw.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
+    }//GEN-LAST:event_HOME_ICONMouseClicked
 
-    private void btn_Eliminar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseClicked
+    private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
         // TODO add your handling code here:
-        Eliminar_Cita EC = new Eliminar_Cita();
-        EC.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btn_Eliminar_CitaMouseClicked
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_LIGHTBROWN.png")));
+    }//GEN-LAST:event_HOME_ICONMouseEntered
+
+    private void HOME_ICONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseExited
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
+    }//GEN-LAST:event_HOME_ICONMouseExited
 
     /**
      * @param args the command line arguments
@@ -369,14 +370,22 @@ public class Registro_Windows extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actualizar_Cliente_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actualizar_Cliente_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actualizar_Cliente_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actualizar_Cliente_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -389,32 +398,38 @@ public class Registro_Windows extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registro_Windows().setVisible(true);
+                new Actualizar_Cliente_Window().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel Label_Lista_Clientes;
     private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JLabel Registros;
     private javax.swing.JTable Tab_R_Client;
     private javax.swing.JLabel bgImage;
-    private javax.swing.JLabel btn_Agendar_Cita;
+    private javax.swing.JLabel btn_Actualizar;
     private javax.swing.JLabel btn_Buscar;
-    private javax.swing.JLabel btn_Comprar_Producto;
-    private javax.swing.JLabel btn_Eliminar_Cita;
-    private javax.swing.JLabel btn_Modificar_Cita;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Borered;
+    private javax.swing.JLabel label_Direccion;
     private javax.swing.JLabel label_Email;
+    private javax.swing.JLabel label_Email2;
+    private javax.swing.JLabel label_No_Contacto;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
+    private javax.swing.JLabel label_Nombre2;
     private javax.swing.JPanel panel_Transparent_White1;
     private javax.swing.JPanel panel_transparent;
     private javax.swing.JTextField textField_Client_Contacto_input;
     private javax.swing.JTextField textField_Client_Name_input;
+    private javax.swing.JTextField textField_Client_Name_input2;
+    private javax.swing.JTextField textField_Direccion_Input;
     private javax.swing.JTextField textField_Email_input;
+    private javax.swing.JTextField textField_Email_input2;
+    private javax.swing.JTextField textField_No_contacto_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }
