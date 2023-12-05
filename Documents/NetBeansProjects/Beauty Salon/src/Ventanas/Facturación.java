@@ -295,7 +295,7 @@ public class Facturación  extends javax.swing.JFrame {
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-        Clientes_Windows cw = new Clientes_Windows();
+        Home_Windows cw = new Home_Windows();
         cw.setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked

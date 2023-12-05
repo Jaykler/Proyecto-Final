@@ -12,12 +12,12 @@ import java.awt.Color;
  *
  * @author Hilda
  */
-public class Venta extends javax.swing.JFrame {
+public class Venta_Producto_Window extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Venta() {
+    public Venta_Producto_Window() {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
@@ -231,7 +231,7 @@ public class Venta extends javax.swing.JFrame {
         jLabel_Direccion.setText("DIRECCIÓN:");
         panel_transparent.add(jLabel_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 130, 40));
 
-        getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 730));
+        getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
@@ -257,7 +257,7 @@ public class Venta extends javax.swing.JFrame {
 
         int y = evt.getYOnScreen();
 
-        Venta.this.setLocation(x - xx, y - xy);
+        Venta_Producto_Window.this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_panel_transparentMouseDragged
 
     private void jTextField_DireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DireccionActionPerformed
@@ -284,7 +284,7 @@ public class Venta extends javax.swing.JFrame {
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-        Clientes_Windows cw = new Clientes_Windows();
+        Home_Windows cw = new Home_Windows();
         cw.setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
@@ -307,14 +307,78 @@ public class Venta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Venta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Venta_Producto_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Venta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Venta_Producto_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Venta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Venta_Producto_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Venta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Venta_Producto_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -383,7 +447,7 @@ public class Venta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Venta().setVisible(true);
+                new Venta_Producto_Window().setVisible(true);
             }
         });
     }
