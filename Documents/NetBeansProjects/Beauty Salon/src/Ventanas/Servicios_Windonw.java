@@ -87,6 +87,10 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         tabla_Productos = new javax.swing.JTable();
         panel_ResumenServ = new javax.swing.JPanel();
         label_Titlulo = new javax.swing.JLabel();
+        scrollpanel_Resumen = new javax.swing.JScrollPane();
+        tabla_Resumen_Servicios = new javax.swing.JTable();
+        TextField_No_contacto1 = new javax.swing.JTextField();
+        label_No_contacto1 = new javax.swing.JLabel();
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
@@ -217,11 +221,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 tbtn_ProductosMouseClicked(evt);
             }
         });
-        tbtn_Productos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbtn_ProductosActionPerformed(evt);
-            }
-        });
         panel_Main.add(tbtn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 140, 40));
 
         tbtn_Depilacion.setBackground(new java.awt.Color(255, 255, 255));
@@ -234,11 +233,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 tbtn_DepilacionMouseClicked(evt);
             }
         });
-        tbtn_Depilacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbtn_DepilacionActionPerformed(evt);
-            }
-        });
         panel_Main.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 180, 40));
 
         tbtn_Cortes.setBackground(new java.awt.Color(255, 255, 255));
@@ -249,11 +243,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         tbtn_Cortes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbtn_CortesMouseClicked(evt);
-            }
-        });
-        tbtn_Cortes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbtn_CortesActionPerformed(evt);
             }
         });
         panel_Main.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
@@ -290,11 +279,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         tbtn_Maquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbtn_MaquillajeMouseClicked(evt);
-            }
-        });
-        tbtn_Maquillaje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbtn_MaquillajeActionPerformed(evt);
             }
         });
         panel_Main.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, 40));
@@ -591,7 +575,59 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         label_Titlulo.setForeground(new java.awt.Color(128, 76, 46));
         label_Titlulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_Titlulo.setText("Resumen de Servicios");
-        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 40));
+        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 30));
+
+        scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
+        scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Resumen_Servicios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Producto", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
+        if (tabla_Resumen_Servicios.getColumnModel().getColumnCount() > 0) {
+            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMinWidth(50);
+            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMaxWidth(60);
+        }
+
+        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 160));
+
+        TextField_No_contacto1.setEditable(false);
+        TextField_No_contacto1.setBackground(new java.awt.Color(255, 255, 255));
+        TextField_No_contacto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextField_No_contacto1ActionPerformed(evt);
+            }
+        });
+        panel_ResumenServ.add(TextField_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 300, 30));
+
+        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
+        label_No_contacto1.setText("TOTAL:");
+        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 207, 120, 20));
 
         panel_Main.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 240));
 
@@ -702,18 +738,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
-    private void tbtn_DepilacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_DepilacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbtn_DepilacionActionPerformed
-
-    private void tbtn_CortesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_CortesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbtn_CortesActionPerformed
-
-    private void tbtn_MaquillajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_MaquillajeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbtn_MaquillajeActionPerformed
-
     private void tbtn_Servicios_generalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_Servicios_generalesMouseClicked
         // TODO add your handling code here:
 //        tbtn_Servicios_generales.setBackground(new java.awt.Color(128, 76, 46));
@@ -723,6 +747,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
+         panel_Productos.setVisible(false);
         
     }//GEN-LAST:event_tbtn_Servicios_generalesMouseClicked
 
@@ -733,6 +758,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
+         panel_Productos.setVisible(false);
         
     }//GEN-LAST:event_tbtn_Limpieza_CejasMouseClicked
 
@@ -743,6 +769,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Cortes.setVisible(true);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
+         panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_CortesMouseClicked
 
     private void tbtn_MaquillajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_MaquillajeMouseClicked
@@ -752,6 +779,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(true);
+        panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_MaquillajeMouseClicked
 
     private void tbtn_DepilacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_DepilacionMouseClicked
@@ -761,15 +789,22 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(true);
         panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_DepilacionMouseClicked
 
     private void tbtn_ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_ProductosMouseClicked
         // TODO add your handling code here:
+        panel_ServiciosGen.setVisible(false);
+        panel_LimpiezaCeja.setVisible(false);
+        panel_Cortes.setVisible(false);
+        panel_Depilacion.setVisible(false);
+        panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(true);
     }//GEN-LAST:event_tbtn_ProductosMouseClicked
 
-    private void tbtn_ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_ProductosActionPerformed
+    private void TextField_No_contacto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contacto1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbtn_ProductosActionPerformed
+    }//GEN-LAST:event_TextField_No_contacto1ActionPerformed
  
     /**
      * @param args the command line arguments
@@ -942,6 +977,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Hora;
     private javax.swing.JPanel Panel_Servicios;
     private javax.swing.JTextField TextField_No_contacto;
+    private javax.swing.JTextField TextField_No_contacto1;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Modificar_Cita1;
     private javax.swing.ButtonGroup buttonGroup;
@@ -953,6 +989,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JLabel label_LimpiezaCejas;
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
+    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Productos;
     private javax.swing.JLabel label_ServiceGen;
@@ -976,12 +1013,14 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollpanel_4;
     private javax.swing.JScrollPane scrollpanel_5;
     private javax.swing.JScrollPane scrollpanel_6;
+    private javax.swing.JScrollPane scrollpanel_Resumen;
     private javax.swing.JTable tabla_Cejas;
     private javax.swing.JTable tabla_Cortes;
     private javax.swing.JTable tabla_Cortes1;
     private javax.swing.JTable tabla_Cortes2;
     private javax.swing.JTable tabla_LimpiezaCeja;
     private javax.swing.JTable tabla_Productos;
+    private javax.swing.JTable tabla_Resumen_Servicios;
     private javax.swing.JToggleButton tbtn_Cortes;
     private javax.swing.JToggleButton tbtn_Depilacion;
     private javax.swing.JToggleButton tbtn_Limpieza_Cejas;

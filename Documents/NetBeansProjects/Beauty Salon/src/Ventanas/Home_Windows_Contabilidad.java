@@ -97,6 +97,9 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         btn_Ingresos_Egresos.setMinimumSize(new java.awt.Dimension(204, 36));
         btn_Ingresos_Egresos.setPreferredSize(new java.awt.Dimension(200, 36));
         btn_Ingresos_Egresos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Ingresos_EgresosMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Ingresos_EgresosMouseEntered(evt);
             }
@@ -115,6 +118,9 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         btn_Inventario.setMinimumSize(new java.awt.Dimension(204, 36));
         btn_Inventario.setPreferredSize(new java.awt.Dimension(200, 36));
         btn_Inventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_InventarioMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_InventarioMouseEntered(evt);
             }
@@ -156,6 +162,20 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Inventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Inventario_White.png"))); 
     }//GEN-LAST:event_btn_InventarioMouseExited
+
+    private void btn_Ingresos_EgresosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Ingresos_EgresosMouseClicked
+        // TODO add your handling code here:
+        Ingresos_Windows_Contabilidad iwc = new Ingresos_Windows_Contabilidad();
+        iwc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_Ingresos_EgresosMouseClicked
+
+    private void btn_InventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InventarioMouseClicked
+        // TODO add your handling code here:
+        Inventario_Windows_Contabilidad inwc = new Inventario_Windows_Contabilidad();
+        inwc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_InventarioMouseClicked
 
     /**
      * @param args the command line arguments

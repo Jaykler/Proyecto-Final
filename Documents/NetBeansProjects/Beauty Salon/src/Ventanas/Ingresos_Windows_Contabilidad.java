@@ -37,6 +37,7 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
         panel_Main = new javax.swing.JPanel();
         panel_Transparent1 = new javax.swing.JPanel();
         label_title = new javax.swing.JLabel();
+        label_Home_Icon = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -64,9 +65,21 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
         label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_title.setText("Ingresos");
         label_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panel_Transparent1.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, -1, 80));
+        panel_Transparent1.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 80));
 
-        panel_Main.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 410, 70));
+        label_Home_Icon.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
+        label_Home_Icon.setForeground(new java.awt.Color(105, 87, 86));
+        label_Home_Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Home_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_BLUE.png"))); // NOI18N
+        label_Home_Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        label_Home_Icon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_Home_IconMouseClicked(evt);
+            }
+        });
+        panel_Transparent1.add(label_Home_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 50));
+
+        panel_Main.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 80));
 
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
         panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
@@ -79,10 +92,10 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
         );
         panel_Transparent2Layout.setVerticalGroup(
             panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 90, Short.MAX_VALUE)
         );
 
-        panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 1190, 70));
+        panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 1190, 90));
 
         jPanel1.setBackground(new java.awt.Color(105, 133, 149));
 
@@ -183,6 +196,13 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
     private void TextField_TotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_TotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_TotalActionPerformed
+
+    private void label_Home_IconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_Home_IconMouseClicked
+        // TODO add your handling code here:
+        Home_Windows_Contabilidad hwc = new Home_Windows_Contabilidad();
+        hwc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_label_Home_IconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -482,6 +502,7 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_Home_Icon;
     private javax.swing.JLabel label_title;
     private javax.swing.JPanel panel_Main;
     private javax.swing.JPanel panel_Transparent1;
