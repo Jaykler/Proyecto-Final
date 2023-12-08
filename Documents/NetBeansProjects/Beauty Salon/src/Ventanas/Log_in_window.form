@@ -143,6 +143,9 @@
               <Color id="Text Cursor"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="label_contrasena">
           <Properties>
@@ -171,6 +174,9 @@
               <Color id="Text Cursor"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="btn_Iniciar_Ses">
           <Properties>

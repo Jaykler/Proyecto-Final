@@ -4,6 +4,13 @@ package Ventanas;
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -194,7 +201,60 @@ public class Log_in_window extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Iniciar_SesMouseExited
 
     private void btn_Iniciar_SesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Iniciar_SesMouseClicked
-        // TODO add your handling code here:
+
+            String userName = textField_Username_input.getText();
+            String password = passwordField.getText();
+            String ConexionUrl = "jdbc:sqlserver://DESKTOP-8J790S3;databaseName=BeutyS;integratedSecurity=true;encrypt=false";
+
+            try {
+                // Establecer la conexión
+                Connection conexion = DriverManager.getConnection(ConexionUrl);
+    
+                // Consulta SQL
+                String consultaSQL = "SELECT * FROM usuarios WHERE Nombre = ?";
+    
+                 // Preparar la consulta
+                PreparedStatement statement = conexion.prepareStatement(consultaSQL);
+                statement.setString(1, userName); // Establecer el valor del parámetro
+    
+                // Ejecutar la consulta y obtener el resultado
+                ResultSet resultado = statement.executeQuery();
+
+                 // Procesar el resultado
+                if (resultado.next()) {
+                         // Obtener el valor de la contraseña (asumiendo que es un entero)
+                        String passwordFromDatabase = resultado.getString("Password");
+                        String nivelAccesoFromDatabase = resultado.getString("nivel_Acceso");
+                        
+
+                        // Comparar la contraseña
+                        if (passwordFromDatabase.equals(password)) {
+                            //nivel Recepcion
+                            if(nivelAccesoFromDatabase.equals("Recepcion")){
+                                Home_Windows Home_W =new Home_Windows();
+                                Home_W.setVisible(true);
+                            }
+                            //nivel Contable
+                            if (nivelAccesoFromDatabase.equals("Contable")){
+                                Home_Windows_Contabilidad windows_Cont = new Home_Windows_Contabilidad();
+                                windows_Cont.setVisible(true);
+                            }
+                            //Nivel Administrador
+                            if(nivelAccesoFromDatabase.equals("Administrador")){
+                            //Aun en proceso
+                            }                        
+                              
+                              } 
+                        
+                 }else{
+                         JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+                         }
+
+
+            } catch (SQLException e) {
+                 e.printStackTrace();
+                }
+        
         
     }//GEN-LAST:event_btn_Iniciar_SesMouseClicked
 
@@ -242,8 +302,8 @@ public class Log_in_window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Usuario;
     private javax.swing.JLabel label_contrasena;
     private javax.swing.JPanel panel_login;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField textField_Username_input;
+    public javax.swing.JPasswordField passwordField;
+    public javax.swing.JTextField textField_Username_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }
