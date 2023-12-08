@@ -42,31 +42,33 @@ public class Servicios_Windonw extends javax.swing.JFrame {
 
         buttonGroup = new javax.swing.ButtonGroup();
         panel_Main = new javax.swing.JPanel();
-        label_Nombre = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
-        label_No_contacto = new javax.swing.JLabel();
         panel_Transparent1 = new javax.swing.JPanel();
         label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
+        label_Nombre = new javax.swing.JLabel();
+        textField_Client_Name_input = new javax.swing.JTextField();
+        label_No_contacto = new javax.swing.JLabel();
         TextField_No_contacto = new javax.swing.JTextField();
         Label_Fecha = new javax.swing.JLabel();
         jDateChooser = new com.toedter.calendar.JDateChooser();
         Label_Hora = new javax.swing.JLabel();
         comboBox_Time = new javax.swing.JComboBox<>();
         label_Bordered = new javax.swing.JLabel();
+        tbtn_Productos = new javax.swing.JToggleButton();
         tbtn_Depilacion = new javax.swing.JToggleButton();
         tbtn_Cortes = new javax.swing.JToggleButton();
         tbtn_Servicios_generales = new javax.swing.JToggleButton();
         tbtn_Limpieza_Cejas = new javax.swing.JToggleButton();
+        tbtn_Maquillaje = new javax.swing.JToggleButton();
         Panel_Servicios = new javax.swing.JPanel();
-        panel_LimpiezaCeja = new javax.swing.JPanel();
-        label_LimpiezaCejas = new javax.swing.JLabel();
-        scrollpanel_2 = new javax.swing.JScrollPane();
-        tabla_Cejas = new javax.swing.JTable();
         panel_ServiciosGen = new javax.swing.JPanel();
         label_ServiceGen = new javax.swing.JLabel();
         scrollpanel_1 = new javax.swing.JScrollPane();
         tabla_LimpiezaCeja = new javax.swing.JTable();
+        panel_LimpiezaCeja = new javax.swing.JPanel();
+        label_LimpiezaCejas = new javax.swing.JLabel();
+        scrollpanel_2 = new javax.swing.JScrollPane();
+        tabla_Cejas = new javax.swing.JTable();
         panel_Cortes = new javax.swing.JPanel();
         label_Cortes = new javax.swing.JLabel();
         scrollpanel_3 = new javax.swing.JScrollPane();
@@ -79,13 +81,16 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         label_Depilacion = new javax.swing.JLabel();
         scrollpanel_5 = new javax.swing.JScrollPane();
         tabla_Cortes2 = new javax.swing.JTable();
+        panel_Productos = new javax.swing.JPanel();
+        label_Productos = new javax.swing.JLabel();
+        scrollpanel_6 = new javax.swing.JScrollPane();
+        tabla_Productos = new javax.swing.JTable();
         panel_ResumenServ = new javax.swing.JPanel();
         label_Titlulo = new javax.swing.JLabel();
-        btn_Modificar_Cita1 = new javax.swing.JLabel();
-        panel_Transparent2 = new javax.swing.JPanel();
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
-        tbtn_Maquillaje = new javax.swing.JToggleButton();
+        panel_Transparent2 = new javax.swing.JPanel();
+        btn_Modificar_Cita1 = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,26 +101,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Main.setBackground(new java.awt.Color(212, 176, 155));
         panel_Main.setEnabled(false);
         panel_Main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
-        label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Nombre.setText("NOMBRE:");
-        label_Nombre.setFocusable(false);
-        label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        panel_Main.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
-
-        textField_Client_Name_input.setEditable(false);
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_Main.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
-
-        label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto.setText("NO. CONTACTO:");
-        panel_Main.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 120, -1));
 
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -165,6 +150,26 @@ public class Servicios_Windonw extends javax.swing.JFrame {
 
         panel_Main.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
 
+        label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
+        label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Nombre.setText("NOMBRE:");
+        label_Nombre.setFocusable(false);
+        label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        panel_Main.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
+
+        textField_Client_Name_input.setEditable(false);
+        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Client_Name_input.setText(" ");
+        textField_Client_Name_input.setBorder(null);
+        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_Main.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
+
+        label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
+        label_No_contacto.setText("NO. CONTACTO:");
+        panel_Main.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 120, -1));
+
         TextField_No_contacto.setEditable(false);
         TextField_No_contacto.setBackground(new java.awt.Color(255, 255, 255));
         TextField_No_contacto.addActionListener(new java.awt.event.ActionListener() {
@@ -202,6 +207,23 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         label_Bordered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         panel_Main.add(label_Bordered, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 1020, 130));
 
+        tbtn_Productos.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Productos);
+        tbtn_Productos.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Productos.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Productos.setText("Productos");
+        tbtn_Productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_ProductosMouseClicked(evt);
+            }
+        });
+        tbtn_Productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_ProductosActionPerformed(evt);
+            }
+        });
+        panel_Main.add(tbtn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 140, 40));
+
         tbtn_Depilacion.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup.add(tbtn_Depilacion);
         tbtn_Depilacion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -217,7 +239,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 tbtn_DepilacionActionPerformed(evt);
             }
         });
-        panel_Main.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 300, 180, 40));
+        panel_Main.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 180, 40));
 
         tbtn_Cortes.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup.add(tbtn_Cortes);
@@ -234,7 +256,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 tbtn_CortesActionPerformed(evt);
             }
         });
-        panel_Main.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 180, 40));
+        panel_Main.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
         tbtn_Servicios_generales.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup.add(tbtn_Servicios_generales);
@@ -246,7 +268,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 tbtn_Servicios_generalesMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 180, 40));
+        panel_Main.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 160, 40));
 
         tbtn_Limpieza_Cejas.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup.add(tbtn_Limpieza_Cejas);
@@ -258,55 +280,27 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 tbtn_Limpieza_CejasMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 180, 40));
+        panel_Main.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 150, 40));
+
+        tbtn_Maquillaje.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Maquillaje);
+        tbtn_Maquillaje.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Maquillaje.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Maquillaje.setText("Maquillaje");
+        tbtn_Maquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_MaquillajeMouseClicked(evt);
+            }
+        });
+        tbtn_Maquillaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbtn_MaquillajeActionPerformed(evt);
+            }
+        });
+        panel_Main.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, 40));
 
         Panel_Servicios.setBackground(new java.awt.Color(128, 76, 46));
         Panel_Servicios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panel_LimpiezaCeja.setBackground(new java.awt.Color(128, 76, 46));
-        panel_LimpiezaCeja.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_LimpiezaCejas.setBackground(new java.awt.Color(255, 255, 255));
-        label_LimpiezaCejas.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        label_LimpiezaCejas.setForeground(new java.awt.Color(255, 255, 255));
-        label_LimpiezaCejas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_LimpiezaCejas.setText("Limpieza de Cejas");
-        panel_LimpiezaCeja.add(label_LimpiezaCejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
-
-        scrollpanel_2.setForeground(new java.awt.Color(0, 0, 0));
-
-        tabla_Cejas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Producto", "Precio", "Agregar"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        scrollpanel_2.setViewportView(tabla_Cejas);
-
-        panel_LimpiezaCeja.add(scrollpanel_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
-
-        Panel_Servicios.add(panel_LimpiezaCeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_ServiciosGen.setBackground(new java.awt.Color(128, 76, 46));
         panel_ServiciosGen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -352,6 +346,59 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_ServiciosGen.add(scrollpanel_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
         Panel_Servicios.add(panel_ServiciosGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_LimpiezaCeja.setBackground(new java.awt.Color(128, 76, 46));
+        panel_LimpiezaCeja.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_LimpiezaCejas.setBackground(new java.awt.Color(255, 255, 255));
+        label_LimpiezaCejas.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_LimpiezaCejas.setForeground(new java.awt.Color(255, 255, 255));
+        label_LimpiezaCejas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_LimpiezaCejas.setText("Limpieza de Cejas");
+        panel_LimpiezaCeja.add(label_LimpiezaCejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_2.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Cejas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_2.setViewportView(tabla_Cejas);
+        if (tabla_Cejas.getColumnModel().getColumnCount() > 0) {
+            tabla_Cejas.getColumnModel().getColumn(0).setMinWidth(25);
+            tabla_Cejas.getColumnModel().getColumn(0).setMaxWidth(20);
+            tabla_Cejas.getColumnModel().getColumn(2).setMinWidth(55);
+            tabla_Cejas.getColumnModel().getColumn(2).setMaxWidth(60);
+            tabla_Cejas.getColumnModel().getColumn(3).setMinWidth(55);
+            tabla_Cejas.getColumnModel().getColumn(3).setMaxWidth(50);
+        }
+
+        panel_LimpiezaCeja.add(scrollpanel_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        Panel_Servicios.add(panel_LimpiezaCeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_Cortes.setBackground(new java.awt.Color(128, 76, 46));
         panel_Cortes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -488,6 +535,51 @@ public class Servicios_Windonw extends javax.swing.JFrame {
 
         Panel_Servicios.add(panel_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
+        panel_Productos.setBackground(new java.awt.Color(128, 76, 46));
+        panel_Productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Productos.setBackground(new java.awt.Color(255, 255, 255));
+        label_Productos.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_Productos.setForeground(new java.awt.Color(255, 255, 255));
+        label_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Productos.setText("Productos");
+        panel_Productos.add(label_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_6.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Productos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_6.setViewportView(tabla_Productos);
+
+        panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        Panel_Servicios.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
         panel_Main.add(Panel_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 490, 240));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
@@ -495,43 +587,13 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_ResumenServ.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Titlulo.setBackground(new java.awt.Color(255, 255, 255));
-        label_Titlulo.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        label_Titlulo.setForeground(new java.awt.Color(0, 0, 0));
+        label_Titlulo.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        label_Titlulo.setForeground(new java.awt.Color(128, 76, 46));
         label_Titlulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_Titlulo.setText("Resumen de Servicios");
-        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 30));
+        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 40));
 
         panel_Main.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 240));
-
-        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
-        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseExited(evt);
-            }
-        });
-        panel_Main.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 630, 200, -1));
-
-        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
-        panel_Transparent2.setLayout(panel_Transparent2Layout);
-        panel_Transparent2Layout.setHorizontalGroup(
-            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
-        );
-        panel_Transparent2Layout.setVerticalGroup(
-            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 679, 1130, 40));
 
         panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -548,10 +610,10 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Transparent3.setLayout(panel_Transparent3Layout);
         panel_Transparent3Layout.setHorizontalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
         panel_Transparent3Layout.setVerticalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -561,24 +623,37 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        panel_Main.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
+        panel_Main.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 370, 50));
 
-        tbtn_Maquillaje.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup.add(tbtn_Maquillaje);
-        tbtn_Maquillaje.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Maquillaje.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Maquillaje.setText("Maquillaje");
-        tbtn_Maquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_MaquillajeMouseClicked(evt);
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
+        panel_Transparent2.setLayout(panel_Transparent2Layout);
+        panel_Transparent2Layout.setHorizontalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1130, Short.MAX_VALUE)
+        );
+        panel_Transparent2Layout.setVerticalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 679, 1130, 40));
+
+        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
+        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Modificar_Cita1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Modificar_Cita1MouseExited(evt);
             }
         });
-        tbtn_Maquillaje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbtn_MaquillajeActionPerformed(evt);
-            }
-        });
-        panel_Main.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 180, 40));
+        panel_Main.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 630, 200, -1));
 
         getContentPane().add(panel_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -588,7 +663,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
-        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
+        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
         pack();
         setLocationRelativeTo(null);
@@ -687,6 +762,14 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Depilacion.setVisible(true);
         panel_Maquillaje.setVisible(false);
     }//GEN-LAST:event_tbtn_DepilacionMouseClicked
+
+    private void tbtn_ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_ProductosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbtn_ProductosMouseClicked
+
+    private void tbtn_ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtn_ProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbtn_ProductosActionPerformed
  
     /**
      * @param args the command line arguments
@@ -871,6 +954,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
+    private javax.swing.JLabel label_Productos;
     private javax.swing.JLabel label_ServiceGen;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo;
@@ -880,6 +964,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JPanel panel_LimpiezaCeja;
     private javax.swing.JPanel panel_Main;
     private javax.swing.JPanel panel_Maquillaje;
+    private javax.swing.JPanel panel_Productos;
     private javax.swing.JPanel panel_ResumenServ;
     private javax.swing.JPanel panel_ServiciosGen;
     private javax.swing.JPanel panel_Transparent1;
@@ -890,15 +975,18 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollpanel_3;
     private javax.swing.JScrollPane scrollpanel_4;
     private javax.swing.JScrollPane scrollpanel_5;
+    private javax.swing.JScrollPane scrollpanel_6;
     private javax.swing.JTable tabla_Cejas;
     private javax.swing.JTable tabla_Cortes;
     private javax.swing.JTable tabla_Cortes1;
     private javax.swing.JTable tabla_Cortes2;
     private javax.swing.JTable tabla_LimpiezaCeja;
+    private javax.swing.JTable tabla_Productos;
     private javax.swing.JToggleButton tbtn_Cortes;
     private javax.swing.JToggleButton tbtn_Depilacion;
     private javax.swing.JToggleButton tbtn_Limpieza_Cejas;
     private javax.swing.JToggleButton tbtn_Maquillaje;
+    private javax.swing.JToggleButton tbtn_Productos;
     private javax.swing.JToggleButton tbtn_Servicios_generales;
     private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables

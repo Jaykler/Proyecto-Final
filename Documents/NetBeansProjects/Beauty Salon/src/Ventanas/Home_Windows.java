@@ -72,7 +72,7 @@ public class Home_Windows extends javax.swing.JFrame {
         label_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         panel_Transparent2.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 80));
 
-        panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 70));
+        panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 70));
 
         btn_Cliente_Nuevo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_Entered.png"))); // NOI18N
@@ -255,10 +255,12 @@ public class Home_Windows extends javax.swing.JFrame {
 
     private void btn_ProductosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProductosMouseEntered
         // TODO add your handling code here:
+        btn_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Productos_Brown.png")));
     }//GEN-LAST:event_btn_ProductosMouseEntered
 
     private void btn_ProductosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProductosMouseExited
         // TODO add your handling code here:
+        btn_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Productos_White.png")));
     }//GEN-LAST:event_btn_ProductosMouseExited
 
     private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked
@@ -267,10 +269,12 @@ public class Home_Windows extends javax.swing.JFrame {
 
     private void btn_FacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseEntered
         // TODO add your handling code here:
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_Brown.png"))); 
     }//GEN-LAST:event_btn_FacturarMouseEntered
 
     private void btn_FacturarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseExited
         // TODO add your handling code here:
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White.png"))); 
     }//GEN-LAST:event_btn_FacturarMouseExited
 
     /**
