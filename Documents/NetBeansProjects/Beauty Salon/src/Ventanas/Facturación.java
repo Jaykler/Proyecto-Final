@@ -21,8 +21,8 @@ public class Facturación  extends javax.swing.JFrame {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
-        //panel_Transparent2.setBackground(new Color (255,255,255,200));
-        //panel_Transparent3.setBackground(new Color (255,255,255,200));
+        panel_Transparent2.setBackground(new Color (255,255,255,200));
+        panel_Transparent3.setBackground(new Color (255,255,255,200));
     }
 
     /**
@@ -37,10 +37,8 @@ public class Facturación  extends javax.swing.JFrame {
         panel_transparent = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
         panel_Transparent1 = new javax.swing.JPanel();
+        label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
-        label_titulo_Facturacion1 = new javax.swing.JLabel();
-        Label_Fecha = new javax.swing.JLabel();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
         TextField_Nombre = new javax.swing.JTextField();
         Label_No_Contacto = new javax.swing.JLabel();
         Panel_Tab = new javax.swing.JPanel();
@@ -48,14 +46,10 @@ public class Facturación  extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btn_Buscar = new javax.swing.JLabel();
+        panel_Transparent2 = new javax.swing.JPanel();
+        panel_Transparent3 = new javax.swing.JPanel();
+        label_titulo_Facturacion = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        panel_ResumenServ = new javax.swing.JPanel();
-        label_Titlulo = new javax.swing.JLabel();
-        scrollpanel_Resumen = new javax.swing.JScrollPane();
-        tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_No_contacto1 = new javax.swing.JTextField();
-        label_No_contacto1 = new javax.swing.JLabel();
-        btn_Modificar_Cita1 = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,9 +73,16 @@ public class Facturación  extends javax.swing.JFrame {
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Nombre.setText("NOMBRE:");
-        panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 70, -1));
+        panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 70, -1));
 
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
+
+        label_titulo1.setBackground(new java.awt.Color(105, 87, 86));
+        label_titulo1.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        label_titulo1.setForeground(new java.awt.Color(105, 87, 86));
+        label_titulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo1.setText("BEAUTY SALON & SPA");
+        label_titulo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         HOME_ICON.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
@@ -99,15 +100,6 @@ public class Facturación  extends javax.swing.JFrame {
             }
         });
 
-        label_titulo_Facturacion1.setBackground(new java.awt.Color(105, 87, 86));
-        label_titulo_Facturacion1.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
-        label_titulo_Facturacion1.setForeground(new java.awt.Color(105, 87, 86));
-        label_titulo_Facturacion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo_Facturacion1.setText("Facturación");
-        label_titulo_Facturacion1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        label_titulo_Facturacion1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        label_titulo_Facturacion1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
         javax.swing.GroupLayout panel_Transparent1Layout = new javax.swing.GroupLayout(panel_Transparent1);
         panel_Transparent1.setLayout(panel_Transparent1Layout);
         panel_Transparent1Layout.setHorizontalGroup(
@@ -115,44 +107,32 @@ public class Facturación  extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(420, 420, 420)
-                .addComponent(label_titulo_Facturacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(430, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
+                .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(269, 269, 269))
         );
         panel_Transparent1Layout.setVerticalGroup(
             panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_titulo_Facturacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
-
-        Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Fecha.setForeground(new java.awt.Color(0, 0, 0));
-        Label_Fecha.setText("FECHA:");
-        panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 60, -1));
-
-        jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser.setForeground(new java.awt.Color(0, 0, 0));
-        jDateChooser.setDateFormatString("y,MMMM,d");
-        jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
-        jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
-        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 170, 40));
 
         TextField_Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextField_NombreActionPerformed(evt);
             }
         });
-        panel_transparent.add(TextField_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 630, 40));
+        panel_transparent.add(TextField_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 300, 40));
 
         Label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_No_Contacto.setText("NO. CONTACTO:");
-        panel_transparent.add(Label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 100, -1));
+        panel_transparent.add(Label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 100, -1));
 
         Panel_Tab.setBackground(new java.awt.Color(128, 76, 46));
 
@@ -181,7 +161,7 @@ public class Facturación  extends javax.swing.JFrame {
             Panel_TabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_TabLayout.createSequentialGroup()
-                .addContainerGap(488, Short.MAX_VALUE)
+                .addContainerGap(368, Short.MAX_VALUE)
                 .addComponent(Label_Lista_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(317, 317, 317))
         );
@@ -191,11 +171,10 @@ public class Facturación  extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(Label_Lista_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 1040, 200));
+        panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 297, 920, -1));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,91 +185,59 @@ public class Facturación  extends javax.swing.JFrame {
                 btn_BuscarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 130, 220, 40));
+        panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 220, 40));
+
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
+        panel_Transparent2.setLayout(panel_Transparent2Layout);
+        panel_Transparent2Layout.setHorizontalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1130, Short.MAX_VALUE)
+        );
+        panel_Transparent2Layout.setVerticalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1130, -1));
+
+        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
+
+        label_titulo_Facturacion.setBackground(new java.awt.Color(105, 87, 86));
+        label_titulo_Facturacion.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
+        label_titulo_Facturacion.setForeground(new java.awt.Color(105, 87, 86));
+        label_titulo_Facturacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo_Facturacion.setText("Facturación");
+        label_titulo_Facturacion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        label_titulo_Facturacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        label_titulo_Facturacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
+        panel_Transparent3.setLayout(panel_Transparent3Layout);
+        panel_Transparent3Layout.setHorizontalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent3Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(label_titulo_Facturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        panel_Transparent3Layout.setVerticalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_titulo_Facturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        panel_transparent.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 340, 40));
-
-        panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
-        panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
-        panel_ResumenServ.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_Titlulo.setBackground(new java.awt.Color(255, 255, 255));
-        label_Titlulo.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
-        label_Titlulo.setForeground(new java.awt.Color(128, 76, 46));
-        label_Titlulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Titlulo.setText("Resumen de Servicios");
-        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 470, 30));
-
-        scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
-        scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
-
-        tabla_Resumen_Servicios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Producto", "Precio"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
-
-        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 870, 160));
-
-        TextField_No_contacto1.setEditable(false);
-        TextField_No_contacto1.setBackground(new java.awt.Color(255, 255, 255));
-        TextField_No_contacto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contacto1ActionPerformed(evt);
-            }
-        });
-        panel_ResumenServ.add(TextField_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 130, 30));
-
-        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        label_No_contacto1.setText("TOTAL A PAGAR:");
-        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 20));
-
-        panel_transparent.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 930, 240));
-
-        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
-        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 660, 200, -1));
+        panel_transparent.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 222, 180, 40));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -356,20 +303,6 @@ public class Facturación  extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void TextField_No_contacto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contacto1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contacto1ActionPerformed
-
-    private void btn_Modificar_Cita1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseEntered
-        // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown_Cita.png")));
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseEntered
-
-    private void btn_Modificar_Cita1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseExited
-        // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png")));
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseExited
 
     /**
      * @param args the command line arguments
@@ -471,28 +404,22 @@ public class Facturación  extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HOME_ICON;
-    private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Lista_clientes;
     private javax.swing.JLabel Label_No_Contacto;
     private javax.swing.JPanel Panel_Tab;
-    private javax.swing.JTextField TextField_No_contacto1;
     private javax.swing.JTextField TextField_Nombre;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
-    private javax.swing.JLabel btn_Modificar_Cita1;
-    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
-    private javax.swing.JLabel label_Titlulo;
-    private javax.swing.JLabel label_titulo_Facturacion1;
-    private javax.swing.JPanel panel_ResumenServ;
+    private javax.swing.JLabel label_titulo1;
+    private javax.swing.JLabel label_titulo_Facturacion;
     private javax.swing.JPanel panel_Transparent1;
+    private javax.swing.JPanel panel_Transparent2;
+    private javax.swing.JPanel panel_Transparent3;
     private javax.swing.JPanel panel_transparent;
-    private javax.swing.JScrollPane scrollpanel_Resumen;
-    private javax.swing.JTable tabla_Resumen_Servicios;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }
