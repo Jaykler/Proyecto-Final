@@ -168,7 +168,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1130, -1));
+        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, -1));
 
         Panel_Tabla.setBackground(new java.awt.Color(128, 76, 46));
 
@@ -222,7 +222,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Borered.setForeground(new java.awt.Color(0, 0, 0));
         label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 910, 270));
+        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 920, 270));
 
         textField_Client_Name_input2.setBackground(new java.awt.Color(255, 255, 255));
         textField_Client_Name_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

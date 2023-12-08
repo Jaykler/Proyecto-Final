@@ -19,9 +19,10 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
      */
     public Home_Windows_Contabilidad() {
         initComponents();
-        panel_Transparent1.setBackground(new Color (212,176,155,200));
-        panel_Transparent2.setBackground(new Color (255,255,255,100));
-        panel_Transparent3.setBackground(new Color (255,255,255,100));
+        panel_Main.setBackground(new Color (198,214,222,180));
+        panel_Transparent1.setBackground(new Color (255,255,255,200));
+        panel_Transparent2.setBackground(new Color (255,255,255,200));
+        
     }
 
     /**
@@ -33,11 +34,13 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel_Main = new javax.swing.JPanel();
         panel_Transparent1 = new javax.swing.JPanel();
-        panel_Transparent2 = new javax.swing.JPanel();
         label_Home_Icon = new javax.swing.JLabel();
         label_title = new javax.swing.JLabel();
-        panel_Transparent3 = new javax.swing.JPanel();
+        panel_Transparent2 = new javax.swing.JPanel();
+        btn_Ingresos_Egresos = new javax.swing.JLabel();
+        btn_Inventario = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,39 +48,86 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panel_Main.setBackground(new java.awt.Color(198, 214, 222));
+        panel_Main.setEnabled(false);
+        panel_Main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
-        panel_Transparent1.setEnabled(false);
+        panel_Transparent1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         panel_Transparent1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_Transparent2.setBackground(new java.awt.Color(44, 128, 223));
-        panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        panel_Transparent2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         label_Home_Icon.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
-        label_Home_Icon.setForeground(new java.awt.Color(255, 255, 255));
+        label_Home_Icon.setForeground(new java.awt.Color(105, 87, 86));
         label_Home_Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Home_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
+        label_Home_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_BLUE.png"))); // NOI18N
         label_Home_Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panel_Transparent2.add(label_Home_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, 50));
+        panel_Transparent1.add(label_Home_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, 50));
 
         label_title.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
-        label_title.setForeground(new java.awt.Color(255, 255, 255));
+        label_title.setForeground(new java.awt.Color(105, 133, 149));
         label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_title.setText("HOME");
         label_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panel_Transparent2.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 80));
+        panel_Transparent1.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, 80));
 
-        panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 70));
+        panel_Main.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 70));
 
-        panel_Transparent3.setBackground(new java.awt.Color(44, 128, 223));
-        panel_Transparent3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        panel_Transparent3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panel_Transparent1.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 1020, 70));
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
 
-        getContentPane().add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 1020, 640));
+        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
+        panel_Transparent2.setLayout(panel_Transparent2Layout);
+        panel_Transparent2Layout.setHorizontalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 850, Short.MAX_VALUE)
+        );
+        panel_Transparent2Layout.setVerticalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 850, 70));
+
+        btn_Ingresos_Egresos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_IngresosE_White.png"))); // NOI18N
+        btn_Ingresos_Egresos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Ingresos_Egresos.setFocusable(false);
+        btn_Ingresos_Egresos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Ingresos_Egresos.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Ingresos_Egresos.setMinimumSize(new java.awt.Dimension(204, 36));
+        btn_Ingresos_Egresos.setPreferredSize(new java.awt.Dimension(200, 36));
+        btn_Ingresos_Egresos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Ingresos_EgresosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Ingresos_EgresosMouseExited(evt);
+            }
+        });
+        panel_Main.add(btn_Ingresos_Egresos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 280, 200));
+
+        btn_Inventario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Inventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Inventario_White.png"))); // NOI18N
+        btn_Inventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Inventario.setFocusable(false);
+        btn_Inventario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Inventario.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Inventario.setMinimumSize(new java.awt.Dimension(204, 36));
+        btn_Inventario.setPreferredSize(new java.awt.Dimension(200, 36));
+        btn_Inventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_InventarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_InventarioMouseExited(evt);
+            }
+        });
+        panel_Main.add(btn_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 280, 200));
+
+        getContentPane().add(panel_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 840, 560));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\Proyecto-Final-Java\\Proyecto-Final-Java\\Programacion I\\Proyecto final\\Salon\\Blue_Contabilidad.jpg")); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Contabilidad_bg.jpg"))); // NOI18N
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
@@ -86,6 +136,26 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_Ingresos_EgresosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Ingresos_EgresosMouseEntered
+        // TODO add your handling code here:
+        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_IngresosE_Blue.png")));
+    }//GEN-LAST:event_btn_Ingresos_EgresosMouseEntered
+
+    private void btn_Ingresos_EgresosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Ingresos_EgresosMouseExited
+        // TODO add your handling code here:
+        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_IngresosE_White.png")));
+    }//GEN-LAST:event_btn_Ingresos_EgresosMouseExited
+
+    private void btn_InventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InventarioMouseEntered
+        // TODO add your handling code here: 
+        btn_Inventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Inventario_Blue.png"))); 
+    }//GEN-LAST:event_btn_InventarioMouseEntered
+
+    private void btn_InventarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InventarioMouseExited
+        // TODO add your handling code here:
+        btn_Inventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Inventario_White.png"))); 
+    }//GEN-LAST:event_btn_InventarioMouseExited
 
     /**
      * @param args the command line arguments
@@ -187,10 +257,12 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgImage;
+    private javax.swing.JLabel btn_Ingresos_Egresos;
+    private javax.swing.JLabel btn_Inventario;
     private javax.swing.JLabel label_Home_Icon;
     private javax.swing.JLabel label_title;
+    private javax.swing.JPanel panel_Main;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
-    private javax.swing.JPanel panel_Transparent3;
     // End of variables declaration//GEN-END:variables
 }
