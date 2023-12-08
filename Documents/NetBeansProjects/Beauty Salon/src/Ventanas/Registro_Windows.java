@@ -43,14 +43,14 @@ public class Registro_Windows extends javax.swing.JFrame {
         label_Borered = new javax.swing.JLabel();
         panel_Transparent_White1 = new javax.swing.JPanel();
         Registros = new javax.swing.JLabel();
+        HOME_ICON = new javax.swing.JLabel();
         Panel_Tabla = new javax.swing.JPanel();
         Label_Lista_Clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tab_R_Client = new javax.swing.JTable();
         btn_Agendar_Cita = new javax.swing.JLabel();
         btn_Modificar_Cita = new javax.swing.JLabel();
-        btn_Eliminar_Cita = new javax.swing.JLabel();
-        btn_Comprar_Producto = new javax.swing.JLabel();
+        panel_Transparent2 = new javax.swing.JPanel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,12 +136,30 @@ public class Registro_Windows extends javax.swing.JFrame {
         Registros.setText("Registros");
         Registros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        HOME_ICON.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
+        HOME_ICON.setFocusable(false);
+        HOME_ICON.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_Transparent_White1Layout = new javax.swing.GroupLayout(panel_Transparent_White1);
         panel_Transparent_White1.setLayout(panel_Transparent_White1Layout);
         panel_Transparent_White1Layout.setHorizontalGroup(
             panel_Transparent_White1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
-                .addContainerGap(499, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 446, Short.MAX_VALUE)
                 .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(426, 426, 426))
         );
@@ -150,9 +168,13 @@ public class Registro_Windows extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
                 .addGap(0, 19, Short.MAX_VALUE)
                 .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel_Transparent_White1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1130, -1));
+        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, -1));
 
         Panel_Tabla.setBackground(new java.awt.Color(128, 76, 46));
 
@@ -212,7 +234,7 @@ public class Registro_Windows extends javax.swing.JFrame {
                 btn_Agendar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, -1, -1));
+        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, -1, -1));
 
         btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); // NOI18N
         btn_Modificar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -226,32 +248,22 @@ public class Registro_Windows extends javax.swing.JFrame {
                 btn_Modificar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, -1, -1));
+        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, -1));
 
-        btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); // NOI18N
-        btn_Eliminar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Eliminar_CitaMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Eliminar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, -1, -1));
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); // NOI18N
-        btn_Comprar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Comprar_ProductoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Comprar_ProductoMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Comprar_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 500, -1, -1));
+        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
+        panel_Transparent2.setLayout(panel_Transparent2Layout);
+        panel_Transparent2Layout.setHorizontalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1120, Short.MAX_VALUE)
+        );
+        panel_Transparent2Layout.setVerticalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 669, 1120, 50));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
@@ -304,26 +316,6 @@ public class Registro_Windows extends javax.swing.JFrame {
         btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); 
     }//GEN-LAST:event_btn_Modificar_CitaMouseExited
 
-    private void btn_Eliminar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseEntered
-        // TODO add your handling code here:
-         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_Brown.png"))); 
-    }//GEN-LAST:event_btn_Eliminar_CitaMouseEntered
-
-    private void btn_Eliminar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseExited
-        // TODO add your handling code here:
-         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White.png"))); 
-    }//GEN-LAST:event_btn_Eliminar_CitaMouseExited
-
-    private void btn_Comprar_ProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Comprar_ProductoMouseEntered
-        // TODO add your handling code here:
-         btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_Brown.png"))); 
-    }//GEN-LAST:event_btn_Comprar_ProductoMouseEntered
-
-    private void btn_Comprar_ProductoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Comprar_ProductoMouseExited
-        // TODO add your handling code here:
-        btn_Comprar_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Comprar_Producto_White.png"))); 
-    }//GEN-LAST:event_btn_Comprar_ProductoMouseExited
-
     private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
         // TODO add your handling code here:
         btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown.png"))); 
@@ -340,17 +332,27 @@ public class Registro_Windows extends javax.swing.JFrame {
 
     private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
         // TODO add your handling code here:
-        Modificar_Citas mc = new Modificar_Citas();
+        Citas_Agendadas mc = new Citas_Agendadas();
         mc.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
 
-    private void btn_Eliminar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseClicked
+    private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-        Eliminar_Cita EC = new Eliminar_Cita();
-        EC.setVisible(true);
+        Home_Windows cw = new Home_Windows();
+        cw.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btn_Eliminar_CitaMouseClicked
+    }//GEN-LAST:event_HOME_ICONMouseClicked
+
+    private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_LIGHTBROWN.png")));
+    }//GEN-LAST:event_HOME_ICONMouseEntered
+
+    private void HOME_ICONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseExited
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
+    }//GEN-LAST:event_HOME_ICONMouseExited
 
     /**
      * @param args the command line arguments
@@ -395,6 +397,7 @@ public class Registro_Windows extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel Label_Lista_Clientes;
     private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JLabel Registros;
@@ -402,14 +405,13 @@ public class Registro_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Agendar_Cita;
     private javax.swing.JLabel btn_Buscar;
-    private javax.swing.JLabel btn_Comprar_Producto;
-    private javax.swing.JLabel btn_Eliminar_Cita;
     private javax.swing.JLabel btn_Modificar_Cita;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Borered;
     private javax.swing.JLabel label_Email;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
+    private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent_White1;
     private javax.swing.JPanel panel_transparent;
     private javax.swing.JTextField textField_Client_Contacto_input;

@@ -89,7 +89,7 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 850, 70));
 
         btn_Ingresos_Egresos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_IngresosE_White.png"))); // NOI18N
+        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Ingresos_White.png"))); // NOI18N
         btn_Ingresos_Egresos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Ingresos_Egresos.setFocusable(false);
         btn_Ingresos_Egresos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -145,12 +145,12 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
 
     private void btn_Ingresos_EgresosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Ingresos_EgresosMouseEntered
         // TODO add your handling code here:
-        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_IngresosE_Blue.png")));
+        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Ingresos_Blue.png")));
     }//GEN-LAST:event_btn_Ingresos_EgresosMouseEntered
 
     private void btn_Ingresos_EgresosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Ingresos_EgresosMouseExited
         // TODO add your handling code here:
-        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_IngresosE_White.png")));
+        btn_Ingresos_Egresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Ingresos_White.png")));
     }//GEN-LAST:event_btn_Ingresos_EgresosMouseExited
 
     private void btn_InventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InventarioMouseEntered

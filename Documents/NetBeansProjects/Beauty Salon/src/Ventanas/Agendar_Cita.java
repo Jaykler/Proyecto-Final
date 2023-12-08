@@ -58,6 +58,44 @@ public class Agendar_Cita extends javax.swing.JFrame {
         panel_Transparent2 = new javax.swing.JPanel();
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
+        tbtn_Servicios_generales = new javax.swing.JToggleButton();
+        tbtn_Limpieza_Cejas = new javax.swing.JToggleButton();
+        tbtn_Cortes = new javax.swing.JToggleButton();
+        tbtn_Maquillaje = new javax.swing.JToggleButton();
+        tbtn_Depilacion = new javax.swing.JToggleButton();
+        tbtn_Productos = new javax.swing.JToggleButton();
+        panel_ServiciosGen = new javax.swing.JPanel();
+        panel_ServiciosGen1 = new javax.swing.JPanel();
+        label_ServiceGen = new javax.swing.JLabel();
+        scrollpanel_1 = new javax.swing.JScrollPane();
+        tabla_LimpiezaCeja = new javax.swing.JTable();
+        panel_LimpiezaCeja = new javax.swing.JPanel();
+        label_LimpiezaCejas = new javax.swing.JLabel();
+        scrollpanel_2 = new javax.swing.JScrollPane();
+        tabla_Cejas = new javax.swing.JTable();
+        panel_Cortes = new javax.swing.JPanel();
+        label_Cortes = new javax.swing.JLabel();
+        scrollpanel_3 = new javax.swing.JScrollPane();
+        tabla_Cortes = new javax.swing.JTable();
+        panel_Maquillaje = new javax.swing.JPanel();
+        label_Maquillaje = new javax.swing.JLabel();
+        scrollpanel_4 = new javax.swing.JScrollPane();
+        tabla_Cortes1 = new javax.swing.JTable();
+        panel_Depilacion = new javax.swing.JPanel();
+        label_Depilacion = new javax.swing.JLabel();
+        scrollpanel_5 = new javax.swing.JScrollPane();
+        tabla_Cortes2 = new javax.swing.JTable();
+        panel_Productos = new javax.swing.JPanel();
+        label_Productos = new javax.swing.JLabel();
+        scrollpanel_6 = new javax.swing.JScrollPane();
+        tabla_Productos = new javax.swing.JTable();
+        panel_ResumenServ = new javax.swing.JPanel();
+        label_Titlulo = new javax.swing.JLabel();
+        scrollpanel_Resumen = new javax.swing.JScrollPane();
+        tabla_Resumen_Servicios = new javax.swing.JTable();
+        TextField_total_pagar = new javax.swing.JTextField();
+        label_No_contacto1 = new javax.swing.JLabel();
+        btn_Cancelar_Cita = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,7 +200,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
                 btn_Agendar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 570, 200, -1));
+        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 200, -1));
 
         combobox_Time.setBackground(new java.awt.Color(255, 255, 255));
         combobox_Time.setForeground(new java.awt.Color(0, 0, 0));
@@ -190,10 +228,10 @@ public class Agendar_Cita extends javax.swing.JFrame {
         );
         panel_Transparent2Layout.setVerticalGroup(
             panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 69, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1130, -1));
+        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 669, 1130, 50));
 
         panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -201,7 +239,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
         label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(105, 87, 86));
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText(" Citas");
+        label_titulo.setText(" Agendar Citas");
         label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -211,9 +249,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
         panel_Transparent3Layout.setHorizontalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         panel_Transparent3Layout.setVerticalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,6 +262,423 @@ public class Agendar_Cita extends javax.swing.JFrame {
         );
 
         panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
+
+        tbtn_Servicios_generales.setBackground(new java.awt.Color(255, 255, 255));
+        tbtn_Servicios_generales.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Servicios_generales.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Servicios_generales.setText("Servicios generales");
+        tbtn_Servicios_generales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_Servicios_generalesMouseClicked(evt);
+            }
+        });
+        panel_transparent.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 160, 40));
+
+        tbtn_Limpieza_Cejas.setBackground(new java.awt.Color(255, 255, 255));
+        tbtn_Limpieza_Cejas.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Limpieza_Cejas.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Limpieza_Cejas.setText("Limpieza de Cejas");
+        tbtn_Limpieza_Cejas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_Limpieza_CejasMouseClicked(evt);
+            }
+        });
+        panel_transparent.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 150, 40));
+
+        tbtn_Cortes.setBackground(new java.awt.Color(255, 255, 255));
+        tbtn_Cortes.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Cortes.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Cortes.setText("Cortes");
+        tbtn_Cortes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_CortesMouseClicked(evt);
+            }
+        });
+        panel_transparent.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
+
+        tbtn_Maquillaje.setBackground(new java.awt.Color(255, 255, 255));
+        tbtn_Maquillaje.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Maquillaje.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Maquillaje.setText("Maquillaje");
+        tbtn_Maquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_MaquillajeMouseClicked(evt);
+            }
+        });
+        panel_transparent.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, 40));
+
+        tbtn_Depilacion.setBackground(new java.awt.Color(255, 255, 255));
+        tbtn_Depilacion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Depilacion.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Depilacion.setText("Depilación");
+        tbtn_Depilacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_DepilacionMouseClicked(evt);
+            }
+        });
+        panel_transparent.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 180, 40));
+
+        tbtn_Productos.setBackground(new java.awt.Color(255, 255, 255));
+        tbtn_Productos.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Productos.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Productos.setText("Productos");
+        tbtn_Productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_ProductosMouseClicked(evt);
+            }
+        });
+        panel_transparent.add(tbtn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 140, 40));
+
+        panel_ServiciosGen.setBackground(new java.awt.Color(128, 76, 46));
+        panel_ServiciosGen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panel_ServiciosGen1.setBackground(new java.awt.Color(128, 76, 46));
+        panel_ServiciosGen1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_ServiceGen.setBackground(new java.awt.Color(255, 255, 255));
+        label_ServiceGen.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_ServiceGen.setForeground(new java.awt.Color(255, 255, 255));
+        label_ServiceGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_ServiceGen.setText("Servicios Generales");
+        panel_ServiciosGen1.add(label_ServiceGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_1.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_LimpiezaCeja.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_1.setViewportView(tabla_LimpiezaCeja);
+
+        panel_ServiciosGen1.add(scrollpanel_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_ServiciosGen.add(panel_ServiciosGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_LimpiezaCeja.setBackground(new java.awt.Color(128, 76, 46));
+        panel_LimpiezaCeja.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_LimpiezaCejas.setBackground(new java.awt.Color(255, 255, 255));
+        label_LimpiezaCejas.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_LimpiezaCejas.setForeground(new java.awt.Color(255, 255, 255));
+        label_LimpiezaCejas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_LimpiezaCejas.setText("Limpieza de Cejas");
+        panel_LimpiezaCeja.add(label_LimpiezaCejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_2.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Cejas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_2.setViewportView(tabla_Cejas);
+
+        panel_LimpiezaCeja.add(scrollpanel_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_ServiciosGen.add(panel_LimpiezaCeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_Cortes.setBackground(new java.awt.Color(128, 76, 46));
+        panel_Cortes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Cortes.setBackground(new java.awt.Color(255, 255, 255));
+        label_Cortes.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_Cortes.setForeground(new java.awt.Color(255, 255, 255));
+        label_Cortes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Cortes.setText("Cortes");
+        panel_Cortes.add(label_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_3.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Cortes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_3.setViewportView(tabla_Cortes);
+
+        panel_Cortes.add(scrollpanel_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_ServiciosGen.add(panel_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_Maquillaje.setBackground(new java.awt.Color(128, 76, 46));
+        panel_Maquillaje.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Maquillaje.setBackground(new java.awt.Color(255, 255, 255));
+        label_Maquillaje.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_Maquillaje.setForeground(new java.awt.Color(255, 255, 255));
+        label_Maquillaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Maquillaje.setText("Maquillaje");
+        panel_Maquillaje.add(label_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_4.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Cortes1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_4.setViewportView(tabla_Cortes1);
+
+        panel_Maquillaje.add(scrollpanel_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_ServiciosGen.add(panel_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_Depilacion.setBackground(new java.awt.Color(128, 76, 46));
+        panel_Depilacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Depilacion.setBackground(new java.awt.Color(255, 255, 255));
+        label_Depilacion.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_Depilacion.setForeground(new java.awt.Color(255, 255, 255));
+        label_Depilacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Depilacion.setText("Depilación");
+        panel_Depilacion.add(label_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_5.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Cortes2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_5.setViewportView(tabla_Cortes2);
+
+        panel_Depilacion.add(scrollpanel_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_ServiciosGen.add(panel_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_Productos.setBackground(new java.awt.Color(128, 76, 46));
+        panel_Productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Productos.setBackground(new java.awt.Color(255, 255, 255));
+        label_Productos.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_Productos.setForeground(new java.awt.Color(255, 255, 255));
+        label_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Productos.setText("Productos");
+        panel_Productos.add(label_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_6.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Productos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_6.setViewportView(tabla_Productos);
+
+        panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_ServiciosGen.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+
+        panel_transparent.add(panel_ServiciosGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+
+        panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
+        panel_ResumenServ.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Titlulo.setBackground(new java.awt.Color(255, 255, 255));
+        label_Titlulo.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        label_Titlulo.setForeground(new java.awt.Color(128, 76, 46));
+        label_Titlulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Titlulo.setText("Resumen de Servicios");
+        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 30));
+
+        scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
+        scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Resumen_Servicios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Producto", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
+
+        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 160));
+
+        TextField_total_pagar.setEditable(false);
+        TextField_total_pagar.setBackground(new java.awt.Color(255, 255, 255));
+        TextField_total_pagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextField_total_pagarActionPerformed(evt);
+            }
+        });
+        panel_ResumenServ.add(TextField_total_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 70, 30));
+
+        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
+        label_No_contacto1.setText("TOTAL:");
+        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 70, 20));
+
+        panel_transparent.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 240));
+
+        btn_Cancelar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_White.png"))); // NOI18N
+        btn_Cancelar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Cancelar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Cancelar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Cancelar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Cancelar_CitaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Cancelar_CitaMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Cancelar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 200, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -267,6 +722,82 @@ public class Agendar_Cita extends javax.swing.JFrame {
         cw.setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
+
+    private void tbtn_Servicios_generalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_Servicios_generalesMouseClicked
+        // TODO add your handling code here:
+        //        tbtn_Servicios_generales.setBackground(new java.awt.Color(128, 76, 46));
+        //        tbtn_Servicios_generales.setForeground(new java.awt.Color(255, 255, 255));
+        panel_ServiciosGen.setVisible(true);
+        panel_LimpiezaCeja.setVisible(false);
+        panel_Cortes.setVisible(false);
+        panel_Depilacion.setVisible(false);
+        panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(false);
+
+    }//GEN-LAST:event_tbtn_Servicios_generalesMouseClicked
+
+    private void tbtn_Limpieza_CejasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_Limpieza_CejasMouseClicked
+        // TODO add your handling code here:
+        panel_ServiciosGen.setVisible(false);
+        panel_LimpiezaCeja.setVisible(true);
+        panel_Cortes.setVisible(false);
+        panel_Depilacion.setVisible(false);
+        panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(false);
+
+    }//GEN-LAST:event_tbtn_Limpieza_CejasMouseClicked
+
+    private void tbtn_CortesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_CortesMouseClicked
+        // TODO add your handling code here:
+        panel_ServiciosGen.setVisible(false);
+        panel_LimpiezaCeja.setVisible(false);
+        panel_Cortes.setVisible(true);
+        panel_Depilacion.setVisible(false);
+        panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(false);
+    }//GEN-LAST:event_tbtn_CortesMouseClicked
+
+    private void tbtn_MaquillajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_MaquillajeMouseClicked
+        // TODO add your handling code here:
+        panel_ServiciosGen.setVisible(false);
+        panel_LimpiezaCeja.setVisible(false);
+        panel_Cortes.setVisible(false);
+        panel_Depilacion.setVisible(false);
+        panel_Maquillaje.setVisible(true);
+        panel_Productos.setVisible(false);
+    }//GEN-LAST:event_tbtn_MaquillajeMouseClicked
+
+    private void tbtn_DepilacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_DepilacionMouseClicked
+        // TODO add your handling code here:
+        panel_ServiciosGen.setVisible(false);
+        panel_LimpiezaCeja.setVisible(false);
+        panel_Cortes.setVisible(false);
+        panel_Depilacion.setVisible(true);
+        panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(false);
+    }//GEN-LAST:event_tbtn_DepilacionMouseClicked
+
+    private void tbtn_ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_ProductosMouseClicked
+        // TODO add your handling code here:
+        panel_ServiciosGen.setVisible(false);
+        panel_LimpiezaCeja.setVisible(false);
+        panel_Cortes.setVisible(false);
+        panel_Depilacion.setVisible(false);
+        panel_Maquillaje.setVisible(false);
+        panel_Productos.setVisible(true);
+    }//GEN-LAST:event_tbtn_ProductosMouseClicked
+
+    private void TextField_total_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_total_pagarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextField_total_pagarActionPerformed
+
+    private void btn_Cancelar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Cancelar_CitaMouseEntered
+
+    private void btn_Cancelar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Cancelar_CitaMouseExited
 
     /**
      * @param args the command line arguments
@@ -371,19 +902,57 @@ public class Agendar_Cita extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Fecha1;
     private javax.swing.JTextField TextField_No_contacto;
+    private javax.swing.JTextField TextField_total_pagar;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Agendar_Cita;
+    private javax.swing.JLabel btn_Cancelar_Cita;
     private javax.swing.JComboBox<String> combobox_Time;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel label_Borered;
+    private javax.swing.JLabel label_Cortes;
+    private javax.swing.JLabel label_Depilacion;
+    private javax.swing.JLabel label_LimpiezaCejas;
+    private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
+    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
+    private javax.swing.JLabel label_Productos;
+    private javax.swing.JLabel label_ServiceGen;
+    private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JLabel label_titulo1;
+    private javax.swing.JPanel panel_Cortes;
+    private javax.swing.JPanel panel_Depilacion;
+    private javax.swing.JPanel panel_LimpiezaCeja;
+    private javax.swing.JPanel panel_Maquillaje;
+    private javax.swing.JPanel panel_Productos;
+    private javax.swing.JPanel panel_ResumenServ;
+    private javax.swing.JPanel panel_ServiciosGen;
+    private javax.swing.JPanel panel_ServiciosGen1;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent3;
     private javax.swing.JPanel panel_transparent;
+    private javax.swing.JScrollPane scrollpanel_1;
+    private javax.swing.JScrollPane scrollpanel_2;
+    private javax.swing.JScrollPane scrollpanel_3;
+    private javax.swing.JScrollPane scrollpanel_4;
+    private javax.swing.JScrollPane scrollpanel_5;
+    private javax.swing.JScrollPane scrollpanel_6;
+    private javax.swing.JScrollPane scrollpanel_Resumen;
+    private javax.swing.JTable tabla_Cejas;
+    private javax.swing.JTable tabla_Cortes;
+    private javax.swing.JTable tabla_Cortes1;
+    private javax.swing.JTable tabla_Cortes2;
+    private javax.swing.JTable tabla_LimpiezaCeja;
+    private javax.swing.JTable tabla_Productos;
+    private javax.swing.JTable tabla_Resumen_Servicios;
+    private javax.swing.JToggleButton tbtn_Cortes;
+    private javax.swing.JToggleButton tbtn_Depilacion;
+    private javax.swing.JToggleButton tbtn_Limpieza_Cejas;
+    private javax.swing.JToggleButton tbtn_Maquillaje;
+    private javax.swing.JToggleButton tbtn_Productos;
+    private javax.swing.JToggleButton tbtn_Servicios_generales;
     private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;

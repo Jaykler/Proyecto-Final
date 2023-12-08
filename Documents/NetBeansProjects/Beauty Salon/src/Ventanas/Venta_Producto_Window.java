@@ -52,17 +52,16 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         Label_Lista_Clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tab_R_Client = new javax.swing.JTable();
+        panel_Productos = new javax.swing.JPanel();
+        label_Productos = new javax.swing.JLabel();
+        scrollpanel_6 = new javax.swing.JScrollPane();
+        tabla_Productos = new javax.swing.JTable();
         panel_ResumenServ = new javax.swing.JPanel();
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
         tabla_Resumen_Servicios = new javax.swing.JTable();
         TextField_No_contacto1 = new javax.swing.JTextField();
         label_No_contacto1 = new javax.swing.JLabel();
-        panel_Productos = new javax.swing.JPanel();
-        label_Productos = new javax.swing.JLabel();
-        scrollpanel_6 = new javax.swing.JScrollPane();
-        tabla_Productos = new javax.swing.JTable();
-        label_Borered = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -225,7 +224,52 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
 
         Panel_Busqueda_Cliente.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 950, 130));
 
-        panel_transparent.add(Panel_Busqueda_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 990, 340));
+        panel_transparent.add(Panel_Busqueda_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 990, 350));
+
+        panel_Productos.setBackground(new java.awt.Color(128, 76, 46));
+        panel_Productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label_Productos.setBackground(new java.awt.Color(255, 255, 255));
+        label_Productos.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        label_Productos.setForeground(new java.awt.Color(255, 255, 255));
+        label_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Productos.setText("Productos");
+        panel_Productos.add(label_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+
+        scrollpanel_6.setForeground(new java.awt.Color(0, 0, 0));
+
+        tabla_Productos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Producto", "Precio", "Agregar"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollpanel_6.setViewportView(tabla_Productos);
+
+        panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+
+        panel_transparent.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 490, 240));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
         panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
@@ -289,56 +333,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
 
         panel_transparent.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 490, 240));
 
-        panel_Productos.setBackground(new java.awt.Color(128, 76, 46));
-        panel_Productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_Productos.setBackground(new java.awt.Color(255, 255, 255));
-        label_Productos.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        label_Productos.setForeground(new java.awt.Color(255, 255, 255));
-        label_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Productos.setText("Productos");
-        panel_Productos.add(label_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
-
-        scrollpanel_6.setForeground(new java.awt.Color(0, 0, 0));
-
-        tabla_Productos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Producto", "Precio", "Agregar"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        scrollpanel_6.setViewportView(tabla_Productos);
-
-        panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
-
-        panel_transparent.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 490, 240));
-
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
-
-        label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
-        getContentPane().add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 1000, 400));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
@@ -588,7 +583,6 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField_Direccion;
     private javax.swing.JTextField jTextField_Email;
-    private javax.swing.JLabel label_Borered;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;

@@ -17,12 +17,12 @@ import javax.swing.JButton;
  *
  * @author Hilda
  */
-public class Servicios_Windonw extends javax.swing.JFrame {
+public class Reservar_Cita_Window extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Servicios_Windonw() {
+    public Reservar_Cita_Window() {
         
         initComponents();
         panel_Main.setBackground(new Color (212,176,155,200));
@@ -94,7 +94,8 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
-        btn_Modificar_Cita1 = new javax.swing.JLabel();
+        btn_Agendar_Cita = new javax.swing.JLabel();
+        btn_Cancelar_Cita = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -637,7 +638,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(105, 87, 86));
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText("Servicios");
+        label_titulo.setText("Reservación");
         label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -676,20 +677,35 @@ public class Servicios_Windonw extends javax.swing.JFrame {
 
         panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 679, 1130, 40));
 
-        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png"))); // NOI18N
-        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Agendar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White_Cita.png"))); // NOI18N
+        btn_Agendar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Agendar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Agendar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseEntered(evt);
+                btn_Agendar_CitaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseExited(evt);
+                btn_Agendar_CitaMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 620, 200, -1));
+        panel_Main.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 200, -1));
+
+        btn_Cancelar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_White.png"))); // NOI18N
+        btn_Cancelar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Cancelar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Cancelar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Cancelar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Cancelar_CitaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Cancelar_CitaMouseExited(evt);
+            }
+        });
+        panel_Main.add(btn_Cancelar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 200, -1));
 
         getContentPane().add(panel_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -709,18 +725,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private void TextField_No_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contactoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_No_contactoActionPerformed
-
-    private void btn_Modificar_Cita1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseEntered
-        // TODO add your handling code here:
-               btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_Brown.png")));
-
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseEntered
-
-    private void btn_Modificar_Cita1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseExited
-        // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png")));
-
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseExited
 
     private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
         // TODO add your handling code here:
@@ -806,6 +810,24 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private void TextField_No_contacto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contacto1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_No_contacto1ActionPerformed
+
+    private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
+        // TODO add your handling code here:
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown_Cita.png")));
+    }//GEN-LAST:event_btn_Agendar_CitaMouseEntered
+
+    private void btn_Agendar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseExited
+        // TODO add your handling code here:
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White_Cita.png")));
+    }//GEN-LAST:event_btn_Agendar_CitaMouseExited
+
+    private void btn_Cancelar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Cancelar_CitaMouseEntered
+
+    private void btn_Cancelar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Cancelar_CitaMouseExited
  
     /**
      * @param args the command line arguments
@@ -827,14 +849,142 @@ public class Servicios_Windonw extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Servicios_Windonw.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Servicios_Windonw.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Servicios_Windonw.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Servicios_Windonw.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-foPanel_Tabla    /* Create and display the form */
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-foPanel_Tabla    /* Create and display the form */
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -966,7 +1116,7 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Servicios_Windonw().setVisible(true);
+                new Reservar_Cita_Window().setVisible(true);
             }
         });
 
@@ -980,7 +1130,8 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JTextField TextField_No_contacto;
     private javax.swing.JTextField TextField_No_contacto1;
     private javax.swing.JLabel bgImage;
-    private javax.swing.JLabel btn_Modificar_Cita1;
+    private javax.swing.JLabel btn_Agendar_Cita;
+    private javax.swing.JLabel btn_Cancelar_Cita;
     private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JComboBox<String> comboBox_Time;
     private com.toedter.calendar.JDateChooser jDateChooser;
