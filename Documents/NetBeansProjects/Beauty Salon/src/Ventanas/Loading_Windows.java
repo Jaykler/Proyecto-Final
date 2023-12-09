@@ -88,7 +88,7 @@ public class Loading_Windows extends javax.swing.JFrame {
         getContentPane().add(Label_Loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 210, 20));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Loading_bg.jpg"))); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/Loading_bg.jpg"))); // NOI18N
         bgImage.setText("jLabel1");
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
@@ -138,7 +138,7 @@ public class Loading_Windows extends javax.swing.JFrame {
          sp.setVisible(true);
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(100);
+                Thread.sleep(50);
                 sp.LoadingBar.setValue(i);
                 sp.Label_ProgressBar_Value.setText(i+"%");
                 if (i == 10) {
