@@ -126,7 +126,7 @@ public class Registro_Windows extends javax.swing.JFrame {
         label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Borered.setForeground(new java.awt.Color(0, 0, 0));
         label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 890, 380));
+        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 890, 370));
 
         panel_Transparent_White1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -227,6 +227,9 @@ public class Registro_Windows extends javax.swing.JFrame {
 
         btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White.png"))); // NOI18N
         btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Agendar_CitaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Agendar_CitaMouseEntered(evt);
             }
@@ -330,13 +333,6 @@ public class Registro_Windows extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField_Email_inputActionPerformed
 
-    private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
-        // TODO add your handling code here:
-        Citas_Agendadas mc = new Citas_Agendadas();
-        mc.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
-
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
         Home_Windows cw = new Home_Windows();
@@ -353,6 +349,20 @@ public class Registro_Windows extends javax.swing.JFrame {
         // TODO add your handling code here:
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
     }//GEN-LAST:event_HOME_ICONMouseExited
+
+    private void btn_Agendar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseClicked
+        // TODO add your handling code here:
+        Reservar_Cita_Window ac = new Reservar_Cita_Window();
+        ac.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_Agendar_CitaMouseClicked
+
+    private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
+        // TODO add your handling code here:
+        Citas_Agendadas ca = new Citas_Agendadas();
+        ca.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
 
     /**
      * @param args the command line arguments

@@ -2,11 +2,13 @@ package Ventanas;
 
 
 import java.awt.Color;
+import java.awt.JobAttributes;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -89,8 +91,8 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
         tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_No_contacto1 = new javax.swing.JTextField();
-        label_No_contacto1 = new javax.swing.JLabel();
+        Textfield_Monto_a_pagar = new javax.swing.JTextField();
+        label_total = new javax.swing.JLabel();
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
@@ -177,11 +179,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
         TextField_No_contacto.setEditable(false);
         TextField_No_contacto.setBackground(new java.awt.Color(255, 255, 255));
-        TextField_No_contacto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contactoActionPerformed(evt);
-            }
-        });
         panel_Main.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 300, 40));
 
         Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -565,7 +562,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
         Panel_Servicios.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
-        panel_Main.add(Panel_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 490, 240));
+        panel_Main.add(Panel_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 490, 250));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
         panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
@@ -576,7 +573,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         label_Titlulo.setForeground(new java.awt.Color(128, 76, 46));
         label_Titlulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_Titlulo.setText("Resumen de Servicios");
-        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 30));
+        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 430, 30));
 
         scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
         scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
@@ -614,23 +611,18 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
             tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMaxWidth(60);
         }
 
-        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 160));
+        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 470, 180));
 
-        TextField_No_contacto1.setEditable(false);
-        TextField_No_contacto1.setBackground(new java.awt.Color(255, 255, 255));
-        TextField_No_contacto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contacto1ActionPerformed(evt);
-            }
-        });
-        panel_ResumenServ.add(TextField_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 70, 30));
+        Textfield_Monto_a_pagar.setEditable(false);
+        Textfield_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.add(Textfield_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 80, 30));
 
-        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto1.setText("TOTAL:");
-        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 70, 20));
+        label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_total.setForeground(new java.awt.Color(0, 0, 0));
+        label_total.setText("TOTAL:");
+        panel_ResumenServ.add(label_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 60, 20));
 
-        panel_Main.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 240));
+        panel_Main.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 250));
 
         panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -690,7 +682,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 btn_Agendar_CitaMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 200, -1));
+        panel_Main.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 630, 200, -1));
 
         btn_Cancelar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_White.png"))); // NOI18N
@@ -698,6 +690,9 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         btn_Cancelar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Cancelar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Cancelar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Cancelar_CitaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Cancelar_CitaMouseEntered(evt);
             }
@@ -705,7 +700,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 btn_Cancelar_CitaMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Cancelar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 200, -1));
+        panel_Main.add(btn_Cancelar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 630, 120, -1));
 
         getContentPane().add(panel_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -722,10 +717,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
    
-    private void TextField_No_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contactoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contactoActionPerformed
-
     private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
         // TODO add your handling code here:
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_LIGHTBROWN.png")));
@@ -738,7 +729,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
+        
         cw.setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
@@ -807,10 +798,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Productos.setVisible(true);
     }//GEN-LAST:event_tbtn_ProductosMouseClicked
 
-    private void TextField_No_contacto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contacto1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contacto1ActionPerformed
-
     private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
         // TODO add your handling code here:
         btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown_Cita.png")));
@@ -823,11 +810,23 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
     private void btn_Cancelar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseEntered
         // TODO add your handling code here:
+        btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_Brown.png"))); //
     }//GEN-LAST:event_btn_Cancelar_CitaMouseEntered
 
     private void btn_Cancelar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseExited
         // TODO add your handling code here:
+        btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_White.png"))); //
     }//GEN-LAST:event_btn_Cancelar_CitaMouseExited
+
+    private void btn_Cancelar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseClicked
+        // TODO add your handling code here:
+        int ans = JOptionPane.showConfirmDialog(null, "Seguro que desea cancelar esta formular?");
+
+  if (ans == JOptionPane.YES_OPTION)
+     JOptionPane.showMessageDialog(null, "Hurrah!  A good student!");
+  else
+     JOptionPane.showMessageDialog(null, "Not another bad student!");
+    }//GEN-LAST:event_btn_Cancelar_CitaMouseClicked
  
     /**
      * @param args the command line arguments
@@ -1128,7 +1127,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Hora;
     private javax.swing.JPanel Panel_Servicios;
     private javax.swing.JTextField TextField_No_contacto;
-    private javax.swing.JTextField TextField_No_contacto1;
+    private javax.swing.JTextField Textfield_Monto_a_pagar;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Agendar_Cita;
     private javax.swing.JLabel btn_Cancelar_Cita;
@@ -1141,13 +1140,13 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_LimpiezaCejas;
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
-    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Productos;
     private javax.swing.JLabel label_ServiceGen;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JLabel label_titulo1;
+    private javax.swing.JLabel label_total;
     private javax.swing.JPanel panel_Cortes;
     private javax.swing.JPanel panel_Depilacion;
     private javax.swing.JPanel panel_LimpiezaCeja;
@@ -1181,5 +1180,5 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JToggleButton tbtn_Servicios_generales;
     private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables
-    private int xx, xy;
+    private Home_Windows cw = new Home_Windows();
 }

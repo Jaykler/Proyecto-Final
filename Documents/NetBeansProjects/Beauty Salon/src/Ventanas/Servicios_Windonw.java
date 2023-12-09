@@ -89,8 +89,8 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
         tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_No_contacto1 = new javax.swing.JTextField();
-        label_No_contacto1 = new javax.swing.JLabel();
+        TextField_Monto_a_pagar = new javax.swing.JTextField();
+        label_total = new javax.swing.JLabel();
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
@@ -613,21 +613,16 @@ public class Servicios_Windonw extends javax.swing.JFrame {
             tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMaxWidth(60);
         }
 
-        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 160));
+        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 170));
 
-        TextField_No_contacto1.setEditable(false);
-        TextField_No_contacto1.setBackground(new java.awt.Color(255, 255, 255));
-        TextField_No_contacto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contacto1ActionPerformed(evt);
-            }
-        });
-        panel_ResumenServ.add(TextField_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 70, 30));
+        TextField_Monto_a_pagar.setEditable(false);
+        TextField_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.add(TextField_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 70, 20));
 
-        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto1.setText("TOTAL:");
-        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 70, 20));
+        label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_total.setForeground(new java.awt.Color(0, 0, 0));
+        label_total.setText("TOTAL:");
+        panel_ResumenServ.add(label_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 70, 20));
 
         panel_Main.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 240));
 
@@ -647,9 +642,9 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Transparent3Layout.setHorizontalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent3Layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         panel_Transparent3Layout.setVerticalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -802,10 +797,6 @@ public class Servicios_Windonw extends javax.swing.JFrame {
         panel_Maquillaje.setVisible(false);
         panel_Productos.setVisible(true);
     }//GEN-LAST:event_tbtn_ProductosMouseClicked
-
-    private void TextField_No_contacto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contacto1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contacto1ActionPerformed
  
     /**
      * @param args the command line arguments
@@ -977,8 +968,8 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Hora;
     private javax.swing.JPanel Panel_Servicios;
+    private javax.swing.JTextField TextField_Monto_a_pagar;
     private javax.swing.JTextField TextField_No_contacto;
-    private javax.swing.JTextField TextField_No_contacto1;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Modificar_Cita1;
     private javax.swing.ButtonGroup buttonGroup;
@@ -990,13 +981,13 @@ public class Servicios_Windonw extends javax.swing.JFrame {
     private javax.swing.JLabel label_LimpiezaCejas;
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
-    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Productos;
     private javax.swing.JLabel label_ServiceGen;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JLabel label_titulo1;
+    private javax.swing.JLabel label_total;
     private javax.swing.JPanel panel_Cortes;
     private javax.swing.JPanel panel_Depilacion;
     private javax.swing.JPanel panel_LimpiezaCeja;

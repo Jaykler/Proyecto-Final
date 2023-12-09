@@ -53,9 +53,10 @@ public class Facturación  extends javax.swing.JFrame {
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
         tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_No_contacto1 = new javax.swing.JTextField();
-        label_No_contacto1 = new javax.swing.JLabel();
-        btn_Modificar_Cita1 = new javax.swing.JLabel();
+        TextField_Monto_a_pagar = new javax.swing.JTextField();
+        label_total = new javax.swing.JLabel();
+        btn_Facturar = new javax.swing.JLabel();
+        btn_Modifica_Servicios = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,14 +135,14 @@ public class Facturación  extends javax.swing.JFrame {
         Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_Fecha.setForeground(new java.awt.Color(0, 0, 0));
         Label_Fecha.setText("FECHA:");
-        panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 60, -1));
+        panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 60, -1));
 
         jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
         jDateChooser.setForeground(new java.awt.Color(0, 0, 0));
         jDateChooser.setDateFormatString("y,MMMM,d");
         jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
         jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
-        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 170, 40));
+        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 170, 40));
 
         TextField_Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +153,7 @@ public class Facturación  extends javax.swing.JFrame {
 
         Label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_No_Contacto.setText("NO. CONTACTO:");
-        panel_transparent.add(Label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 100, -1));
+        panel_transparent.add(Label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 100, -1));
 
         Panel_Tab.setBackground(new java.awt.Color(128, 76, 46));
 
@@ -195,7 +196,7 @@ public class Facturación  extends javax.swing.JFrame {
                 .addGap(49, 49, 49))
         );
 
-        panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 1040, 190));
+        panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 1040, 190));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,14 +207,14 @@ public class Facturación  extends javax.swing.JFrame {
                 btn_BuscarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 130, 220, 40));
+        panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 120, 220, 40));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        panel_transparent.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 340, 40));
+        panel_transparent.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 340, 40));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
         panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
@@ -257,40 +258,54 @@ public class Facturación  extends javax.swing.JFrame {
             }
         });
         scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
+        if (tabla_Resumen_Servicios.getColumnModel().getColumnCount() > 0) {
+            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMinWidth(60);
+            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMaxWidth(80);
+        }
 
-        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 870, 160));
+        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 870, 160));
 
-        TextField_No_contacto1.setEditable(false);
-        TextField_No_contacto1.setBackground(new java.awt.Color(255, 255, 255));
-        TextField_No_contacto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contacto1ActionPerformed(evt);
-            }
-        });
-        panel_ResumenServ.add(TextField_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 130, 30));
+        TextField_Monto_a_pagar.setEditable(false);
+        TextField_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.add(TextField_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 120, 30));
 
-        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        label_No_contacto1.setText("TOTAL A PAGAR:");
-        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 20));
+        label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_total.setForeground(new java.awt.Color(0, 0, 0));
+        label_total.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_total.setText("TOTAL A PAGAR:");
+        panel_ResumenServ.add(label_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 130, 20));
 
-        panel_transparent.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 930, 240));
+        panel_transparent.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 890, 240));
 
-        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
-        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Facturar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White_Facturacion.png"))); // NOI18N
+        btn_Facturar.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Facturar.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Facturar.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseEntered(evt);
+                btn_FacturarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseExited(evt);
+                btn_FacturarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 660, 200, -1));
+        panel_transparent.add(btn_Facturar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 670, 200, -1));
+
+        btn_Modifica_Servicios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Modifica_Servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Servicios_White.png"))); // NOI18N
+        btn_Modifica_Servicios.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Modifica_Servicios.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Modifica_Servicios.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Modifica_Servicios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Modifica_ServiciosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Modifica_ServiciosMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Modifica_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 230, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -357,19 +372,25 @@ public class Facturación  extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void TextField_No_contacto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contacto1ActionPerformed
+    private void btn_FacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contacto1ActionPerformed
+       btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_Brown_Facturacion.png"))); 
+    }//GEN-LAST:event_btn_FacturarMouseEntered
 
-    private void btn_Modificar_Cita1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseEntered
+    private void btn_FacturarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseExited
         // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown_Cita.png")));
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseEntered
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White_Facturacion.png"))); 
+    }//GEN-LAST:event_btn_FacturarMouseExited
 
-    private void btn_Modificar_Cita1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseExited
+    private void btn_Modifica_ServiciosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modifica_ServiciosMouseEntered
         // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png")));
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseExited
+        btn_Modifica_Servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Servicios_White.png")));
+    }//GEN-LAST:event_btn_Modifica_ServiciosMouseEntered
+
+    private void btn_Modifica_ServiciosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modifica_ServiciosMouseExited
+        // TODO add your handling code here:
+        btn_Modifica_Servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Servicios_Nelson.png")));
+    }//GEN-LAST:event_btn_Modifica_ServiciosMouseExited
 
     /**
      * @param args the command line arguments
@@ -475,19 +496,20 @@ public class Facturación  extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Lista_clientes;
     private javax.swing.JLabel Label_No_Contacto;
     private javax.swing.JPanel Panel_Tab;
-    private javax.swing.JTextField TextField_No_contacto1;
+    private javax.swing.JTextField TextField_Monto_a_pagar;
     private javax.swing.JTextField TextField_Nombre;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
-    private javax.swing.JLabel btn_Modificar_Cita1;
+    private javax.swing.JLabel btn_Facturar;
+    private javax.swing.JLabel btn_Modifica_Servicios;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo_Facturacion1;
+    private javax.swing.JLabel label_total;
     private javax.swing.JPanel panel_ResumenServ;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_transparent;
