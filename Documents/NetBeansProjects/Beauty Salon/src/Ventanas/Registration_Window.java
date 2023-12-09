@@ -38,13 +38,11 @@ public class Registration_Window extends javax.swing.JFrame {
         HOME_ICON = new javax.swing.JLabel();
         panel_Registration = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
+        TFnombre = new javax.swing.JTextField();
         label_No_Contacto = new javax.swing.JLabel();
-        textField_No_contacto_input = new javax.swing.JTextField();
+        TFtel = new javax.swing.JTextField();
         label_Email = new javax.swing.JLabel();
-        textField_Email_input = new javax.swing.JTextField();
-        label_Direccion = new javax.swing.JLabel();
-        textField_Direccion_Input = new javax.swing.JTextField();
+        TFmail = new javax.swing.JTextField();
         btn_Registra = new javax.swing.JLabel();
         panel_Transparent1 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
@@ -54,6 +52,11 @@ public class Registration_Window extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(50, 50));
         setResizable(false);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                formComponentHidden(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,76 +113,49 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Registration.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre.setText("NOMBRE:");
         panel_Registration.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 90, 30));
 
-        textField_Client_Name_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_Client_Name_input.addActionListener(new java.awt.event.ActionListener() {
+        TFnombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFnombre.setText(" ");
+        TFnombre.setBorder(null);
+        TFnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_Client_Name_inputActionPerformed(evt);
+                TFnombreActionPerformed(evt);
             }
         });
-        panel_Registration.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 390, 40));
+        panel_Registration.add(TFnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 390, 40));
 
         label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_Contacto.setText("NO. CONTACTO:");
         panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, 30));
 
-        textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_No_contacto_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_No_contacto_input.setText(" ");
-        textField_No_contacto_input.setBorder(null);
-        textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_No_contacto_input.addActionListener(new java.awt.event.ActionListener() {
+        TFtel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFtel.setText(" ");
+        TFtel.setBorder(null);
+        TFtel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFtel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_No_contacto_inputActionPerformed(evt);
+                TFtelActionPerformed(evt);
             }
         });
-        panel_Registration.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 390, 40));
+        panel_Registration.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 390, 40));
 
         label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Email.setForeground(new java.awt.Color(0, 0, 0));
         label_Email.setText("CORREO ELECTRONICO:");
         panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, 30));
 
-        textField_Email_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Email_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Email_input.setText(" ");
-        textField_Email_input.setBorder(null);
-        textField_Email_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_Email_input.addActionListener(new java.awt.event.ActionListener() {
+        TFmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFmail.setText(" ");
+        TFmail.setBorder(null);
+        TFmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_Email_inputActionPerformed(evt);
+                TFmailActionPerformed(evt);
             }
         });
-        panel_Registration.add(textField_Email_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 390, 40));
-
-        label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Direccion.setForeground(new java.awt.Color(0, 0, 0));
-        label_Direccion.setText("DIRECCION:");
-        panel_Registration.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 100, 40));
-
-        textField_Direccion_Input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Direccion_Input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Direccion_Input.setText(" ");
-        textField_Direccion_Input.setBorder(null);
-        textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textField_Direccion_Input.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField_Direccion_InputActionPerformed(evt);
-            }
-        });
-        panel_Registration.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 390, 40));
+        panel_Registration.add(TFmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 390, 40));
 
         btn_Registra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Registra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Registrar.png"))); // NOI18N
@@ -201,7 +177,7 @@ public class Registration_Window extends javax.swing.JFrame {
                 btn_RegistraMouseExited(evt);
             }
         });
-        panel_Registration.add(btn_Registra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 210, 40));
+        panel_Registration.add(btn_Registra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 210, 40));
 
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
         panel_Transparent1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
@@ -219,9 +195,9 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
         panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         panel_Transparent2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panel_Registration.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 750, 60));
+        panel_Registration.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 750, 60));
 
-        getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 750, 540));
+        getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 750, 490));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/login_bg.jpg"))); // NOI18N
@@ -250,22 +226,17 @@ public class Registration_Window extends javax.swing.JFrame {
         xy = evt.getY();
     }//GEN-LAST:event_bgImageMousePressed
 
-    private void textField_No_contacto_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_No_contacto_inputActionPerformed
+    private void TFtelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFtelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField_No_contacto_inputActionPerformed
+    }//GEN-LAST:event_TFtelActionPerformed
 
-    private void textField_Client_Name_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Client_Name_inputActionPerformed
+    private void TFnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField_Client_Name_inputActionPerformed
+    }//GEN-LAST:event_TFnombreActionPerformed
 
-    private void textField_Email_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Email_inputActionPerformed
+    private void TFmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField_Email_inputActionPerformed
-
-    private void textField_Direccion_InputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_Direccion_InputActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_textField_Direccion_InputActionPerformed
+    }//GEN-LAST:event_TFmailActionPerformed
 
     private void bgImageMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgImageMouseDragged
         // TODO add your handling code here:
@@ -289,15 +260,13 @@ public class Registration_Window extends javax.swing.JFrame {
 
     private void btn_RegistraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseClicked
         // TODO add your handling code here:
-       
+       new Clases.Clientes().agregar(new String[] {TFnombre.getText(), TFtel.getText(), TFmail.getText()});
        clearRegistration_Window();
-         
     }//GEN-LAST:event_btn_RegistraMouseClicked
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
-        // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
-        cw.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows().setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
@@ -310,11 +279,14 @@ public class Registration_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
     }//GEN-LAST:event_HOME_ICONMouseExited
+
+    private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
+        
+    }//GEN-LAST:event_formComponentHidden
     private void clearRegistration_Window(){
-        textField_Client_Name_input.setText("");
-         textField_Direccion_Input.setText("");
-         textField_No_contacto_input.setText("");
-         textField_Email_input.setText("");
+        TFnombre.setText("");
+         TFtel.setText("");
+         TFmail.setText("");
     }
     /**
      * @param args the command line arguments
@@ -356,9 +328,11 @@ public class Registration_Window extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HOME_ICON;
+    private javax.swing.JTextField TFmail;
+    private javax.swing.JTextField TFnombre;
+    private javax.swing.JTextField TFtel;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Registra;
-    private javax.swing.JLabel label_Direccion;
     private javax.swing.JLabel label_Email;
     private javax.swing.JLabel label_No_Contacto;
     private javax.swing.JLabel label_Nombre;
@@ -368,10 +342,6 @@ public class Registration_Window extends javax.swing.JFrame {
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent3;
-    private javax.swing.JTextField textField_Client_Name_input;
-    private javax.swing.JTextField textField_Direccion_Input;
-    private javax.swing.JTextField textField_Email_input;
-    private javax.swing.JTextField textField_No_contacto_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }

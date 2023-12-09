@@ -3,6 +3,7 @@ package Ventanas;
 
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -36,9 +37,9 @@ public class Log_in_window extends javax.swing.JFrame {
         label_Nombre_Salon = new javax.swing.JLabel();
         label_Bienvenido1 = new javax.swing.JLabel();
         label_Usuario = new javax.swing.JLabel();
-        textField_Username_input = new javax.swing.JTextField();
+        TFuser = new javax.swing.JTextField();
         label_contrasena = new javax.swing.JLabel();
-        passwordField = new javax.swing.JPasswordField();
+        TFpass = new javax.swing.JPasswordField();
         btn_Iniciar_Ses = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
@@ -51,34 +52,26 @@ public class Log_in_window extends javax.swing.JFrame {
         panel_login.setEnabled(false);
 
         label_Nombre_Salon.setFont(new java.awt.Font("Poor Richard", 0, 80)); // NOI18N
-        label_Nombre_Salon.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre_Salon.setText("<html><p>Beauty salon </p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;& Spa</p></html>");
         label_Nombre_Salon.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         label_Bienvenido1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_Bienvenido1.setForeground(new java.awt.Color(0, 0, 0));
         label_Bienvenido1.setText("!Bienvenido! Por favor, ingrese a su cuenta...");
 
         label_Usuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_Usuario.setForeground(new java.awt.Color(0, 0, 0));
         label_Usuario.setText("Usuario");
 
-        textField_Username_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Username_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Username_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Username_input.setText(" ");
-        textField_Username_input.setBorder(null);
-        textField_Username_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFuser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFuser.setText(" ");
+        TFuser.setBorder(null);
+        TFuser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         label_contrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label_contrasena.setForeground(new java.awt.Color(0, 0, 0));
         label_contrasena.setText("Contraseña");
 
-        passwordField.setBackground(new java.awt.Color(255, 255, 255));
-        passwordField.setForeground(new java.awt.Color(0, 0, 0));
-        passwordField.setText("jPasswordField1");
-        passwordField.setBorder(null);
-        passwordField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFpass.setText("jPasswordField1");
+        TFpass.setBorder(null);
+        TFpass.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         btn_Iniciar_Ses.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Iniciar_Ses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Iniciar_Session_Exit.png"))); // NOI18N
@@ -112,9 +105,9 @@ public class Log_in_window extends javax.swing.JFrame {
                         .addGroup(panel_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(label_Bienvenido1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField_Username_input, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                            .addComponent(TFuser, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                             .addComponent(label_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                            .addComponent(TFpass, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                             .addComponent(label_Nombre_Salon))
                         .addGap(134, 134, 134))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_loginLayout.createSequentialGroup()
@@ -131,11 +124,11 @@ public class Log_in_window extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(label_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(textField_Username_input, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TFuser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(label_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TFpass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btn_Iniciar_Ses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(61, Short.MAX_VALUE))
@@ -194,8 +187,13 @@ public class Log_in_window extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Iniciar_SesMouseExited
 
     private void btn_Iniciar_SesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Iniciar_SesMouseClicked
-        // TODO add your handling code here:
-        
+        int val = SQL.Getters.Validation(TFuser.getText(), String.valueOf(TFpass.getPassword()));
+        switch(val){
+            case -1 -> JOptionPane.showMessageDialog(null, "Usuario o contraseña equivocados");
+            case 0 -> {dispose(); new Home_Windows().setVisible(true);}
+            case 1 -> {dispose(); new Home_Windows_Contabilidad().setVisible(true);}
+            case 2 -> {dispose(); new Home_Windows_Contabilidad().setVisible(true);}
+        }
     }//GEN-LAST:event_btn_Iniciar_SesMouseClicked
 
     /**
@@ -235,6 +233,8 @@ public class Log_in_window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField TFpass;
+    private javax.swing.JTextField TFuser;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Iniciar_Ses;
     private javax.swing.JLabel label_Bienvenido1;
@@ -242,8 +242,6 @@ public class Log_in_window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Usuario;
     private javax.swing.JLabel label_contrasena;
     private javax.swing.JPanel panel_login;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField textField_Username_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }

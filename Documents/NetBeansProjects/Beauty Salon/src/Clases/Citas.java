@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author vladi
  */
-public class Citas{
+public class Citas implements IgestionRUD{
     private ArrayList<Productos> Lista_productos = new ArrayList<>();
     static int id_count = 0;
     private int precio_total;
@@ -68,5 +68,20 @@ public class Citas{
     
     void cancelar(){
     
+    }
+
+    @Override
+    public void cargar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void modificar(String[] set) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void eliminar(String[] set) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
