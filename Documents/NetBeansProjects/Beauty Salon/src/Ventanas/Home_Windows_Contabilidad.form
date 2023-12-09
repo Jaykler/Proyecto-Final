@@ -209,7 +209,7 @@
           <Color blue="9b" green="b0" red="d4" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Contabilidad_bg.jpg"/>
+          <Image iconType="3" name="/Backgrounds_Fondo/Contabilidad_bg.jpg"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[1000, 2000]"/>

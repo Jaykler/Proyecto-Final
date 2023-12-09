@@ -1166,7 +1166,7 @@
           <Color blue="9b" green="b0" red="d4" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/bg_Registros.jpg"/>
+          <Image iconType="3" name="/Backgrounds_Fondo/bg_Registros.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

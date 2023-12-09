@@ -224,7 +224,7 @@ public class Registration_Window extends javax.swing.JFrame {
         getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 750, 540));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_bg.jpg"))); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/login_bg.jpg"))); // NOI18N
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));

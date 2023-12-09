@@ -66,16 +66,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
 
         panel_transparent.setBackground(new java.awt.Color(212, 176, 155));
         panel_transparent.setEnabled(false);
-        panel_transparent.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                panel_transparentMouseDragged(evt);
-            }
-        });
-        panel_transparent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                panel_transparentMousePressed(evt);
-            }
-        });
         panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -154,7 +144,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
             panel_Transparent_White1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent_White1Layout.createSequentialGroup()
                 .addComponent(HOME_ICON)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 410, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addComponent(Registros, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(376, 376, 376))
         );
@@ -168,7 +158,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, -1));
+        panel_transparent.add(panel_Transparent_White1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, -1));
 
         Panel_Tabla.setBackground(new java.awt.Color(128, 76, 46));
 
@@ -285,12 +275,12 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 btn_ActualizarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 640, -1, -1));
+        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 640, -1, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/bg_Registros.jpg"))); // NOI18N
         bgImage.setText("jLabel1");
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
@@ -302,21 +292,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
    
-    private void panel_transparentMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMouseDragged
-        // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-
-	int y = evt.getYOnScreen();
-
-	Actualizar_Cliente_Window.this.setLocation(x - xx, y - xy);
-    }//GEN-LAST:event_panel_transparentMouseDragged
-
-    private void panel_transparentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMousePressed
-        // TODO add your handling code here:\
-        xx = evt.getX();
-        xy = evt.getY();  
-    }//GEN-LAST:event_panel_transparentMousePressed
-
     private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
         // TODO add your handling code here:
          btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Brown.png"))); 
@@ -330,10 +305,12 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
 
     private void btn_ActualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ActualizarMouseEntered
         // TODO add your handling code here:
+        btn_Actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_Brown.png")));
     }//GEN-LAST:event_btn_ActualizarMouseEntered
 
     private void btn_ActualizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ActualizarMouseExited
         // TODO add your handling code here:
+        btn_Actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png")));
     }//GEN-LAST:event_btn_ActualizarMouseExited
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
