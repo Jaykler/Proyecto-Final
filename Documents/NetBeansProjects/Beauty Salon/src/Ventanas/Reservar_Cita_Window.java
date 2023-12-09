@@ -2,11 +2,13 @@ package Ventanas;
 
 
 import java.awt.Color;
-import java.util.Calendar;
-import java.util.Date;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerDateModel;
-import javax.swing.SpinnerModel;
+import java.awt.JobAttributes;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,16 +19,15 @@ import javax.swing.SpinnerModel;
  *
  * @author Hilda
  */
-public class Agendar_Cita extends javax.swing.JFrame {
-
-    private SpinnerModel sm;
+public class Reservar_Cita_Window extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Agendar_Cita() {
+    public Reservar_Cita_Window() {
+        
         initComponents();
-        panel_transparent.setBackground(new Color (212,176,155,200));
+        panel_Main.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         panel_Transparent2.setBackground(new Color (255,255,255,200));
         panel_Transparent3.setBackground(new Color (255,255,255,200));
@@ -41,31 +42,29 @@ public class Agendar_Cita extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_transparent = new javax.swing.JPanel();
-        label_Nombre = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
-        label_No_contacto = new javax.swing.JLabel();
+        buttonGroup = new javax.swing.ButtonGroup();
+        panel_Main = new javax.swing.JPanel();
         panel_Transparent1 = new javax.swing.JPanel();
         label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
+        label_HomeM_Icon = new javax.swing.JLabel();
+        label_Nombre = new javax.swing.JLabel();
+        textField_Client_Name_input = new javax.swing.JTextField();
+        label_No_contacto = new javax.swing.JLabel();
         TextField_No_contacto = new javax.swing.JTextField();
         Label_Fecha = new javax.swing.JLabel();
         jDateChooser = new com.toedter.calendar.JDateChooser();
-        btn_Agendar_Cita = new javax.swing.JLabel();
-        combobox_Time = new javax.swing.JComboBox<>();
-        Label_Fecha1 = new javax.swing.JLabel();
-        label_Borered = new javax.swing.JLabel();
-        panel_Transparent2 = new javax.swing.JPanel();
-        panel_Transparent3 = new javax.swing.JPanel();
-        label_titulo = new javax.swing.JLabel();
+        Label_Hora = new javax.swing.JLabel();
+        comboBox_Time = new javax.swing.JComboBox<>();
+        label_Bordered = new javax.swing.JLabel();
+        tbtn_Productos = new javax.swing.JToggleButton();
+        tbtn_Depilacion = new javax.swing.JToggleButton();
+        tbtn_Cortes = new javax.swing.JToggleButton();
         tbtn_Servicios_generales = new javax.swing.JToggleButton();
         tbtn_Limpieza_Cejas = new javax.swing.JToggleButton();
-        tbtn_Cortes = new javax.swing.JToggleButton();
         tbtn_Maquillaje = new javax.swing.JToggleButton();
-        tbtn_Depilacion = new javax.swing.JToggleButton();
-        tbtn_Productos = new javax.swing.JToggleButton();
+        Panel_Servicios = new javax.swing.JPanel();
         panel_ServiciosGen = new javax.swing.JPanel();
-        panel_ServiciosGen1 = new javax.swing.JPanel();
         label_ServiceGen = new javax.swing.JLabel();
         scrollpanel_1 = new javax.swing.JScrollPane();
         tabla_LimpiezaCeja = new javax.swing.JTable();
@@ -93,8 +92,12 @@ public class Agendar_Cita extends javax.swing.JFrame {
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
         tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_total_pagar = new javax.swing.JTextField();
-        label_No_contacto1 = new javax.swing.JLabel();
+        Textfield_Monto_a_pagar = new javax.swing.JTextField();
+        label_total = new javax.swing.JLabel();
+        panel_Transparent3 = new javax.swing.JPanel();
+        label_titulo = new javax.swing.JLabel();
+        panel_Transparent2 = new javax.swing.JPanel();
+        btn_Agendar_Cita = new javax.swing.JLabel();
         btn_Cancelar_Cita = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
@@ -103,28 +106,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_transparent.setBackground(new java.awt.Color(212, 176, 155));
-        panel_transparent.setEnabled(false);
-        panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
-        label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Nombre.setText("NOMBRE:");
-        label_Nombre.setFocusable(false);
-        label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
-
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
-
-        label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto.setText("NO. CONTACTO:");
-        panel_transparent.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 120, -1));
+        panel_Main.setBackground(new java.awt.Color(212, 176, 155));
+        panel_Main.setEnabled(false);
+        panel_Main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -151,6 +135,12 @@ public class Agendar_Cita extends javax.swing.JFrame {
             }
         });
 
+        label_HomeM_Icon.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
+        label_HomeM_Icon.setForeground(new java.awt.Color(105, 87, 86));
+        label_HomeM_Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_HomeM_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_GREEN.png"))); // NOI18N
+        label_HomeM_Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout panel_Transparent1Layout = new javax.swing.GroupLayout(panel_Transparent1);
         panel_Transparent1.setLayout(panel_Transparent1Layout);
         panel_Transparent1Layout.setHorizontalGroup(
@@ -158,7 +148,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_HomeM_Icon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(269, 269, 269))
         );
@@ -166,159 +158,70 @@ public class Agendar_Cita extends javax.swing.JFrame {
             panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_HomeM_Icon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                        .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
-        panel_transparent.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 300, 40));
+        panel_Main.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
+
+        label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
+        label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_Nombre.setText("NOMBRE:");
+        label_Nombre.setFocusable(false);
+        label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        panel_Main.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
+
+        textField_Client_Name_input.setEditable(false);
+        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textField_Client_Name_input.setText(" ");
+        textField_Client_Name_input.setBorder(null);
+        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_Main.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
+
+        label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
+        label_No_contacto.setText("NO. CONTACTO:");
+        panel_Main.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 120, -1));
+
+        TextField_No_contacto.setEditable(false);
+        TextField_No_contacto.setBackground(new java.awt.Color(255, 255, 255));
+        panel_Main.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 300, 40));
 
         Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_Fecha.setForeground(new java.awt.Color(0, 0, 0));
         Label_Fecha.setText("FECHA:");
-        panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 60, -1));
+        panel_Main.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 60, -1));
 
         jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
         jDateChooser.setForeground(new java.awt.Color(0, 0, 0));
-        jDateChooser.setDateFormatString("d,MMMM,y");
+        jDateChooser.setDateFormatString("y,MMMM,d");
         jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
         jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
-        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
+        panel_Main.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
 
-        btn_Agendar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White_Cita.png"))); // NOI18N
-        btn_Agendar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Agendar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Agendar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Agendar_CitaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Agendar_CitaMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 200, -1));
+        Label_Hora.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Label_Hora.setForeground(new java.awt.Color(0, 0, 0));
+        Label_Hora.setText("HORA:");
+        panel_Main.add(Label_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 60, -1));
 
-        combobox_Time.setBackground(new java.awt.Color(255, 255, 255));
-        combobox_Time.setForeground(new java.awt.Color(0, 0, 0));
-        combobox_Time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM" }));
-        combobox_Time.setActionCommand("comboBoxTime");
-        panel_transparent.add(combobox_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, 120, 40));
+        comboBox_Time.setBackground(new java.awt.Color(255, 255, 255));
+        comboBox_Time.setForeground(new java.awt.Color(0, 0, 0));
+        comboBox_Time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM" }));
+        comboBox_Time.setActionCommand("comboBoxTime");
+        panel_Main.add(comboBox_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, 120, 40));
 
-        Label_Fecha1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Fecha1.setForeground(new java.awt.Color(0, 0, 0));
-        Label_Fecha1.setText("HORA:");
-        panel_transparent.add(Label_Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 60, -1));
-
-        label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Borered.setForeground(new java.awt.Color(0, 0, 0));
-        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar cita", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 940, 140));
-
-        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
-        panel_Transparent2.setLayout(panel_Transparent2Layout);
-        panel_Transparent2Layout.setHorizontalGroup(
-            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
-        );
-        panel_Transparent2Layout.setVerticalGroup(
-            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 669, 1130, 50));
-
-        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
-
-        label_titulo.setBackground(new java.awt.Color(105, 87, 86));
-        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
-        label_titulo.setForeground(new java.awt.Color(105, 87, 86));
-        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText(" Agendar Citas");
-        label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
-        panel_Transparent3.setLayout(panel_Transparent3Layout);
-        panel_Transparent3Layout.setHorizontalGroup(
-            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        panel_Transparent3Layout.setVerticalGroup(
-            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
-
-        tbtn_Servicios_generales.setBackground(new java.awt.Color(255, 255, 255));
-        tbtn_Servicios_generales.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Servicios_generales.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Servicios_generales.setText("Servicios generales");
-        tbtn_Servicios_generales.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_Servicios_generalesMouseClicked(evt);
-            }
-        });
-        panel_transparent.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 160, 40));
-
-        tbtn_Limpieza_Cejas.setBackground(new java.awt.Color(255, 255, 255));
-        tbtn_Limpieza_Cejas.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Limpieza_Cejas.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Limpieza_Cejas.setText("Limpieza de Cejas");
-        tbtn_Limpieza_Cejas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_Limpieza_CejasMouseClicked(evt);
-            }
-        });
-        panel_transparent.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 150, 40));
-
-        tbtn_Cortes.setBackground(new java.awt.Color(255, 255, 255));
-        tbtn_Cortes.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Cortes.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Cortes.setText("Cortes");
-        tbtn_Cortes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_CortesMouseClicked(evt);
-            }
-        });
-        panel_transparent.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
-
-        tbtn_Maquillaje.setBackground(new java.awt.Color(255, 255, 255));
-        tbtn_Maquillaje.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Maquillaje.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Maquillaje.setText("Maquillaje");
-        tbtn_Maquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_MaquillajeMouseClicked(evt);
-            }
-        });
-        panel_transparent.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, 40));
-
-        tbtn_Depilacion.setBackground(new java.awt.Color(255, 255, 255));
-        tbtn_Depilacion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Depilacion.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Depilacion.setText("Depilación");
-        tbtn_Depilacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_DepilacionMouseClicked(evt);
-            }
-        });
-        panel_transparent.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 180, 40));
+        label_Bordered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_Bordered.setForeground(new java.awt.Color(0, 0, 0));
+        label_Bordered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel_Main.add(label_Bordered, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 1020, 130));
 
         tbtn_Productos.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Productos);
         tbtn_Productos.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         tbtn_Productos.setForeground(new java.awt.Color(128, 76, 46));
         tbtn_Productos.setText("Productos");
@@ -327,20 +230,80 @@ public class Agendar_Cita extends javax.swing.JFrame {
                 tbtn_ProductosMouseClicked(evt);
             }
         });
-        panel_transparent.add(tbtn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 140, 40));
+        panel_Main.add(tbtn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 140, 40));
+
+        tbtn_Depilacion.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Depilacion);
+        tbtn_Depilacion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Depilacion.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Depilacion.setText("Depilación");
+        tbtn_Depilacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_DepilacionMouseClicked(evt);
+            }
+        });
+        panel_Main.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 180, 40));
+
+        tbtn_Cortes.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Cortes);
+        tbtn_Cortes.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Cortes.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Cortes.setText("Cortes");
+        tbtn_Cortes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_CortesMouseClicked(evt);
+            }
+        });
+        panel_Main.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
+
+        tbtn_Servicios_generales.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Servicios_generales);
+        tbtn_Servicios_generales.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Servicios_generales.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Servicios_generales.setText("Servicios generales");
+        tbtn_Servicios_generales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_Servicios_generalesMouseClicked(evt);
+            }
+        });
+        panel_Main.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 160, 40));
+
+        tbtn_Limpieza_Cejas.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Limpieza_Cejas);
+        tbtn_Limpieza_Cejas.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Limpieza_Cejas.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Limpieza_Cejas.setText("Limpieza de Cejas");
+        tbtn_Limpieza_Cejas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_Limpieza_CejasMouseClicked(evt);
+            }
+        });
+        panel_Main.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 150, 40));
+
+        tbtn_Maquillaje.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup.add(tbtn_Maquillaje);
+        tbtn_Maquillaje.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        tbtn_Maquillaje.setForeground(new java.awt.Color(128, 76, 46));
+        tbtn_Maquillaje.setText("Maquillaje");
+        tbtn_Maquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtn_MaquillajeMouseClicked(evt);
+            }
+        });
+        panel_Main.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, 40));
+
+        Panel_Servicios.setBackground(new java.awt.Color(128, 76, 46));
+        Panel_Servicios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_ServiciosGen.setBackground(new java.awt.Color(128, 76, 46));
         panel_ServiciosGen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panel_ServiciosGen1.setBackground(new java.awt.Color(128, 76, 46));
-        panel_ServiciosGen1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_ServiceGen.setBackground(new java.awt.Color(255, 255, 255));
         label_ServiceGen.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         label_ServiceGen.setForeground(new java.awt.Color(255, 255, 255));
         label_ServiceGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ServiceGen.setText("Servicios Generales");
-        panel_ServiciosGen1.add(label_ServiceGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
+        panel_ServiciosGen.add(label_ServiceGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
 
         scrollpanel_1.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -373,9 +336,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
         });
         scrollpanel_1.setViewportView(tabla_LimpiezaCeja);
 
-        panel_ServiciosGen1.add(scrollpanel_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
+        panel_ServiciosGen.add(scrollpanel_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
-        panel_ServiciosGen.add(panel_ServiciosGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+        Panel_Servicios.add(panel_ServiciosGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_LimpiezaCeja.setBackground(new java.awt.Color(128, 76, 46));
         panel_LimpiezaCeja.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -417,10 +380,18 @@ public class Agendar_Cita extends javax.swing.JFrame {
             }
         });
         scrollpanel_2.setViewportView(tabla_Cejas);
+        if (tabla_Cejas.getColumnModel().getColumnCount() > 0) {
+            tabla_Cejas.getColumnModel().getColumn(0).setMinWidth(25);
+            tabla_Cejas.getColumnModel().getColumn(0).setMaxWidth(20);
+            tabla_Cejas.getColumnModel().getColumn(2).setMinWidth(55);
+            tabla_Cejas.getColumnModel().getColumn(2).setMaxWidth(60);
+            tabla_Cejas.getColumnModel().getColumn(3).setMinWidth(55);
+            tabla_Cejas.getColumnModel().getColumn(3).setMaxWidth(50);
+        }
 
         panel_LimpiezaCeja.add(scrollpanel_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
-        panel_ServiciosGen.add(panel_LimpiezaCeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+        Panel_Servicios.add(panel_LimpiezaCeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_Cortes.setBackground(new java.awt.Color(128, 76, 46));
         panel_Cortes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -465,7 +436,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
 
         panel_Cortes.add(scrollpanel_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
-        panel_ServiciosGen.add(panel_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+        Panel_Servicios.add(panel_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_Maquillaje.setBackground(new java.awt.Color(128, 76, 46));
         panel_Maquillaje.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -510,7 +481,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
 
         panel_Maquillaje.add(scrollpanel_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
-        panel_ServiciosGen.add(panel_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+        Panel_Servicios.add(panel_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_Depilacion.setBackground(new java.awt.Color(128, 76, 46));
         panel_Depilacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -555,7 +526,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
 
         panel_Depilacion.add(scrollpanel_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
-        panel_ServiciosGen.add(panel_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+        Panel_Servicios.add(panel_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
         panel_Productos.setBackground(new java.awt.Color(128, 76, 46));
         panel_Productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -600,9 +571,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
 
         panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
-        panel_ServiciosGen.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
+        Panel_Servicios.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
-        panel_transparent.add(panel_ServiciosGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+        panel_Main.add(Panel_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 490, 250));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
         panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
@@ -613,7 +584,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
         label_Titlulo.setForeground(new java.awt.Color(128, 76, 46));
         label_Titlulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_Titlulo.setText("Resumen de Servicios");
-        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 30));
+        panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 430, 30));
 
         scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
         scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
@@ -646,24 +617,83 @@ public class Agendar_Cita extends javax.swing.JFrame {
             }
         });
         scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
+        if (tabla_Resumen_Servicios.getColumnModel().getColumnCount() > 0) {
+            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMinWidth(50);
+            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMaxWidth(60);
+        }
 
-        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 160));
+        panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 470, 180));
 
-        TextField_total_pagar.setEditable(false);
-        TextField_total_pagar.setBackground(new java.awt.Color(255, 255, 255));
-        TextField_total_pagar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_total_pagarActionPerformed(evt);
+        Textfield_Monto_a_pagar.setEditable(false);
+        Textfield_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.add(Textfield_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 80, 30));
+
+        label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        label_total.setForeground(new java.awt.Color(0, 0, 0));
+        label_total.setText("TOTAL:");
+        panel_ResumenServ.add(label_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 60, 20));
+
+        panel_Main.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 250));
+
+        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
+
+        label_titulo.setBackground(new java.awt.Color(105, 87, 86));
+        label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(105, 87, 86));
+        label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo.setText("Reservación");
+        label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
+        panel_Transparent3.setLayout(panel_Transparent3Layout);
+        panel_Transparent3Layout.setHorizontalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
+        );
+        panel_Transparent3Layout.setVerticalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panel_Main.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 370, 50));
+
+        panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout panel_Transparent2Layout = new javax.swing.GroupLayout(panel_Transparent2);
+        panel_Transparent2.setLayout(panel_Transparent2Layout);
+        panel_Transparent2Layout.setHorizontalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1130, Short.MAX_VALUE)
+        );
+        panel_Transparent2Layout.setVerticalGroup(
+            panel_Transparent2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        panel_Main.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 679, 1130, 40));
+
+        btn_Agendar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White_Cita.png"))); // NOI18N
+        btn_Agendar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Agendar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Agendar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_Agendar_CitaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_Agendar_CitaMouseExited(evt);
             }
         });
-        panel_ResumenServ.add(TextField_total_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 70, 30));
-
-        label_No_contacto1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto1.setForeground(new java.awt.Color(0, 0, 0));
-        label_No_contacto1.setText("TOTAL:");
-        panel_ResumenServ.add(label_No_contacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 70, 20));
-
-        panel_transparent.add(panel_ResumenServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 490, 240));
+        panel_Main.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 630, 200, -1));
 
         btn_Cancelar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_White.png"))); // NOI18N
@@ -671,6 +701,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
         btn_Cancelar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Cancelar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Cancelar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Cancelar_CitaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Cancelar_CitaMouseEntered(evt);
             }
@@ -678,9 +711,9 @@ public class Agendar_Cita extends javax.swing.JFrame {
                 btn_Cancelar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Cancelar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 200, -1));
+        panel_Main.add(btn_Cancelar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 630, 120, -1));
 
-        getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
+        getContentPane().add(panel_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
@@ -688,24 +721,13 @@ public class Agendar_Cita extends javax.swing.JFrame {
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
-        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
+        getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
    
-    private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
-        // TODO add your handling code here:
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown_Cita.png")));
-    }//GEN-LAST:event_btn_Agendar_CitaMouseEntered
-
-    private void btn_Agendar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseExited
-        // TODO add your handling code here:
-        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White_Cita.png")));
-
-    }//GEN-LAST:event_btn_Agendar_CitaMouseExited
-
     private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
         // TODO add your handling code here:
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_LIGHTBROWN.png")));
@@ -718,22 +740,22 @@ public class Agendar_Cita extends javax.swing.JFrame {
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
+        
         cw.setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
     private void tbtn_Servicios_generalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_Servicios_generalesMouseClicked
         // TODO add your handling code here:
-        //        tbtn_Servicios_generales.setBackground(new java.awt.Color(128, 76, 46));
-        //        tbtn_Servicios_generales.setForeground(new java.awt.Color(255, 255, 255));
+//        tbtn_Servicios_generales.setBackground(new java.awt.Color(128, 76, 46));
+//        tbtn_Servicios_generales.setForeground(new java.awt.Color(255, 255, 255));
         panel_ServiciosGen.setVisible(true);
         panel_LimpiezaCeja.setVisible(false);
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
-        panel_Productos.setVisible(false);
-
+         panel_Productos.setVisible(false);
+        
     }//GEN-LAST:event_tbtn_Servicios_generalesMouseClicked
 
     private void tbtn_Limpieza_CejasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_Limpieza_CejasMouseClicked
@@ -743,8 +765,8 @@ public class Agendar_Cita extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
-        panel_Productos.setVisible(false);
-
+         panel_Productos.setVisible(false);
+        
     }//GEN-LAST:event_tbtn_Limpieza_CejasMouseClicked
 
     private void tbtn_CortesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_CortesMouseClicked
@@ -754,7 +776,7 @@ public class Agendar_Cita extends javax.swing.JFrame {
         panel_Cortes.setVisible(true);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
-        panel_Productos.setVisible(false);
+         panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_CortesMouseClicked
 
     private void tbtn_MaquillajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_MaquillajeMouseClicked
@@ -787,21 +809,42 @@ public class Agendar_Cita extends javax.swing.JFrame {
         panel_Productos.setVisible(true);
     }//GEN-LAST:event_tbtn_ProductosMouseClicked
 
-    private void TextField_total_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_total_pagarActionPerformed
+    private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_total_pagarActionPerformed
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_Brown_Cita.png")));
+    }//GEN-LAST:event_btn_Agendar_CitaMouseEntered
+
+    private void btn_Agendar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseExited
+        // TODO add your handling code here:
+        btn_Agendar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agendar_Cita_White_Cita.png")));
+    }//GEN-LAST:event_btn_Agendar_CitaMouseExited
 
     private void btn_Cancelar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseEntered
         // TODO add your handling code here:
+        btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_Brown.png"))); //
     }//GEN-LAST:event_btn_Cancelar_CitaMouseEntered
 
     private void btn_Cancelar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseExited
         // TODO add your handling code here:
+        btn_Cancelar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cancelar_White.png"))); //
     }//GEN-LAST:event_btn_Cancelar_CitaMouseExited
 
+    private void btn_Cancelar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cancelar_CitaMouseClicked
+        // TODO add your handling code here:
+        int ans = JOptionPane.showConfirmDialog(null, "Seguro que desea cancelar esta formular?");
+
+  if (ans == JOptionPane.YES_OPTION)
+     JOptionPane.showMessageDialog(null, "Hurrah!  A good student!");
+  else
+     JOptionPane.showMessageDialog(null, "Not another bad student!");
+    }//GEN-LAST:event_btn_Cancelar_CitaMouseClicked
+ 
     /**
      * @param args the command line arguments
      */
+   
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -816,13 +859,13 @@ public class Agendar_Cita extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Agendar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Agendar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Agendar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Agendar_Cita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reservar_Cita_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -887,52 +930,246 @@ public class Agendar_Cita extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-foPanel_Tabla    /* Create and display the form */
         //</editor-fold>
-
-        /* Create and display the form */
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-foPanel_Tabla    /* Create and display the form */
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-foPanel_Tabla    /* Create and display the form */
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-foPanel_Tabla    /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agendar_Cita().setVisible(true);
+                new Reservar_Cita_Window().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel Label_Fecha;
-    private javax.swing.JLabel Label_Fecha1;
+    private javax.swing.JLabel Label_Hora;
+    private javax.swing.JPanel Panel_Servicios;
     private javax.swing.JTextField TextField_No_contacto;
-    private javax.swing.JTextField TextField_total_pagar;
+    private javax.swing.JTextField Textfield_Monto_a_pagar;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Agendar_Cita;
     private javax.swing.JLabel btn_Cancelar_Cita;
-    private javax.swing.JComboBox<String> combobox_Time;
+    private javax.swing.ButtonGroup buttonGroup;
+    private javax.swing.JComboBox<String> comboBox_Time;
     private com.toedter.calendar.JDateChooser jDateChooser;
-    private javax.swing.JLabel label_Borered;
+    private javax.swing.JLabel label_Bordered;
     private javax.swing.JLabel label_Cortes;
     private javax.swing.JLabel label_Depilacion;
+    private javax.swing.JLabel label_HomeM_Icon;
     private javax.swing.JLabel label_LimpiezaCejas;
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
-    private javax.swing.JLabel label_No_contacto1;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Productos;
     private javax.swing.JLabel label_ServiceGen;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JLabel label_titulo1;
+    private javax.swing.JLabel label_total;
     private javax.swing.JPanel panel_Cortes;
     private javax.swing.JPanel panel_Depilacion;
     private javax.swing.JPanel panel_LimpiezaCeja;
+    private javax.swing.JPanel panel_Main;
     private javax.swing.JPanel panel_Maquillaje;
     private javax.swing.JPanel panel_Productos;
     private javax.swing.JPanel panel_ResumenServ;
     private javax.swing.JPanel panel_ServiciosGen;
-    private javax.swing.JPanel panel_ServiciosGen1;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent3;
-    private javax.swing.JPanel panel_transparent;
     private javax.swing.JScrollPane scrollpanel_1;
     private javax.swing.JScrollPane scrollpanel_2;
     private javax.swing.JScrollPane scrollpanel_3;
@@ -955,5 +1192,5 @@ public class Agendar_Cita extends javax.swing.JFrame {
     private javax.swing.JToggleButton tbtn_Servicios_generales;
     private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables
-    private int xx, xy;
+    private Home_Windows cw = new Home_Windows();
 }

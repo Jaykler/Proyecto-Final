@@ -33,6 +33,9 @@ public class Registration_Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel_Transparent3 = new javax.swing.JPanel();
+        label_titulo1 = new javax.swing.JLabel();
+        HOME_ICON = new javax.swing.JLabel();
         panel_Registration = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
         textField_Client_Name_input = new javax.swing.JTextField();
@@ -52,6 +55,54 @@ public class Registration_Window extends javax.swing.JFrame {
         setLocation(new java.awt.Point(50, 50));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
+
+        label_titulo1.setBackground(new java.awt.Color(105, 87, 86));
+        label_titulo1.setFont(new java.awt.Font("Poor Richard", 1, 36)); // NOI18N
+        label_titulo1.setForeground(new java.awt.Color(105, 87, 86));
+        label_titulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_titulo1.setText("BEAUTY SALON & SPA");
+        label_titulo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        HOME_ICON.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png"))); // NOI18N
+        HOME_ICON.setFocusable(false);
+        HOME_ICON.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        HOME_ICON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HOME_ICONMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_Transparent3Layout = new javax.swing.GroupLayout(panel_Transparent3);
+        panel_Transparent3.setLayout(panel_Transparent3Layout);
+        panel_Transparent3Layout.setHorizontalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
+                .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(269, 269, 269))
+        );
+        panel_Transparent3Layout.setVerticalGroup(
+            panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 60));
 
         panel_Registration.setBackground(new java.awt.Color(212, 176, 155));
         panel_Registration.setAutoscrolls(true);
@@ -168,7 +219,7 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
         panel_Transparent2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         panel_Transparent2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panel_Registration.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 750, 60));
+        panel_Registration.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 750, 60));
 
         getContentPane().add(panel_Registration, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 750, 540));
 
@@ -242,6 +293,23 @@ public class Registration_Window extends javax.swing.JFrame {
        clearRegistration_Window();
          
     }//GEN-LAST:event_btn_RegistraMouseClicked
+
+    private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
+        // TODO add your handling code here:
+        Home_Windows cw = new Home_Windows();
+        cw.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_HOME_ICONMouseClicked
+
+    private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_LIGHTBROWN.png")));
+    }//GEN-LAST:event_HOME_ICONMouseEntered
+
+    private void HOME_ICONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseExited
+        // TODO add your handling code here:
+        HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
+    }//GEN-LAST:event_HOME_ICONMouseExited
     private void clearRegistration_Window(){
         textField_Client_Name_input.setText("");
          textField_Direccion_Input.setText("");
@@ -287,6 +355,7 @@ public class Registration_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Registra;
     private javax.swing.JLabel label_Direccion;
@@ -294,9 +363,11 @@ public class Registration_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_No_Contacto;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_titulo;
+    private javax.swing.JLabel label_titulo1;
     private javax.swing.JPanel panel_Registration;
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_Transparent2;
+    private javax.swing.JPanel panel_Transparent3;
     private javax.swing.JTextField textField_Client_Name_input;
     private javax.swing.JTextField textField_Direccion_Input;
     private javax.swing.JTextField textField_Email_input;
