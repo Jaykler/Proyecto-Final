@@ -27,6 +27,7 @@ public class Loading_Windows extends javax.swing.JFrame {
     public Loading_Windows() {
         
         initComponents();
+        new Clases.Clientes().cargar();
         panel_login.setBackground(new Color (212,176,155,170));
     }
     

@@ -4,6 +4,9 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vladi
@@ -17,6 +20,8 @@ public class Clientes implements IgestionRUD{
     
     static int Id_count = 0;
     
+    public static ArrayList<Clientes> clientes = new ArrayList<>();
+    
     public Clientes(int Id_cliente, String nom, String tel, String mail){
         Id_count = Id_cliente;
         this.id_cliente = Id_count;
@@ -25,13 +30,34 @@ public class Clientes implements IgestionRUD{
         this.Correo = mail;
     }
     
-    public void agregar(){
+    public Clientes(String nom, String tel, String mail){
+        Id_count++;
+        this.id_cliente = Id_count;
+        this.nombre = nom;
+        this.Telefono = tel;
+        this.Correo = mail;
+    }
     
+    public Clientes(){
+        
+    }
+    
+    public void agregar(String[] set){
+        clientes.add(new Clientes(set[0], set[1], set[2]));
+        
+        SQL.Conexion.Queries.offer(String.format("INSERT INTO Cliente VALUES('%s', '%s', '%s')", set[0], set[1], set[2]));
+        
+        JOptionPane.showMessageDialog(null, String.format("Cliente %s, con numero de telefono %s y correo %s agregado con exito", set[0], set[1], set[2]));
     }
     
     @Override
     public void cargar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String[][] clients = SQL.Getters.getClientes();
+        clientes.clear();
+        for (String[] Cliente : clients) {
+            clientes.add(new Clientes(Integer.parseInt(Cliente[0]), Cliente[1], Cliente[2], Cliente[3]));
+            Id_count = Integer.parseInt(Cliente[0]);
+        }
     }
 
     @Override

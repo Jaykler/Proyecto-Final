@@ -22,6 +22,7 @@ public class Home_Windows extends javax.swing.JFrame {
         panel_Transparent1.setBackground(new Color (212,176,155,200));
         panel_Transparent2.setBackground(new Color (255,255,255,100));
         panel_Transparent3.setBackground(new Color (255,255,255,100));
+        
     }
 
     /**
@@ -217,14 +218,13 @@ public class Home_Windows extends javax.swing.JFrame {
 
     private void btn_Cliente_NuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseClicked
         // TODO add your handling code here:
-        Registration_Window RW = new Registration_Window();
-        RW.setVisible(true);
+        new Registration_Window().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_Cliente_NuevoMouseClicked
 
     private void btn_Cliente_NuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseEntered
         // TODO add your handling code here:
-        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_Brown.png")));
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_Brown.png")));
     }//GEN-LAST:event_btn_Cliente_NuevoMouseEntered
 
     private void btn_Cliente_NuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseExited

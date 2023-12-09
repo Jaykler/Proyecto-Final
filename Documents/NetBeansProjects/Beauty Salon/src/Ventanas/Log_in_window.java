@@ -190,9 +190,9 @@ public class Log_in_window extends javax.swing.JFrame {
         int val = SQL.Getters.Validation(TFuser.getText(), String.valueOf(TFpass.getPassword()));
         switch(val){
             case -1 -> JOptionPane.showMessageDialog(null, "Usuario o contraseña equivocados");
-            case 0 -> {this.dispose(); new Home_Windows().setVisible(true);}
-            case 1 -> {this.dispose(); new Home_Windows_Contabilidad().setVisible(true);}
-            case 2 -> {this.dispose(); new Home_Windows_Contabilidad().setVisible(true);}
+            case 0 -> {dispose(); new Home_Windows().setVisible(true);}
+            case 1 -> {dispose(); new Home_Windows_Contabilidad().setVisible(true);}
+            case 2 -> {dispose(); new Home_Windows_Contabilidad().setVisible(true);}
         }
     }//GEN-LAST:event_btn_Iniciar_SesMouseClicked
 
