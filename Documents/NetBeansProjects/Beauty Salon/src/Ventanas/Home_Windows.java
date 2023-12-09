@@ -75,7 +75,7 @@ public class Home_Windows extends javax.swing.JFrame {
         panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 70));
 
         btn_Cliente_Nuevo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_Entered.png"))); // NOI18N
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_White.png"))); // NOI18N
         btn_Cliente_Nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Cliente_Nuevo.setFocusable(false);
         btn_Cliente_Nuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -224,12 +224,12 @@ public class Home_Windows extends javax.swing.JFrame {
 
     private void btn_Cliente_NuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseEntered
         // TODO add your handling code here:
-        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo.png")));
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_Brown.png")));
     }//GEN-LAST:event_btn_Cliente_NuevoMouseEntered
 
     private void btn_Cliente_NuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Cliente_NuevoMouseExited
         // TODO add your handling code here:
-        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_Entered.png")));
+        btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Cliente_nuevo_White.png")));
     }//GEN-LAST:event_btn_Cliente_NuevoMouseExited
 
     private void btn_Editar_ClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Editar_ClientMouseClicked
