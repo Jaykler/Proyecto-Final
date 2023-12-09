@@ -187,7 +187,7 @@ public class Home_Windows extends javax.swing.JFrame {
         getContentPane().add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 1020, 640));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg_Registros.jpg"))); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/bg_Registros.jpg"))); // NOI18N
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));

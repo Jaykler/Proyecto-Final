@@ -144,7 +144,7 @@ public class Log_in_window extends javax.swing.JFrame {
         getContentPane().add(panel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 690, 560));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_bg.jpg"))); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/login_bg.jpg"))); // NOI18N
         bgImage.setText("jLabel1");
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));

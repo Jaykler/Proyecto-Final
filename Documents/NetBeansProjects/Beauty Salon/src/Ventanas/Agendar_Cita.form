@@ -1125,7 +1125,7 @@
           <Color blue="9b" green="b0" red="d4" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/bg_Registros.jpg"/>
+          <Image iconType="3" name="/Backgrounds_Fondo/bg_Registros.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1143,7 +1143,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1120" height="720"/>
+          <AbsoluteConstraints x="0" y="0" width="1130" height="720"/>
         </Constraint>
       </Constraints>
     </Component>

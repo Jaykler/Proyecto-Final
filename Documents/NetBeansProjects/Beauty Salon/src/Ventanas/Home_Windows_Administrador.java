@@ -143,7 +143,7 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
         getContentPane().add(panel_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 1020, 570));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
-        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Management_bg_MEDIUM.jpg"))); // NOI18N
+        bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/Management_bg_MEDIUM.jpg"))); // NOI18N
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
