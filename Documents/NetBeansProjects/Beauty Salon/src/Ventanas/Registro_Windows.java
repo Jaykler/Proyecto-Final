@@ -359,7 +359,7 @@ public class Registro_Windows extends javax.swing.JFrame {
 
     private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
         // TODO add your handling code here:
-        Citas_Agendadas ca = new Citas_Agendadas();
+        Citas_Agendadas_Windows ca = new Citas_Agendadas_Windows();
         ca.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_Modificar_CitaMouseClicked

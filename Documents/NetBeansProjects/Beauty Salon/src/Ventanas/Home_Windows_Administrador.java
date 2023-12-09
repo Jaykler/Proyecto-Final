@@ -303,6 +303,8 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
                 new Home_Windows_Administrador().setVisible(true);
             }
         });
+        
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

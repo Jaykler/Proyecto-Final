@@ -251,6 +251,9 @@ public class Home_Windows extends javax.swing.JFrame {
 
     private void btn_ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProductosMouseClicked
         // TODO add your handling code here:
+        Venta_Producto_Window vpw = new Venta_Producto_Window();
+        vpw.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btn_ProductosMouseClicked
 
     private void btn_ProductosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProductosMouseEntered
@@ -265,6 +268,9 @@ public class Home_Windows extends javax.swing.JFrame {
 
     private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked
         // TODO add your handling code here:
+        Facturacion_Windows fw = new Facturacion_Windows();
+        fw.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btn_FacturarMouseClicked
 
     private void btn_FacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseEntered

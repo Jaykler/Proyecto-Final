@@ -142,39 +142,12 @@ public class Log_in_window extends javax.swing.JFrame {
         bgImage.setMaximumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setMinimumSize(new java.awt.Dimension(1000, 2000));
         bgImage.setPreferredSize(new java.awt.Dimension(500, 600));
-        bgImage.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                bgImageMouseDragged(evt);
-            }
-        });
-        bgImage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                bgImageMousePressed(evt);
-            }
-        });
         getContentPane().add(bgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bgImageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgImageMousePressed
-        // TODO add your handling cdoe here:
-        xx = evt.getX();
-        xy = evt.getY();
-        
-    }//GEN-LAST:event_bgImageMousePressed
   
-    private void bgImageMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgImageMouseDragged
-        // TODO add your handling code here:
-        
-        int x = evt.getXOnScreen();
-
-	int y = evt.getYOnScreen();
-
-	Log_in_window.this.setLocation(x - xx, y - xy);
-    }//GEN-LAST:event_bgImageMouseDragged
-
     private void btn_Iniciar_SesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Iniciar_SesMouseEntered
         // TODO add your handling code here:
          btn_Iniciar_Ses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Iniciar_Session.png")));
@@ -192,7 +165,7 @@ public class Log_in_window extends javax.swing.JFrame {
             case -1 -> JOptionPane.showMessageDialog(null, "Usuario o contraseña equivocados");
             case 0 -> {dispose(); new Home_Windows().setVisible(true);}
             case 1 -> {dispose(); new Home_Windows_Contabilidad().setVisible(true);}
-            case 2 -> {dispose(); new Home_Windows_Contabilidad().setVisible(true);}
+            case 2 -> {dispose(); new Home_Windows_Administrador().setVisible(true);}
         }
     }//GEN-LAST:event_btn_Iniciar_SesMouseClicked
 
