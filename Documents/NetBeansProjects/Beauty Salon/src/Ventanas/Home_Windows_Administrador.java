@@ -175,7 +175,9 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         Home_Windows HWR = new Home_Windows();
         HWR.setVisible(true);
+        //label_HomeM_Icon.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_btn_RecepcionMouseClicked
 
     private void btn_RecepcionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RecepcionMouseEntered

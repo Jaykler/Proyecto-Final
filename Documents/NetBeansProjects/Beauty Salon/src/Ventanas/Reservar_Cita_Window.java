@@ -47,6 +47,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Transparent1 = new javax.swing.JPanel();
         label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
+        label_HomeM_Icon = new javax.swing.JLabel();
         label_Nombre = new javax.swing.JLabel();
         textField_Client_Name_input = new javax.swing.JTextField();
         label_No_contacto = new javax.swing.JLabel();
@@ -134,6 +135,12 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
             }
         });
 
+        label_HomeM_Icon.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
+        label_HomeM_Icon.setForeground(new java.awt.Color(105, 87, 86));
+        label_HomeM_Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_HomeM_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_GREEN.png"))); // NOI18N
+        label_HomeM_Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout panel_Transparent1Layout = new javax.swing.GroupLayout(panel_Transparent1);
         panel_Transparent1.setLayout(panel_Transparent1Layout);
         panel_Transparent1Layout.setHorizontalGroup(
@@ -141,7 +148,9 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_HomeM_Icon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addComponent(label_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(269, 269, 269))
         );
@@ -149,9 +158,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
             panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_HomeM_Icon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(label_titulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                        .addComponent(HOME_ICON, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1137,6 +1148,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Bordered;
     private javax.swing.JLabel label_Cortes;
     private javax.swing.JLabel label_Depilacion;
+    private javax.swing.JLabel label_HomeM_Icon;
     private javax.swing.JLabel label_LimpiezaCejas;
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
