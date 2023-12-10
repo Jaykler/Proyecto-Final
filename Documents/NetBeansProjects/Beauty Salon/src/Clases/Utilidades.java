@@ -6,6 +6,10 @@ package Clases;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -95,5 +99,38 @@ public class Utilidades {
         }
         
         return FR;
+    }
+    
+    public static void Agregar_a_resumen(JTable set, JTable objetivo, JTextField Total){
+        int sl = set.getSelectedRow();
+        String mensaje = "Quiere agregar el servicio " + set.getValueAt(sl, 1) + " con precio " + set.getValueAt(sl, 2)+ "?";
+        int o = JOptionPane.showConfirmDialog(null, mensaje);
+        
+        if(o == JOptionPane.YES_OPTION){
+            if(objetivo.getRowCount() == 0){
+                String[][] modelo = {{set.getValueAt(sl, 1).toString(), set.getValueAt(sl, 2).toString()}};
+                objetivo.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+            }else{
+                String[][] modelo = new String[objetivo.getRowCount() + 1][2];
+                
+                for(int i = 0; i < objetivo.getRowCount(); i++){
+                    modelo[i][0] = objetivo.getValueAt(i, 0).toString();
+                    modelo[i][1] = objetivo.getValueAt(i, 1).toString();
+                }
+                
+                modelo[objetivo.getRowCount()][0] = set.getValueAt(sl, 1).toString();
+                modelo[objetivo.getRowCount()][1] = set.getValueAt(sl, 2).toString();
+                
+                objetivo.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+            }
+            
+            int total = 0;
+            
+            for(int i = 0; i < objetivo.getRowCount(); i++){
+                total += Integer.parseInt(objetivo.getValueAt(i, 1).toString());
+            }
+            
+            Total.setText(String.valueOf(total));
+        }
     }
 }

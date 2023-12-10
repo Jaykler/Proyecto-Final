@@ -11,30 +11,30 @@ import java.util.ArrayList;
  * @author vladi
  */
 public class Citas implements IgestionRUD{
-    private ArrayList<Productos> Lista_productos = new ArrayList<>();
+    private ArrayList<Intangible> Lista_productos = new ArrayList<>();
     static int id_count = 0;
     private int precio_total;
     private int id;
     private int id_cliente;
 
-    public Citas(ArrayList<Productos> set, int id_cliente){
+    public Citas(ArrayList<Intangible> set, int id_cliente){
         this.Lista_productos =  new ArrayList<>(set);
         this.id_cliente = id_cliente;
         id_count++;
         this.id = id_count;
     }
-    public Citas(ArrayList<Productos> set, int id_cliente, int ID){
+    public Citas(ArrayList<Intangible> set, int id_cliente, int ID){
         this.Lista_productos = new ArrayList<>(set);
         this.id_cliente = id_cliente;
         id_count = ID;
         this.id = id_count;
     }
 
-    public ArrayList<Productos> getLista_productos() {
+    public ArrayList<Intangible> getLista_productos() {
         return Lista_productos;
     }
 
-    public void setLista_productos(ArrayList<Productos> Lista_productos) {
+    public void setLista_productos(ArrayList<Intangible> Lista_productos) {
         this.Lista_productos = Lista_productos;
     }
 

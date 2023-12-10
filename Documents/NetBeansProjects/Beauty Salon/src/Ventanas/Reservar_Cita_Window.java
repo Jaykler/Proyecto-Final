@@ -14,6 +14,8 @@ import javax.swing.ButtonModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -31,8 +33,12 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     String[] columnas = {"ID", "Producto", "Precio"};
-    public Reservar_Cita_Window() {
-        
+    int id_cliente;
+    String nombre;
+    String telefono;
+    String correo;
+    
+    public Reservar_Cita_Window(String[] set) {
         initComponents();
         panel_Main.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
@@ -43,6 +49,14 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         Tcortes.setModel(new DefaultTableModel(Utilidades.Filtrarservicios(3, Intangible.intangibles), columnas));
         Tmaquillaje.setModel(new DefaultTableModel(Utilidades.Filtrarservicios(4, Intangible.intangibles), columnas));
         Tdepilacion.setModel(new DefaultTableModel(Utilidades.Filtrarservicios(5, Intangible.intangibles), columnas));
+        
+        this.id_cliente = Integer.parseInt(set[0]);
+        this.nombre = set[1];
+        this.telefono = set[2];
+        this.correo = set[3];
+        
+        TFnom.setText(nombre);
+        TFtel.setText(telefono);
         
         String[] horas = new String[25];
         int h = 8;
@@ -56,6 +70,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         }
         
         CBhoras.setModel(new DefaultComboBoxModel(horas));
+        CBhoras.setSelectedIndex(-1);
         Date hoy = new Date();
         DCfecha.setMinSelectableDate(hoy);
     }
@@ -193,7 +208,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
         TFnom.setEditable(false);
         TFnom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFnom.setText(" ");
         TFnom.setBorder(null);
         TFnom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_Main.add(TFnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
@@ -221,6 +235,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Main.add(Label_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 60, -1));
 
         CBhoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM" }));
+        CBhoras.setSelectedIndex(-1);
         CBhoras.setActionCommand("comboBoxTime");
         panel_Main.add(CBhoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, 120, 40));
 
@@ -382,6 +397,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tcejas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TcejasMouseClicked(evt);
+            }
+        });
         scrollpanel_2.setViewportView(Tcejas);
         if (Tcejas.getColumnModel().getColumnCount() > 0) {
             Tcejas.getColumnModel().getColumn(0).setMinWidth(25);
@@ -433,6 +453,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tcortes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TcortesMouseClicked(evt);
+            }
+        });
         scrollpanel_3.setViewportView(Tcortes);
 
         panel_Cortes.add(scrollpanel_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
@@ -476,6 +501,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tmaquillaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TmaquillajeMouseClicked(evt);
+            }
+        });
         scrollpanel_4.setViewportView(Tmaquillaje);
 
         panel_Maquillaje.add(scrollpanel_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
@@ -517,6 +547,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        Tdepilacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TdepilacionMouseClicked(evt);
             }
         });
         scrollpanel_5.setViewportView(Tdepilacion);
@@ -676,6 +711,9 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         btn_Agendar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Agendar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Agendar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Agendar_CitaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Agendar_CitaMouseEntered(evt);
             }
@@ -716,7 +754,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+
    
     private void HOME_ICONMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseEntered
         // TODO add your handling code here:
@@ -827,38 +865,35 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Cancelar_CitaMouseClicked
     
     private void TgeneralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TgeneralMouseClicked
-        int sl = Tgeneral.getSelectedRow();
-        String mensaje = "Quiere agregar el servicio " + Tgeneral.getValueAt(sl, 1) + " con precio " + Tgeneral.getValueAt(sl, 2)+ "?";
-        int o = JOptionPane.showConfirmDialog(null, mensaje);
-        
-        if(o == JOptionPane.YES_OPTION){
-            if(Tresumen.getRowCount() == 0){
-                String[][] modelo = {{Tgeneral.getValueAt(sl, 1).toString(), Tgeneral.getValueAt(sl, 2).toString()}};
-                Tresumen.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
-            }else{
-                String[][] modelo = new String[Tresumen.getRowCount() + 1][2];
-                
-                for(int i = 0; i < Tresumen.getRowCount(); i++){
-                    modelo[i][0] = Tresumen.getValueAt(i, 0).toString();
-                    modelo[i][1] = Tresumen.getValueAt(i, 1).toString();
-                }
-                
-                modelo[Tresumen.getRowCount()][0] = Tgeneral.getValueAt(sl, 1).toString();
-                modelo[Tresumen.getRowCount()][1] = Tgeneral.getValueAt(sl, 2).toString();
-                
-                Tresumen.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
-            }
-            
-            int total = 0;
-            
-            for(int i = 0; i < Tresumen.getRowCount(); i++){
-                total += Integer.parseInt(Tresumen.getValueAt(i, 1).toString());
-            }
-            
-            TFtotal.setText(String.valueOf(total));
-        }
+        Utilidades.Agregar_a_resumen(Tgeneral, Tresumen, TFtotal);
     }//GEN-LAST:event_TgeneralMouseClicked
- 
+
+    private void TcejasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TcejasMouseClicked
+        Utilidades.Agregar_a_resumen(Tcejas, Tresumen, TFtotal);
+    }//GEN-LAST:event_TcejasMouseClicked
+
+    private void TcortesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TcortesMouseClicked
+        Utilidades.Agregar_a_resumen(Tcortes, Tresumen, TFtotal);
+    }//GEN-LAST:event_TcortesMouseClicked
+
+    private void TmaquillajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TmaquillajeMouseClicked
+        Utilidades.Agregar_a_resumen(Tmaquillaje, Tresumen, TFtotal);
+    }//GEN-LAST:event_TmaquillajeMouseClicked
+
+    private void TdepilacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TdepilacionMouseClicked
+        Utilidades.Agregar_a_resumen(Tdepilacion, Tresumen, TFtotal);
+    }//GEN-LAST:event_TdepilacionMouseClicked
+
+    private void btn_Agendar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseClicked
+        if(CBhoras.getSelectedIndex() == -1 || DCfecha.getDate() == null){
+            JOptionPane.showMessageDialog(null, "Ingrese Fecha y hora");
+        }else if(Tresumen.getRowCount() == 0){
+            JOptionPane.showMessageDialog(null, "Seleccione un servicio");
+        }else{
+            
+        }
+    }//GEN-LAST:event_btn_Agendar_CitaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1146,7 +1181,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reservar_Cita_Window().setVisible(true);
+                new Reservar_Cita_Window(null).setVisible(true);
             }
         });
 
