@@ -61,4 +61,31 @@ public class Getters extends Conexion {
  
         return clientes;
     }
+    
+    public static String[][] getServicios(){
+        String[][] Servicios = new String[1][1];
+        ArrayList<String[]> ServiciosAp = new ArrayList<>();
+        
+        try{
+            Statement consultar = getConexion().createStatement();
+            
+            String Query = "SELECT * FROM Servicios";
+            
+            ResultSet consulta = consultar.executeQuery(Query);
+            
+            while(consulta.next()){
+                ServiciosAp.add(new String[] {consulta.getString("Id_Servicios"), consulta.getString("Nombre"), consulta.getString("Precio"), consulta.getString("Id_Tipo_Servicio")});
+            }
+            
+            Servicios = new String[ServiciosAp.size()][4];
+            
+            for(int i = 0; i < Servicios.length; i++){
+                Servicios[i] = ServiciosAp.get(i);
+            }
+            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+        return Servicios;
+    }
 }

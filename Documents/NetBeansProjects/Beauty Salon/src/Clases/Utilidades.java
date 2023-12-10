@@ -74,4 +74,9 @@ public class Utilidades {
         
         return FR;
     }
+    
+    public static Object[][] Filtrarservicios(int sl){
+        
+        return null;
+    }
 }

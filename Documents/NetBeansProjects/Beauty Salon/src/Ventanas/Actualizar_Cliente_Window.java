@@ -356,6 +356,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         val[3] = TFcorreo2.getText();
         
         new Clientes().modificar(val);
+        Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(new int[] {0, 0, 0},new String[] {"", "", ""}, Clases.Clientes.clientes), columna));
     }//GEN-LAST:event_btn_ActualizarMouseClicked
 
     /**

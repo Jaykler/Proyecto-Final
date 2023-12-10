@@ -157,6 +157,7 @@ public class Loading_Windows extends javax.swing.JFrame {
                 }
             }
             new Clases.Clientes().cargar();
+            new Clases.Intangible().cargar();
             sp.dispose();
             Log_in_window log_in =new Log_in_window();
             log_in.setVisible(true);
