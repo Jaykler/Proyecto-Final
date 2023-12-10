@@ -175,8 +175,7 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         Home_Windows HWR = new Home_Windows();
         HWR.setVisible(true);
-        //label_HomeM_Icon.setVisible(true);
-        dispose();
+        
         
     }//GEN-LAST:event_btn_RecepcionMouseClicked
 
@@ -206,7 +205,12 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Contabildad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Contabilidad_White.png")));
     }//GEN-LAST:event_btn_ContabildadMouseExited
-
+    
+    public void recepcionHomeCall(){
+        Reservar_Cita_Window reservar = new Reservar_Cita_Window();
+        //reservar.label_HomeM_Icon.setVisible(true);
+        dispose();
+    }
     /**
      * @param args the command line arguments
      */

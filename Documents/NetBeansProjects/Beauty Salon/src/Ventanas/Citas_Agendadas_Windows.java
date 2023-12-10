@@ -53,7 +53,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_Transparent2 = new javax.swing.JPanel();
         panel_Transparent3 = new javax.swing.JPanel();
         label_titulo = new javax.swing.JLabel();
-        btn_Modificar_Cita1 = new javax.swing.JLabel();
+        btn_Modificar_Cita = new javax.swing.JLabel();
         btn_Eliminar_Cita = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
@@ -268,20 +268,23 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
 
         panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
 
-        btn_Modificar_Cita1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
-        btn_Modificar_Cita1.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Modificar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N
+        btn_Modificar_Cita.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Modificar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Modificar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Modificar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Modificar_CitaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseEntered(evt);
+                btn_Modificar_CitaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modificar_Cita1MouseExited(evt);
+                btn_Modificar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Modificar_Cita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 550, 200, -1));
+        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 550, 200, -1));
 
         btn_Eliminar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White_Cita.png"))); // NOI18N
@@ -332,16 +335,16 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_No_contactoActionPerformed
 
-    private void btn_Modificar_Cita1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseEntered
+    private void btn_Modificar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseEntered
         // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown_Cita.png"))); 
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseEntered
+        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_Brown_Cita.png"))); 
+    }//GEN-LAST:event_btn_Modificar_CitaMouseEntered
 
-    private void btn_Modificar_Cita1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseExited
+    private void btn_Modificar_CitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseExited
         // TODO add your handling code here:
-        btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); 
+        btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); 
 
-    }//GEN-LAST:event_btn_Modificar_Cita1MouseExited
+    }//GEN-LAST:event_btn_Modificar_CitaMouseExited
 
     private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
         // TODO add your handling code here:
@@ -379,6 +382,13 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Eliminar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cita_White_Cita.png")));
     }//GEN-LAST:event_btn_Eliminar_CitaMouseExited
+
+    private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
+        // TODO add your handling code here:
+        Servicios_Windonw sw = new Servicios_Windonw();
+        sw.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -551,7 +561,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Eliminar_Cita;
-    private javax.swing.JLabel btn_Modificar_Cita1;
+    private javax.swing.JLabel btn_Modificar_Cita;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
