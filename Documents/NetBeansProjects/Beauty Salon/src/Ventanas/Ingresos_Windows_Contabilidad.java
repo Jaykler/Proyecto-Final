@@ -65,7 +65,7 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
         label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_title.setText("Ingresos");
         label_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panel_Transparent1.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 80));
+        panel_Transparent1.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 220, 80));
 
         label_Home_Icon.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
         label_Home_Icon.setForeground(new java.awt.Color(105, 87, 86));

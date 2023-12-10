@@ -39,6 +39,7 @@ public class Home_Windows extends javax.swing.JFrame {
         panel_Transparent2 = new javax.swing.JPanel();
         label_Home_Icon = new javax.swing.JLabel();
         label_title = new javax.swing.JLabel();
+        label_HomeM_Icon = new javax.swing.JLabel();
         btn_Cliente_Nuevo = new javax.swing.JLabel();
         btn_Editar_Client = new javax.swing.JLabel();
         btn_Cliente_Registrado = new javax.swing.JLabel();
@@ -73,6 +74,13 @@ public class Home_Windows extends javax.swing.JFrame {
         label_title.setText("HOME");
         label_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         panel_Transparent2.add(label_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 80));
+
+        label_HomeM_Icon.setFont(new java.awt.Font("Palatino Linotype", 1, 48)); // NOI18N
+        label_HomeM_Icon.setForeground(new java.awt.Color(105, 87, 86));
+        label_HomeM_Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_HomeM_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_GREEN.png"))); // NOI18N
+        label_HomeM_Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel_Transparent2.add(label_HomeM_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, 50));
 
         panel_Transparent1.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 70));
 
@@ -357,6 +365,7 @@ public class Home_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel btn_Editar_Client;
     private javax.swing.JLabel btn_Facturar;
     private javax.swing.JLabel btn_Productos;
+    public javax.swing.JLabel label_HomeM_Icon;
     private javax.swing.JLabel label_Home_Icon;
     private javax.swing.JLabel label_title;
     private javax.swing.JPanel panel_Transparent1;
