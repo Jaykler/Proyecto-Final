@@ -19,6 +19,7 @@ public class Home_Windows extends javax.swing.JFrame {
      */
     public Home_Windows() {
         initComponents();
+        
         panel_Transparent1.setBackground(new Color (212,176,155,200));
         panel_Transparent2.setBackground(new Color (255,255,255,100));
         panel_Transparent3.setBackground(new Color (255,255,255,100));

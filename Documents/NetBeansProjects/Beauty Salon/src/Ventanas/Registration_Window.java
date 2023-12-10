@@ -117,7 +117,6 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Registration.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 90, 30));
 
         TFnombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFnombre.setText(" ");
         TFnombre.setBorder(null);
         TFnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         TFnombre.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +131,6 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Registration.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, 30));
 
         TFtel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFtel.setText(" ");
         TFtel.setBorder(null);
         TFtel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         TFtel.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +145,6 @@ public class Registration_Window extends javax.swing.JFrame {
         panel_Registration.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, 30));
 
         TFmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFmail.setText(" ");
         TFmail.setBorder(null);
         TFmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         TFmail.addActionListener(new java.awt.event.ActionListener() {

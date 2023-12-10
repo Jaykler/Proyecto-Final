@@ -79,9 +79,13 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
         TFnom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFnom.setText(" ");
         TFnom.setBorder(null);
         TFnom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFnom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFnomActionPerformed(evt);
+            }
+        });
         panel_transparent.add(TFnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 390, 39));
 
         label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -89,7 +93,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, -1, -1));
 
         TFtel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFtel.setText(" ");
         TFtel.setBorder(null);
         TFtel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 229, 39));
@@ -99,7 +102,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 180, 30));
 
         TFcorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFcorreo.setText(" ");
         TFcorreo.setBorder(null);
         TFcorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(TFcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 420, 40));
@@ -218,7 +220,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 920, 270));
 
         textField_Client_Name_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input2.setText(" ");
         textField_Client_Name_input2.setBorder(null);
         textField_Client_Name_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_Client_Name_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 740, 40));
@@ -232,7 +233,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 130, 30));
 
         textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_No_contacto_input.setText(" ");
         textField_No_contacto_input.setBorder(null);
         textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 740, 40));
@@ -242,7 +242,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 180, 30));
 
         textField_Email_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input2.setText(" ");
         textField_Email_input2.setBorder(null);
         textField_Email_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_Email_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 740, 40));
@@ -252,7 +251,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 100, 40));
 
         textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Direccion_Input.setText(" ");
         textField_Direccion_Input.setBorder(null);
         textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 740, 40));
@@ -332,6 +330,10 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         
         Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(filtros,values, Clases.Clientes.clientes), columna));
     }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void TFnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFnomActionPerformed
 
     /**
      * @param args the command line arguments

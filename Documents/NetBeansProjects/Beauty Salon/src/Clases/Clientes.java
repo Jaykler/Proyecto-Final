@@ -91,10 +91,6 @@ public class Clientes implements IgestionRUD{
             clientes.add(new Clientes(Integer.parseInt(Cliente[0]), Cliente[1], Cliente[2], Cliente[3]));
             Id_count = Integer.parseInt(Cliente[0]);
         }
-        
-        for(int i = 0; i < clientes.size(); i++){
-            System.out.println(clientes.get(i).getId_cliente() + ":" + clientes.get(i).getNombre() + ":" + clientes.get(i).getTelefono() + ":" + clientes.get(i).getCorreo());
-        }
     }
 
     @Override

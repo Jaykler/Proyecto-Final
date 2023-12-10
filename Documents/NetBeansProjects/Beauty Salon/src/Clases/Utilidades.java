@@ -18,6 +18,8 @@ public class Utilidades {
         String[][] FR = null;
         ArrayList<Clientes> rs = new ArrayList<>(set);
         
+        System.out.println(values[0]);
+        
         if(filtros[0] == 1){
             var data = rs.stream()
                     .filter(p -> p.getNombre().equals(values[0]))

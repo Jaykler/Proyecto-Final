@@ -49,25 +49,16 @@ public class Getters extends Conexion {
                 ClientesAp.add(new String[] {consulta.getString("Id_Cliente"), consulta.getString("Nombre"), consulta.getString("telefono"), consulta.getString("Correo")});
             }
             
-            System.out.println(ClientesAp.size());
-            
-            for(int i = 0; i < ClientesAp.size(); i++){
-                String[] clie = ClientesAp.get(i);
-                System.out.println(clie[0] + ":" + clie[1] + ":" + clie[2] + ":" + clie[3]);
-            }
-            
             clientes = new String[ClientesAp.size()][4];
             
             for(int i = 0; i < clientes.length; i++){
                 clientes[i] = ClientesAp.get(i);
             }
             
-            System.out.println(Arrays.deepToString(clientes));
-            
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, ex.toString());            
         }
-        
+ 
         return clientes;
     }
 }
