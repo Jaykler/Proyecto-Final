@@ -18,7 +18,7 @@ public class Conexion {
     public static LinkedList<String> Queries = new LinkedList<>();
     
     public static Connection getConexion(){
-        String URL = "jdbc:sqlserver://VLADI;database=BeutyS;integratedSecurity=true;Encrypt=false";
+        String URL = "jdbc:sqlserver://localhost:1433;database=BeutyS;integratedSecurity=true;Encrypt=false";
         
         try{
             Connection con = DriverManager.getConnection(URL);
