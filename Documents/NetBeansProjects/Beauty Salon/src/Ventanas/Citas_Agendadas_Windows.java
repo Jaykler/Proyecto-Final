@@ -244,7 +244,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         label_titulo.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(105, 87, 86));
         label_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_titulo.setText(" Citas");
+        label_titulo.setText(" Citas Agendas");
         label_titulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         label_titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         label_titulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -254,19 +254,19 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_Transparent3Layout.setHorizontalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         panel_Transparent3Layout.setVerticalGroup(
             panel_Transparent3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Transparent3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Transparent3Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(label_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 89, 400, 50));
+        panel_transparent.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 79, 400, 60));
 
         btn_Modificar_Cita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White_Cita.png"))); // NOI18N

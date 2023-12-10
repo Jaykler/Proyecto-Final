@@ -40,13 +40,10 @@ public class Inventario_Windows_Contabilidad extends javax.swing.JFrame {
         label_Home_Icon = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        TextField_Total = new javax.swing.JTextField();
+        Label_Total_Prod = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tab_Inventario = new javax.swing.JTable();
-        Label_Productos = new javax.swing.JLabel();
-        Label_Cantidad = new javax.swing.JLabel();
-        Label_Precio_unit = new javax.swing.JLabel();
-        Label_Total = new javax.swing.JLabel();
-        Label_Fecha = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,6 +98,17 @@ public class Inventario_Windows_Contabilidad extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(105, 133, 149));
 
+        TextField_Total.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextField_TotalActionPerformed(evt);
+            }
+        });
+
+        Label_Total_Prod.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Label_Total_Prod.setForeground(new java.awt.Color(255, 255, 255));
+        Label_Total_Prod.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Total_Prod.setText("TOTAL DE INGRESOS:");
+
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
 
         Tab_Inventario.setModel(new javax.swing.table.DefaultTableModel(
@@ -119,11 +127,11 @@ public class Inventario_Windows_Contabilidad extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "PRODUCTO", "CANTIDAD", "PRECIO UNITARIO", "TOTAL", ""
+                "PRODUCTO", "CANTIDAD", "PRECIO UNITARIO", "TOTAL", "FECHA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -132,62 +140,28 @@ public class Inventario_Windows_Contabilidad extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tab_Inventario);
 
-        Label_Productos.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Productos.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_Productos.setText("PRODUCTO");
-
-        Label_Cantidad.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Cantidad.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Cantidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_Cantidad.setText("CANTIDAD");
-
-        Label_Precio_unit.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Precio_unit.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Precio_unit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_Precio_unit.setText("PRECIO UNITARIO");
-
-        Label_Total.setBackground(new java.awt.Color(255, 255, 255));
-        Label_Total.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Total.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_Total.setText("TOTAL");
-
-        Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Fecha.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Fecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label_Fecha.setText("FECHA");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(Label_Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Label_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Label_Total_Prod, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Label_Precio_unit, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Label_Total, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Label_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(TextField_Total, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(212, 212, 212))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Productos)
-                    .addComponent(Label_Cantidad)
-                    .addComponent(Label_Precio_unit)
-                    .addComponent(Label_Total)
-                    .addComponent(Label_Fecha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
+                    .addComponent(TextField_Total, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(Label_Total_Prod, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
         );
 
         panel_Main.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 950, 320));
@@ -211,6 +185,10 @@ public class Inventario_Windows_Contabilidad extends javax.swing.JFrame {
         hwc.setVisible(true);
         dispose();
     }//GEN-LAST:event_label_Home_IconMouseClicked
+
+    private void TextField_TotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_TotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextField_TotalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,12 +353,9 @@ public class Inventario_Windows_Contabilidad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Label_Cantidad;
-    private javax.swing.JLabel Label_Fecha;
-    private javax.swing.JLabel Label_Precio_unit;
-    private javax.swing.JLabel Label_Productos;
-    private javax.swing.JLabel Label_Total;
+    private javax.swing.JLabel Label_Total_Prod;
     private javax.swing.JTable Tab_Inventario;
+    private javax.swing.JTextField TextField_Total;
     private javax.swing.JLabel bgImage;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

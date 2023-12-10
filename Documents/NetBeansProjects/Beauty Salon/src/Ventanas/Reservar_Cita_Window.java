@@ -616,6 +616,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
         Textfield_Monto_a_pagar.setEditable(false);
         Textfield_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
+        Textfield_Monto_a_pagar.setToolTipText("");
         panel_ResumenServ.add(Textfield_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 80, 30));
 
         label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N

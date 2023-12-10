@@ -35,6 +35,11 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_Main = new javax.swing.JPanel();
+        DateChooser_Inicio = new com.toedter.calendar.JDateChooser();
+        Label_Fecha_Inicio = new javax.swing.JLabel();
+        DateChooser_Cierre = new com.toedter.calendar.JDateChooser();
+        Label_Fecha_Cierre = new javax.swing.JLabel();
+        btn_Buscar = new javax.swing.JLabel();
         panel_Transparent1 = new javax.swing.JPanel();
         label_title = new javax.swing.JLabel();
         label_Home_Icon = new javax.swing.JLabel();
@@ -55,6 +60,48 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
         panel_Main.setBackground(new java.awt.Color(198, 214, 222));
         panel_Main.setEnabled(false);
         panel_Main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        DateChooser_Inicio.setBackground(new java.awt.Color(255, 255, 255));
+        DateChooser_Inicio.setForeground(new java.awt.Color(0, 0, 0));
+        DateChooser_Inicio.setDateFormatString("y,MMMM,d");
+        DateChooser_Inicio.setMaxSelectableDate(new java.util.Date(1717218081000L));
+        DateChooser_Inicio.setMinSelectableDate(new java.util.Date(1672549281000L));
+        panel_Main.add(DateChooser_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 170, 30));
+
+        Label_Fecha_Inicio.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Label_Fecha_Inicio.setForeground(new java.awt.Color(0, 0, 0));
+        Label_Fecha_Inicio.setText("FECHA DE INICIO:");
+        panel_Main.add(Label_Fecha_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 130, 20));
+
+        DateChooser_Cierre.setBackground(new java.awt.Color(255, 255, 255));
+        DateChooser_Cierre.setForeground(new java.awt.Color(0, 0, 0));
+        DateChooser_Cierre.setDateFormatString("y,MMMM,d");
+        DateChooser_Cierre.setMaxSelectableDate(new java.util.Date(1717218081000L));
+        DateChooser_Cierre.setMinSelectableDate(new java.util.Date(1672549281000L));
+        panel_Main.add(DateChooser_Cierre, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 170, 30));
+
+        Label_Fecha_Cierre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        Label_Fecha_Cierre.setForeground(new java.awt.Color(0, 0, 0));
+        Label_Fecha_Cierre.setText("FECHA DE CIERRE:");
+        panel_Main.add(Label_Fecha_Cierre, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 130, 20));
+
+        btn_Buscar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Contabilidad_White.png"))); // NOI18N
+        btn_Buscar.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Buscar.setMinimumSize(new java.awt.Dimension(200, 36));
+        btn_Buscar.setPreferredSize(new java.awt.Dimension(204, 36));
+        btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseExited(evt);
+            }
+        });
+        panel_Main.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, 120, 30));
 
         panel_Transparent1.setBackground(new java.awt.Color(255, 255, 255));
         panel_Transparent1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
@@ -203,6 +250,21 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
         hwc.setVisible(true);
         dispose();
     }//GEN-LAST:event_label_Home_IconMouseClicked
+
+    private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
+        // TODO add your handling code here:
+       btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Contabilidad_Blue.png")));//
+    }//GEN-LAST:event_btn_BuscarMouseEntered
+
+    private void btn_BuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseExited
+        // TODO add your handling code here:
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Contabilidad_White.png")));
+    }//GEN-LAST:event_btn_BuscarMouseExited
 
     /**
      * @param args the command line arguments
@@ -495,11 +557,16 @@ public class Ingresos_Windows_Contabilidad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DateChooser_Cierre;
+    private com.toedter.calendar.JDateChooser DateChooser_Inicio;
     private javax.swing.JLabel Label_Balance;
+    private javax.swing.JLabel Label_Fecha_Cierre;
+    private javax.swing.JLabel Label_Fecha_Inicio;
     private javax.swing.JLabel Label_Total_Prod;
     private javax.swing.JTable Tab_Inventario;
     private javax.swing.JTextField TextField_Total;
     private javax.swing.JLabel bgImage;
+    private javax.swing.JLabel btn_Buscar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Home_Icon;

@@ -66,16 +66,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
 
         panel_transparent.setBackground(new java.awt.Color(212, 176, 155));
         panel_transparent.setEnabled(false);
-        panel_transparent.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                panel_transparentMouseDragged(evt);
-            }
-        });
-        panel_transparent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                panel_transparentMousePressed(evt);
-            }
-        });
         panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -143,12 +133,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
         jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
         panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 170, 40));
-
-        TextField_Nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_NombreActionPerformed(evt);
-            }
-        });
         panel_transparent.add(TextField_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 630, 40));
 
         Label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -325,25 +309,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
    
-    private void panel_transparentMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMouseDragged
-        // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-
-	int y = evt.getYOnScreen();
-
-	Facturacion_Windows.this.setLocation(x - xx, y - xy);
-    }//GEN-LAST:event_panel_transparentMouseDragged
-
-    private void panel_transparentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_transparentMousePressed
-        // TODO add your handling code here:\
-        xx = evt.getX();
-        xy = evt.getY();  
-    }//GEN-LAST:event_panel_transparentMousePressed
-
-    private void TextField_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_NombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_NombreActionPerformed
-
     private void btn_BuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseEntered
         // TODO add your handling code here:
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_Brown.png")));

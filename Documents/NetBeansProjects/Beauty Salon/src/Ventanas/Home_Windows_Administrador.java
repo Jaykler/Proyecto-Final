@@ -155,8 +155,8 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
 
     private void btn_Manejo_UsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Manejo_UsuarioMouseClicked
         // TODO add your handling code here:
-        Registro_Windows ResgitrosW = new Registro_Windows();
-        ResgitrosW.setVisible(true);
+//        Registro_Windows ResgitrosW = new Registro_Windows();
+//        ResgitrosW.setVisible(true);
         dispose();
         //btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png")));
     }//GEN-LAST:event_btn_Manejo_UsuarioMouseClicked
@@ -173,8 +173,7 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
 
     private void btn_RecepcionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RecepcionMouseClicked
         // TODO add your handling code here:
-        Home_Windows HWR = new Home_Windows();
-        HWR.setVisible(true);
+        recepcionHomeCall();
         
         
     }//GEN-LAST:event_btn_RecepcionMouseClicked
@@ -191,9 +190,7 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
 
     private void btn_ContabildadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ContabildadMouseClicked
         // TODO add your handling code here:
-        Home_Windows_Contabilidad HWC = new Home_Windows_Contabilidad();
-        HWC.setVisible(true);
-        dispose();
+        contabilidadHomeCall();
     }//GEN-LAST:event_btn_ContabildadMouseClicked
 
     private void btn_ContabildadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ContabildadMouseEntered
@@ -207,10 +204,19 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ContabildadMouseExited
     
     public void recepcionHomeCall(){
-        Reservar_Cita_Window reservar = new Reservar_Cita_Window();
-        //reservar.label_HomeM_Icon.setVisible(true);
+        Home_Windows HW= new Home_Windows();    
+        HW.setVisible(true);
+        HW.label_HomeM_Icon.setVisible(true);
         dispose();
     }
+    public void contabilidadHomeCall(){
+        Home_Windows_Contabilidad HWC= new Home_Windows_Contabilidad();    
+        HWC.setVisible(true);
+        HWC.label_HomeM_Icon.setVisible(true);
+        dispose();
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
