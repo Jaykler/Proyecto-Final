@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 /**
  *
@@ -59,7 +58,7 @@ public class Getters extends Conexion {
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, ex.toString());            
         }
-        
+ 
         return clientes;
     }
 }

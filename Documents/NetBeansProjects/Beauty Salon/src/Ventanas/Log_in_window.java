@@ -69,7 +69,6 @@ public class Log_in_window extends javax.swing.JFrame {
         label_contrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label_contrasena.setText("Contraseña");
 
-        TFpass.setText("jPasswordField1");
         TFpass.setBorder(null);
         TFpass.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 

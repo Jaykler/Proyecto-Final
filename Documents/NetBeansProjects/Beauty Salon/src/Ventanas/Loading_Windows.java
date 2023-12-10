@@ -25,9 +25,7 @@ public class Loading_Windows extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public Loading_Windows() {
-        
         initComponents();
-        new Clases.Clientes().cargar();
         panel_login.setBackground(new Color (212,176,155,170));
     }
     
@@ -158,6 +156,7 @@ public class Loading_Windows extends javax.swing.JFrame {
                     sp.Label_Loading.setText("Launching Application...");
                 }
             }
+            new Clases.Clientes().cargar();
             sp.dispose();
             Log_in_window log_in =new Log_in_window();
             log_in.setVisible(true);

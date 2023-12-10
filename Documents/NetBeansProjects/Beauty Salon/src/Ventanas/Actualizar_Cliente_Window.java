@@ -1,7 +1,10 @@
 package Ventanas;
 
 
+import Clases.Clientes;
+import Clases.Utilidades;
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,10 +20,13 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    
+    String[] columna = {"Id Cliente", "Nombre", "Telefono", "Correo"};
     public Actualizar_Cliente_Window() {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent_White1.setBackground(new Color (255,255,255,200));
+        Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(new int[] {0, 0, 0},new String[] {"", "", ""}, Clases.Clientes.clientes), columna));
     }
 
     /**
@@ -34,11 +40,11 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
 
         panel_transparent = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
+        TFnom = new javax.swing.JTextField();
         label_No_contacto = new javax.swing.JLabel();
-        textField_Client_Contacto_input = new javax.swing.JTextField();
+        TFtel = new javax.swing.JTextField();
         label_Email = new javax.swing.JLabel();
-        textField_Email_input = new javax.swing.JTextField();
+        TFcorreo = new javax.swing.JTextField();
         btn_Buscar = new javax.swing.JLabel();
         panel_Transparent_White1 = new javax.swing.JPanel();
         Registros = new javax.swing.JLabel();
@@ -46,7 +52,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         Panel_Tabla = new javax.swing.JPanel();
         Label_Lista_Clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tab_R_Client = new javax.swing.JTable();
+        Tclientes = new javax.swing.JTable();
         label_Borered = new javax.swing.JLabel();
         textField_Client_Name_input2 = new javax.swing.JTextField();
         label_Nombre2 = new javax.swing.JLabel();
@@ -69,42 +75,42 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre.setText("NOMBRE:");
         panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 390, 39));
+        TFnom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFnom.setBorder(null);
+        TFnom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TFnom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFnomActionPerformed(evt);
+            }
+        });
+        panel_transparent.add(TFnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 390, 39));
 
         label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_contacto.setText("NO. CONTACTO:");
         panel_transparent.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, -1, -1));
 
-        textField_Client_Contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Contacto_input.setText(" ");
-        textField_Client_Contacto_input.setBorder(null);
-        textField_Client_Contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Client_Contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 229, 39));
+        TFtel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFtel.setBorder(null);
+        TFtel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 229, 39));
 
         label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Email.setForeground(new java.awt.Color(0, 0, 0));
         label_Email.setText("CORREO ELECTRONICO:");
         panel_transparent.add(label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 180, 30));
 
-        textField_Email_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Email_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Email_input.setText(" ");
-        textField_Email_input.setBorder(null);
-        textField_Email_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Email_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 420, 40));
+        TFcorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFcorreo.setBorder(null);
+        TFcorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(TFcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 420, 40));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_BuscarMouseEntered(evt);
             }
@@ -169,7 +175,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
 
-        Tab_R_Client.setModel(new javax.swing.table.DefaultTableModel(
+        Tclientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -185,7 +191,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(Tab_R_Client);
+        jScrollPane1.setViewportView(Tclientes);
 
         javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
         Panel_Tabla.setLayout(Panel_TablaLayout);
@@ -210,58 +216,41 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         panel_transparent.add(Panel_Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 830, 130));
 
         label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Borered.setForeground(new java.awt.Color(0, 0, 0));
-        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
         panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 920, 270));
 
-        textField_Client_Name_input2.setBackground(new java.awt.Color(255, 255, 255));
         textField_Client_Name_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input2.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Client_Name_input2.setText(" ");
         textField_Client_Name_input2.setBorder(null);
         textField_Client_Name_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_Client_Name_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 740, 40));
 
         label_Nombre2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre2.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre2.setText("NOMBRE:");
         panel_transparent.add(label_Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 90, 30));
 
         label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_Contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_Contacto.setText("NO. CONTACTO:");
         panel_transparent.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 130, 30));
 
-        textField_No_contacto_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_No_contacto_input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_No_contacto_input.setText(" ");
         textField_No_contacto_input.setBorder(null);
         textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 740, 40));
 
         label_Email2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Email2.setForeground(new java.awt.Color(0, 0, 0));
         label_Email2.setText("CORREO ELECTRONICO:");
         panel_transparent.add(label_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 180, 30));
 
-        textField_Email_input2.setBackground(new java.awt.Color(255, 255, 255));
         textField_Email_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input2.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Email_input2.setText(" ");
         textField_Email_input2.setBorder(null);
         textField_Email_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_Email_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 740, 40));
 
         label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Direccion.setForeground(new java.awt.Color(0, 0, 0));
         label_Direccion.setText("DIRECCION:");
         panel_transparent.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 100, 40));
 
-        textField_Direccion_Input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Direccion_Input.setForeground(new java.awt.Color(0, 0, 0));
-        textField_Direccion_Input.setText(" ");
         textField_Direccion_Input.setBorder(null);
         textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_transparent.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 740, 40));
@@ -330,6 +319,22 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         HOME_ICON.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON.png")));
     }//GEN-LAST:event_HOME_ICONMouseExited
 
+    private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
+        int f1 = TFnom.getText().equals("")? 1: 0;
+        int f2 = TFtel.getText().equals("")? 1: 0;
+        int f3 = TFcorreo.getText().equals("")? 1: 0;
+        
+        int[] filtros = {f1, f2, f3};
+        
+        String[] values = {TFnom.getText(), TFtel.getText(), TFcorreo.getText()};
+        
+        Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(filtros,values, Clases.Clientes.clientes), columna));
+    }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void TFnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFnomActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -385,7 +390,10 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Lista_Clientes;
     private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JLabel Registros;
-    private javax.swing.JTable Tab_R_Client;
+    private javax.swing.JTextField TFcorreo;
+    private javax.swing.JTextField TFnom;
+    private javax.swing.JTextField TFtel;
+    private javax.swing.JTable Tclientes;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Actualizar;
     private javax.swing.JLabel btn_Buscar;
@@ -400,11 +408,8 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Nombre2;
     private javax.swing.JPanel panel_Transparent_White1;
     private javax.swing.JPanel panel_transparent;
-    private javax.swing.JTextField textField_Client_Contacto_input;
-    private javax.swing.JTextField textField_Client_Name_input;
     private javax.swing.JTextField textField_Client_Name_input2;
     private javax.swing.JTextField textField_Direccion_Input;
-    private javax.swing.JTextField textField_Email_input;
     private javax.swing.JTextField textField_Email_input2;
     private javax.swing.JTextField textField_No_contacto_input;
     // End of variables declaration//GEN-END:variables
