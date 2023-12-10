@@ -9,6 +9,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -24,6 +25,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    String[] columnas = {"ID", "Producto", "Precio", "Agregar"};
     public Reservar_Cita_Window() {
         
         initComponents();
@@ -31,7 +33,9 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         panel_Transparent2.setBackground(new Color (255,255,255,200));
         panel_Transparent3.setBackground(new Color (255,255,255,200));
-
+        //Tgeneral.setModel(new DefaultTableModel(Clases.Utilidades.Filtrarservicios(1, Clases.Intangible.intangibles)), columnas);
+        Tgeneral.set
+        
     }
 
     /**

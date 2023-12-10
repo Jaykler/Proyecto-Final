@@ -18,7 +18,6 @@ public class Utilidades {
         String[][] FR = null;
         ArrayList<Clientes> rs = new ArrayList<>(set);
         
-        System.out.println(values[0]);
         
         if(filtros[0] == 1){
             var data = rs.stream()
@@ -31,7 +30,6 @@ public class Utilidades {
                 Object[] datap = data.get(i);
                 rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
             }
-            System.out.println("1DS");
         }
         
         if(filtros[1] == 1){
@@ -45,7 +43,6 @@ public class Utilidades {
                 Object[] datap = data.get(i);
                 rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
             }
-            System.out.println("2DS");
         }
         
         if(filtros[2] == 1){
@@ -59,7 +56,6 @@ public class Utilidades {
                 Object[] datap = data.get(i);
                 rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
             }
-            System.out.println("3DS");
         }
         
         FR = new String[rs.size()][4];
@@ -69,14 +65,36 @@ public class Utilidades {
             FR[i][1] = rs.get(i).getNombre();
             FR[i][2] = rs.get(i).getTelefono();
             FR[i][3] = rs.get(i).getCorreo();
-            System.out.println(i);
         }
         
         return FR;
     }
     
-    public static Object[][] Filtrarservicios(int sl){
+    public static Object[][] Filtrarservicios(int sl, ArrayList<Intangible> set){
+        Object[][] FR = null;
+        ArrayList<Intangible> rs = new ArrayList<>(set);
         
-        return null;
+        var data = rs.stream()
+                .filter(p -> p.getTipo_servicio() == sl)
+                .map(p -> new Object[] {p.getId_producto(), p.getNombre(), p.getPrecio()})
+                .collect(Collectors.toList());
+        
+        rs.clear();
+        
+        for(int i = 0; i < data.size(); i++){
+            Object[] datap = data.get(i);
+            rs.add(new Intangible(Integer.parseInt(datap[0].toString()), datap[1].toString(), Integer.parseInt(datap[2].toString()), sl));
+        }
+        
+        FR = new String[rs.size()][5];
+        
+        for(int i = 0; i < rs.size(); i++){
+            FR[i][0] = rs.get(i).getId_producto();
+            FR[i][1] = rs.get(i).getNombre();
+            FR[i][2] = rs.get(i).getPrecio();
+            FR[i][3] = false;
+        }
+        
+        return FR;
     }
 }
