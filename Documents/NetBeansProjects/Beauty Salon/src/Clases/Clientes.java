@@ -5,6 +5,7 @@
 package Clases;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,11 +13,43 @@ import javax.swing.JOptionPane;
  * @author vladi
  */
 public class Clientes implements IgestionRUD{
+
+    public int getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
     
-    int id_cliente;
-    String nombre;
-    String Telefono;
-    String Correo;
+    private int id_cliente;
+    private String nombre;
+    private String Telefono;
+    private String Correo;
     
     static int Id_count = 0;
     
@@ -57,6 +90,10 @@ public class Clientes implements IgestionRUD{
         for (String[] Cliente : clients) {
             clientes.add(new Clientes(Integer.parseInt(Cliente[0]), Cliente[1], Cliente[2], Cliente[3]));
             Id_count = Integer.parseInt(Cliente[0]);
+        }
+        
+        for(int i = 0; i < clientes.size(); i++){
+            System.out.println(clientes.get(i).getId_cliente() + ":" + clientes.get(i).getNombre() + ":" + clientes.get(i).getTelefono() + ":" + clientes.get(i).getCorreo());
         }
     }
 
