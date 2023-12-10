@@ -77,11 +77,6 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         label_HomeM_Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_HomeM_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/HOME_ICON_GREEN.png"))); // NOI18N
         label_HomeM_Icon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        label_HomeM_Icon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                label_HomeM_IconMouseClicked(evt);
-            }
-        });
         panel_Transparent1.add(label_HomeM_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, 50));
 
         panel_Main.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 70));
@@ -190,14 +185,6 @@ public class Home_Windows_Contabilidad extends javax.swing.JFrame {
         inwc.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_InventarioMouseClicked
-
-    private void label_HomeM_IconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_HomeM_IconMouseClicked
-        // TODO add your handling code here:
-        Home_Windows_Administrador hwa = new Home_Windows_Administrador();
-        hwa.setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_label_HomeM_IconMouseClicked
 
     /**
      * @param args the command line arguments
