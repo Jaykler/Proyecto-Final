@@ -95,7 +95,23 @@ public class Clientes implements IgestionRUD{
 
     @Override
     public void modificar(String[] set) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int id = Integer.parseInt(set[0]);
+        String nom = set[1];
+        String tel = set[2];
+        String correo = set[3];
+        
+        for(int i = 0; i < clientes.size(); i++){
+            if(clientes.get(i).getId_cliente() == id){
+                Clientes com = clientes.get(i);
+                com.setNombre(nom);
+                com.setTelefono(tel);
+                com.setCorreo(correo);
+                break;
+            }
+        }
+        
+        SQL.Conexion.Queries.offer(String.format("UPDATE cliente SET Nombre = '%s', telefono = '%s', Correo = '%s' WHERE Id_Cliente = %d", nom, tel, correo, id));
+        JOptionPane.showMessageDialog(null, "Usuario " + id + " Modificado");
     }
 
     @Override

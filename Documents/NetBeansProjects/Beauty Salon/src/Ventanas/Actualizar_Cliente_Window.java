@@ -54,14 +54,12 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tclientes = new javax.swing.JTable();
         label_Borered = new javax.swing.JLabel();
-        textField_Client_Name_input2 = new javax.swing.JTextField();
+        TFnom2 = new javax.swing.JTextField();
         label_Nombre2 = new javax.swing.JLabel();
         label_No_Contacto = new javax.swing.JLabel();
-        textField_No_contacto_input = new javax.swing.JTextField();
+        TFtel2 = new javax.swing.JTextField();
         label_Email2 = new javax.swing.JLabel();
-        textField_Email_input2 = new javax.swing.JTextField();
-        label_Direccion = new javax.swing.JLabel();
-        textField_Direccion_Input = new javax.swing.JTextField();
+        TFcorreo2 = new javax.swing.JTextField();
         btn_Actualizar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
@@ -191,6 +189,11 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tclientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TclientesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Tclientes);
 
         javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
@@ -219,10 +222,10 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
         panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 920, 270));
 
-        textField_Client_Name_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input2.setBorder(null);
-        textField_Client_Name_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Client_Name_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 740, 40));
+        TFnom2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFnom2.setBorder(null);
+        TFnom2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(TFnom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 740, 40));
 
         label_Nombre2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Nombre2.setText("NOMBRE:");
@@ -232,31 +235,25 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         label_No_Contacto.setText("NO. CONTACTO:");
         panel_transparent.add(label_No_Contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 130, 30));
 
-        textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_No_contacto_input.setBorder(null);
-        textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 740, 40));
+        TFtel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFtel2.setBorder(null);
+        TFtel2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(TFtel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 740, 40));
 
         label_Email2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_Email2.setText("CORREO ELECTRONICO:");
         panel_transparent.add(label_Email2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 180, 30));
 
-        textField_Email_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input2.setBorder(null);
-        textField_Email_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Email_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 740, 40));
-
-        label_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Direccion.setText("DIRECCION:");
-        panel_transparent.add(label_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 570, 100, 40));
-
-        textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Direccion_Input.setBorder(null);
-        textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 740, 40));
+        TFcorreo2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFcorreo2.setBorder(null);
+        TFcorreo2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(TFcorreo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 740, 40));
 
         btn_Actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png"))); // NOI18N
         btn_Actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ActualizarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_ActualizarMouseEntered(evt);
             }
@@ -264,7 +261,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 btn_ActualizarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 640, -1, -1));
+        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 590, -1, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
@@ -303,9 +300,8 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ActualizarMouseExited
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
-        // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
-        cw.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows().setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
@@ -334,6 +330,33 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     private void TFnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TFnomActionPerformed
+
+    private void TclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TclientesMouseClicked
+        int sl = Tclientes.getSelectedRow();
+        switch(sl){
+            case -1 -> {
+                TFnom2.setText("");
+                TFtel2.setText("");
+                TFcorreo2.setText("s");
+            }
+            default -> {
+                TFnom2.setText(Tclientes.getValueAt(sl, 1).toString());
+                TFtel2.setText(Tclientes.getValueAt(sl, 2).toString());
+                TFcorreo2.setText(Tclientes.getValueAt(sl, 3).toString());
+            }
+        }
+    }//GEN-LAST:event_TclientesMouseClicked
+
+    private void btn_ActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ActualizarMouseClicked
+        String[] val = new String[4];
+        
+        val[0] = String.valueOf(Tclientes.getValueAt(Tclientes.getSelectedRow(), 0));
+        val[1] = TFnom2.getText();
+        val[2] = TFtel2.getText();
+        val[3] = TFcorreo2.getText();
+        
+        new Clientes().modificar(val);
+    }//GEN-LAST:event_btn_ActualizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -391,15 +414,17 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JLabel Registros;
     private javax.swing.JTextField TFcorreo;
+    private javax.swing.JTextField TFcorreo2;
     private javax.swing.JTextField TFnom;
+    private javax.swing.JTextField TFnom2;
     private javax.swing.JTextField TFtel;
+    private javax.swing.JTextField TFtel2;
     private javax.swing.JTable Tclientes;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Actualizar;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Borered;
-    private javax.swing.JLabel label_Direccion;
     private javax.swing.JLabel label_Email;
     private javax.swing.JLabel label_Email2;
     private javax.swing.JLabel label_No_Contacto;
@@ -408,10 +433,6 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Nombre2;
     private javax.swing.JPanel panel_Transparent_White1;
     private javax.swing.JPanel panel_transparent;
-    private javax.swing.JTextField textField_Client_Name_input2;
-    private javax.swing.JTextField textField_Direccion_Input;
-    private javax.swing.JTextField textField_Email_input2;
-    private javax.swing.JTextField textField_No_contacto_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }
