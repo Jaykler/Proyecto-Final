@@ -70,8 +70,8 @@ public class Utilidades {
         return FR;
     }
     
-    public static Object[][] Filtrarservicios(int sl, ArrayList<Intangible> set){
-        Object[][] FR = null;
+    public static String[][] Filtrarservicios(int sl, ArrayList<Intangible> set){
+        String[][] FR = null;
         ArrayList<Intangible> rs = new ArrayList<>(set);
         
         var data = rs.stream()
@@ -86,13 +86,12 @@ public class Utilidades {
             rs.add(new Intangible(Integer.parseInt(datap[0].toString()), datap[1].toString(), Integer.parseInt(datap[2].toString()), sl));
         }
         
-        FR = new String[rs.size()][5];
+        FR = new String[rs.size()][3];
         
         for(int i = 0; i < rs.size(); i++){
-            FR[i][0] = rs.get(i).getId_producto();
+            FR[i][0] = String.valueOf(rs.get(i).getId_producto());
             FR[i][1] = rs.get(i).getNombre();
-            FR[i][2] = rs.get(i).getPrecio();
-            FR[i][3] = false;
+            FR[i][2] = String.valueOf(rs.get(i).getPrecio());
         }
         
         return FR;
