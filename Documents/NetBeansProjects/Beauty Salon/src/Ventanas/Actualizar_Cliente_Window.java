@@ -320,9 +320,9 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_HOME_ICONMouseExited
 
     private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
-        int f1 = TFnom.getText().equals("")? 1: 0;
-        int f2 = TFtel.getText().equals("")? 1: 0;
-        int f3 = TFcorreo.getText().equals("")? 1: 0;
+        int f1 = TFnom.getText().equals("")? 0: 1;
+        int f2 = TFtel.getText().equals("")? 0: 1;
+        int f3 = TFcorreo.getText().equals("")? 0: 1;
         
         int[] filtros = {f1, f2, f3};
         
