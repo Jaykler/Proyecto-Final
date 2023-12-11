@@ -360,7 +360,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_TclientesMouseClicked
 
     private void btn_ActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ActualizarMouseClicked
-        String[] val = new String[4];
+        Object[] val = new String[4];
         
         val[0] = String.valueOf(Tclientes.getValueAt(Tclientes.getSelectedRow(), 0));
         val[1] = TFnom2.getText();

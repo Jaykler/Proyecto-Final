@@ -5,12 +5,13 @@
 package Clases;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author vladi
  */
-public class Citas implements IgestionRUD{
+public class Citas {
     private ArrayList<Intangible> Lista_servicios = new ArrayList<>();
     static int id_count = 0;
     private int precio_total;
@@ -105,9 +106,10 @@ public class Citas implements IgestionRUD{
         String Query = String.format("INSERT INTO Citas VALUES (%d, '%s', '%s', %d)", id_cliente, servicios, fecha, PrecTotal);
         
         SQL.Conexion.Queries.offer(Query);
+        
+        JOptionPane.showMessageDialog(null, "Cita agendada para " + fecha + " por valor de " + PrecTotal);
     }
     
-    @Override
     public void cargar() {
         String[][] Cit = SQL.Getters.getCitas();
         citas.clear();
@@ -133,12 +135,40 @@ public class Citas implements IgestionRUD{
         }
     }
 
-    @Override
-    public void modificar(String[] set) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void modificar(Object[] set, ArrayList<Intangible> septus) {
+        
+        int id_cita = Integer.parseInt(set[0].toString());
+        String Fecha = set[1].toString();
+        ArrayList<Intangible> servicios = new ArrayList<>(septus);
+        int PrecTotal = Integer.parseInt(set[2].toString());
+        
+        Citas cita = new Citas();
+        
+        for(int i = 0; i > citas.size(); i++){
+            if(citas.get(i).getId() == id_cita){
+                cita = citas.get(i);
+                break;
+            }
+        }
+        
+        cita.setFecha(Fecha);
+        cita.setLista_servicios(servicios);
+        cita.setPrecio_total(PrecTotal);
+        
+        String serviciosS = "";
+        
+        serviciosS += septus.get(0).getNombre();
+        
+        for(int i = 1; i < septus.size(); i++){
+            serviciosS += ","+septus.get(i).getNombre();
+        }
+        
+        String Query = String.format("UPDATE citas SET Servicios = '%s', Fecha_Horas = '%s', Precio_Total = %d WHERE Id_Cita = %d", serviciosS, Fecha, PrecTotal, id_cita);
+        
+        SQL.Conexion.Queries.offer(Query);
+        JOptionPane.showMessageDialog(null, "Cita modificada con exito");
     }
 
-    @Override
     public void eliminar(String[] set) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

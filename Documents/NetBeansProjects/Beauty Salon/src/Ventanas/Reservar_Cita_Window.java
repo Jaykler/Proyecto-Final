@@ -845,10 +845,10 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
             if(day < 10){
                 fecha += "0" + day; 
             }else{
-                fecha += day + " ";
+                fecha += day;
             }
             
-            fecha += hora;
+            fecha += " " + hora;
             
             ArrayList<Intangible> set = new ArrayList<>();
             

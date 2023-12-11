@@ -7,11 +7,16 @@ import Clases.Utilidades;
 import java.awt.Color;
 import java.awt.JobAttributes;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.DefaultComboBoxModel;
@@ -40,6 +45,7 @@ public class Servicios_Window extends javax.swing.JFrame {
     String nombre;
     String telefono;
     String correo;
+    int id_cita;
     
     public Servicios_Window(String[] set) {
         initComponents();
@@ -57,6 +63,7 @@ public class Servicios_Window extends javax.swing.JFrame {
         this.nombre = set[1];
         this.telefono = set[2];
         this.correo = set[3];
+        this.id_cita = Integer.parseInt(set[4]);
         
         TFnom.setText(nombre);
         TFtel.setText(telefono);
@@ -76,6 +83,76 @@ public class Servicios_Window extends javax.swing.JFrame {
         CBhoras.setSelectedIndex(-1);
         Date hoy = new Date();
         DCfecha.setMinSelectableDate(hoy);
+        
+        Citas cita = new Citas();
+        for(int i = 0; i < Citas.citas.size(); i++){
+            if(Citas.citas.get(i).getId() == id_cita){
+                cita = Citas.citas.get(i);
+                break;
+            }
+        }
+        
+        String[][] modelo = new String[cita.getLista_servicios().size()][2];
+        for(int i = 0; i < cita.getLista_servicios().size(); i++){
+            modelo[i][0] = cita.getLista_servicios().get(i).getNombre();
+            modelo[i][1] = String.valueOf(cita.getLista_servicios().get(i).getPrecio());
+        }
+        
+        Tresumen.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+        
+        int total = 0;
+        
+        for(int i = 0; i < Tresumen.getRowCount() - 1; i++){
+            total += Integer.parseInt(Tresumen.getValueAt(i, 1).toString());
+        }
+            
+        TFtotal.setText(String.valueOf(total));
+        DateFormat df = new SimpleDateFormat("y,MMMM,d");
+        Date mod = new Date();
+        
+        String fecha = cita.getFecha().split(" ")[0];
+        String[] comps = fecha.split("-");
+        
+        String year = comps[0];
+        
+        int moth = Integer.parseInt(comps[1]);
+        
+        String month = "";
+        month = switch(moth){
+            case 1 -> "enero";
+            case 2 -> "febrero";
+            case 3 -> "marzo";
+            case 4 -> "abril";
+            case 5 -> "mayo";
+            case 6 -> "junio";
+            case 7 -> "julio";
+            case 8 -> "agosto";
+            case 9 -> "septiembre";
+            case 10 -> "octubre";
+            case 11 -> "noviembre";
+            case 12 -> "diciembre";
+            default -> "Xs";
+        };
+        
+        String day = comps[2];
+        
+        fecha = year + "," + month + "," + day;
+        
+        try {
+            mod = df.parse(fecha);
+        } catch (ParseException ex) {
+            Logger.getLogger(Servicios_Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        DCfecha.setDate(mod);
+        
+        String hora = cita.getFecha().split(" ")[1];
+        
+        hora = hora.substring(0, 5);
+        
+        CBhoras.setSelectedItem(hora);
+        
+        
+        
     }
 
     /**
@@ -678,6 +755,9 @@ public class Servicios_Window extends javax.swing.JFrame {
         btn_Modificar_Cita1.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Modificar_Cita1.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Modificar_Cita1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Modificar_Cita1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Modificar_Cita1MouseEntered(evt);
             }
@@ -817,6 +897,53 @@ public class Servicios_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Modificar_Cita1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png")));
     }//GEN-LAST:event_btn_Modificar_Cita1MouseExited
+
+    private void btn_Modificar_Cita1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_Cita1MouseClicked
+        int o = JOptionPane.showConfirmDialog(null, "Modificar cita?");
+        
+        if(o == JOptionPane.YES_OPTION){
+            int id = id_cita;
+            String fecha = "";
+            
+            LocalDate com = DCfecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+            int year = com.getYear();
+            int month = com.getMonthValue();
+            int day = com.getDayOfMonth();
+            
+            String hora = CBhoras.getSelectedItem().toString() + ":00";
+            
+            fecha += year +"-";
+            
+            if(month < 10){
+                fecha += "0" + month + "-";
+            }else{
+                fecha += month + "-";
+            }
+            
+            if(day < 10){
+                fecha += "0" + day; 
+            }else{
+                fecha += day;
+            }
+            
+            fecha += " " + hora;
+            
+            ArrayList<Intangible> set = new ArrayList<>();
+            
+            for(int i = 0; i < Tresumen.getRowCount(); i++){
+                for(int y = 0; y < Intangible.intangibles.size(); y++){
+                    if(Intangible.intangibles.get(y).getNombre().equals(Tresumen.getValueAt(i, 0).toString())){
+                        Intangible dan = Intangible.intangibles.get(y);
+                        set.add(new Intangible(dan.getId_producto(), dan.getNombre(), dan.getPrecio(), dan.getTipo_servicio()));
+                        break;
+                    }
+                }
+            }
+            
+            new Citas().modificar(new Object[] {id, fecha, TFtotal.getText()}, set);
+        }
+    }//GEN-LAST:event_btn_Modificar_Cita1MouseClicked
 
     /**
      * @param args the command line arguments

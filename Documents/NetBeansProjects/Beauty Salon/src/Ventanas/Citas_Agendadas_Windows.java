@@ -1,7 +1,14 @@
 package Ventanas;
 
 
+import Clases.Citas;
+import Clases.Utilidades;
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,14 +24,33 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public Citas_Agendadas_Windows() {
+    String[] columnas = {"Id", "Fecha", "Hora"};
+    String id_cliente;
+    String nombre;
+    String telefono;
+    String correo;
+    public Citas_Agendadas_Windows(String[] set) {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         panel_Transparent2.setBackground(new Color (255,255,255,200));
         panel_Transparent3.setBackground(new Color (255,255,255,200));
         
-        //Id_cita | Nombre_cliente | Numero_cliente | Fecha | Hora
+        //Id_cita | Fecha | Hora
+        this.id_cliente = set[0];
+        this.nombre = set[1];
+        this.telefono = set[2];
+        this.correo = set[3];
+        
+        TFnombre.setText(set[1]);
+        TFtel.setText(set[2]);
+        
+        String fecha = "";
+            
+        DCfecha.setMinSelectableDate(new Date());
+        
+        Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {"", id_cliente}, Citas.citas), columnas));
+        
     }
 
     /**
@@ -38,18 +64,18 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
 
         panel_transparent = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
+        TFnombre = new javax.swing.JTextField();
         label_No_contacto = new javax.swing.JLabel();
         panel_Transparent1 = new javax.swing.JPanel();
         label_titulo1 = new javax.swing.JLabel();
         HOME_ICON = new javax.swing.JLabel();
-        TextField_No_contacto = new javax.swing.JTextField();
+        TFtel = new javax.swing.JTextField();
         Label_Fecha = new javax.swing.JLabel();
         Panel_Tab = new javax.swing.JPanel();
         Label_Lista_clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tcitas = new javax.swing.JTable();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
+        DCfecha = new com.toedter.calendar.JDateChooser();
         btn_Buscar = new javax.swing.JLabel();
         label_Borered = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
@@ -85,13 +111,13 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
 
-        textField_Client_Name_input.setEditable(false);
-        textField_Client_Name_input.setBackground(new java.awt.Color(255, 255, 255));
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_transparent.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
+        TFnombre.setEditable(false);
+        TFnombre.setBackground(new java.awt.Color(255, 255, 255));
+        TFnombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFnombre.setText(" ");
+        TFnombre.setBorder(null);
+        TFnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_transparent.add(TFnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
 
         label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_No_contacto.setText("NO. CONTACTO:");
@@ -145,12 +171,12 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
 
         panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
 
-        TextField_No_contacto.addActionListener(new java.awt.event.ActionListener() {
+        TFtel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contactoActionPerformed(evt);
+                TFtelActionPerformed(evt);
             }
         });
-        panel_transparent.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 300, 40));
+        panel_transparent.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 300, 40));
 
         Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_Fecha.setText("FECHA:");
@@ -199,14 +225,16 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
 
         panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 920, -1));
 
-        jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser.setDateFormatString("YYYY-MM-dd");
-        jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
-        jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
-        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
+        DCfecha.setBackground(new java.awt.Color(255, 255, 255));
+        DCfecha.setMaxSelectableDate(new java.util.Date(1717218081000L));
+        DCfecha.setMinSelectableDate(new java.util.Date(1672549281000L));
+        panel_transparent.add(DCfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_BuscarMouseEntered(evt);
             }
@@ -328,9 +356,9 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         xy = evt.getY();  
     }//GEN-LAST:event_panel_transparentMousePressed
 
-    private void TextField_No_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contactoActionPerformed
+    private void TFtelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFtelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contactoActionPerformed
+    }//GEN-LAST:event_TFtelActionPerformed
 
     private void btn_Modificar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseEntered
         // TODO add your handling code here:
@@ -381,10 +409,46 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Eliminar_CitaMouseExited
 
     private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
-        // TODO add your handling code here:
-        new Servicios_Window(null).setVisible(true);
-        dispose();
+        if(Tcitas.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione una cita");
+        }else{
+            int sl = Tcitas.getSelectedRow();
+            String id = Tcitas.getValueAt(sl, 0).toString();
+            
+            new Servicios_Window(new String[] {id_cliente, nombre, telefono, correo, id}).setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
+
+    private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
+        String fecha = "";
+            
+        LocalDate com = DCfecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+        int year = com.getYear();
+        int month = com.getMonthValue();
+        int day = com.getDayOfMonth();
+            
+        String hora = "00:00";
+            
+        fecha += year +"-";
+            
+        if(month < 10){
+            fecha += "0" + month + "-";
+        }else{
+            fecha += month + "-";
+        }
+            
+        if(day < 10){
+            fecha += "0" + day; 
+        }else{
+            fecha += day;
+        }
+            
+        fecha += " " + hora;
+        
+        Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {fecha, id_cliente}, Citas.citas), columnas));
+    }//GEN-LAST:event_btn_BuscarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -543,23 +607,24 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Citas_Agendadas_Windows().setVisible(true);
+                new Citas_Agendadas_Windows(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DCfecha;
     private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Lista_clientes;
     private javax.swing.JPanel Panel_Tab;
+    private javax.swing.JTextField TFnombre;
+    private javax.swing.JTextField TFtel;
     private javax.swing.JTable Tcitas;
-    private javax.swing.JTextField TextField_No_contacto;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Eliminar_Cita;
     private javax.swing.JLabel btn_Modificar_Cita;
-    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Borered;
     private javax.swing.JLabel label_No_contacto;
@@ -570,7 +635,6 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent3;
     private javax.swing.JPanel panel_transparent;
-    private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }

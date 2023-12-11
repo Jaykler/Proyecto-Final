@@ -373,7 +373,7 @@ public class Registro_Windows extends javax.swing.JFrame {
             String telefono = Tclientes.getValueAt(sl, 2).toString();
             String correo = Tclientes.getValueAt(sl, 3).toString();
             
-            new Citas_Agendadas_Windows().setVisible(true);
+            new Citas_Agendadas_Windows(new String[] {id, nombre, telefono, correo}).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btn_Modificar_CitaMouseClicked

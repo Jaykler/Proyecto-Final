@@ -94,11 +94,11 @@ public class Clientes implements IgestionRUD{
     }
 
     @Override
-    public void modificar(String[] set) {
-        int id = Integer.parseInt(set[0]);
-        String nom = set[1];
-        String tel = set[2];
-        String correo = set[3];
+    public void modificar(Object[] set) {
+        int id = Integer.parseInt(set[0].toString());
+        String nom = set[1].toString();
+        String tel = set[2].toString();
+        String correo = set[3].toString();
         
         for(int i = 0; i < clientes.size(); i++){
             if(clientes.get(i).getId_cliente() == id){

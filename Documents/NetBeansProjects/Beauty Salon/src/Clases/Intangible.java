@@ -40,7 +40,7 @@ public class Intangible extends Productos implements IgestionRUD{
     }
 
     @Override
-    public void modificar(String[] set) {
+    public void modificar(Object[] set) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

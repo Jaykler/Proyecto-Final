@@ -4,12 +4,14 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vladi
  */
 public interface IgestionRUD {
     void cargar();
-    void modificar(String[] set);
+    void modificar(Object[] set);
     void eliminar(String[] set);
 }
