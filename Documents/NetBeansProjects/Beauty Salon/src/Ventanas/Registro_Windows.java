@@ -364,10 +364,18 @@ public class Registro_Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Agendar_CitaMouseClicked
 
     private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
-        // TODO add your handling code here:
-        Citas_Agendadas_Windows ca = new Citas_Agendadas_Windows();
-        ca.setVisible(true);
-        dispose();
+        if(Tclientes.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione un cliente");
+        }else{
+            int sl = Tclientes.getSelectedRow();
+            String id = Tclientes.getValueAt(sl, 0).toString();
+            String nombre = Tclientes.getValueAt(sl, 1).toString();
+            String telefono = Tclientes.getValueAt(sl, 2).toString();
+            String correo = Tclientes.getValueAt(sl, 3).toString();
+            
+            new Citas_Agendadas_Windows().setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
 
     private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked

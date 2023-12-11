@@ -362,8 +362,7 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
 
     private void btn_Modifica_ServiciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modifica_ServiciosMouseClicked
         // TODO add your handling code here:
-        Servicios_Windonw sw = new Servicios_Windonw();
-        sw.setVisible(true);
+        new Servicios_Window(null).setVisible(true);
         dispose();
         
     }//GEN-LAST:event_btn_Modifica_ServiciosMouseClicked

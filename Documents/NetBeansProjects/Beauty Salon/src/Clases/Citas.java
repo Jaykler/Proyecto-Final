@@ -17,6 +17,8 @@ public class Citas implements IgestionRUD{
     private int id;
     private int id_cliente;
     private String fecha;
+    
+    public static ArrayList<Citas> citas = new ArrayList<>();
 
     public Citas(ArrayList<Intangible> set, int id_cliente, String fecha){
         this.Lista_servicios =  new ArrayList<>(set);
@@ -24,6 +26,12 @@ public class Citas implements IgestionRUD{
         id_count++;
         this.fecha = fecha;
         this.id = id_count;
+        
+        this.precio_total = 0;
+        
+        for(int i = 0; i < set.size(); i++){
+            this.precio_total += set.get(i).getPrecio();
+        }
     }
     public Citas(ArrayList<Intangible> set, int id_cliente, int ID, String fecha){
         this.Lista_servicios = new ArrayList<>(set);
@@ -31,6 +39,16 @@ public class Citas implements IgestionRUD{
         id_count = ID;
         this.fecha = fecha;
         this.id = id_count;
+        
+        this.precio_total = 0;
+        
+        for(int i = 0; i < set.size(); i++){
+            this.precio_total += set.get(i).getPrecio();
+        }
+    }
+    
+    public Citas(){
+        
     }
 
     public ArrayList<Intangible> getLista_servicios() {
@@ -65,17 +83,54 @@ public class Citas implements IgestionRUD{
         this.id_cliente = id_cliente;
     }
     
-     void concretar(){
+    public void concretar(){
     
     }
     
-    void cancelar(){
+    public void cancelar(){
     
     }
-
+    
+    public void crear(ArrayList<Intangible> set, int id_cliente, String fecha, int PrecTotal){
+        citas.add(new Citas(set, id_cliente, fecha));
+        
+        String servicios = "";
+        
+        servicios += set.get(0).getNombre();
+        
+        for(int i = 1; i < set.size(); i++){
+            servicios += ","+set.get(i).getNombre();
+        }
+        
+        String Query = String.format("INSERT INTO Citas VALUES (%d, '%s', '%s', %d)", id_cliente, servicios, fecha, PrecTotal);
+        
+        SQL.Conexion.Queries.offer(Query);
+    }
+    
     @Override
     public void cargar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String[][] Cit = SQL.Getters.getCitas();
+        citas.clear();
+        for (String[] Cita : Cit) {
+            ArrayList<Intangible> set = new ArrayList<>();
+            
+            String servs = Cita[2];
+            
+            String[] servicios = servs.split(",");
+            
+            for(int i = 0; i < servicios.length; i++){
+                for(int y = 0; y < Intangible.intangibles.size(); y++){
+                    if(Intangible.intangibles.get(y).getNombre().equals(servicios[i])){
+                        Intangible con = Intangible.intangibles.get(y);
+                        set.add(new Intangible(con.getId_producto(), con.getNombre(), con.getPrecio(), con.getTipo_servicio()));
+                        break;
+                    }
+                }
+            }
+            
+            citas.add(new Citas(set, Integer.parseInt(Cita[1]), Integer.parseInt(Cita[0]), Cita[3]));
+            id_count = Integer.parseInt(Cita[0]);
+        }
     }
 
     @Override

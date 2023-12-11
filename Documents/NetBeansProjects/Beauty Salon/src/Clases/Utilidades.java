@@ -133,4 +133,92 @@ public class Utilidades {
             Total.setText(String.valueOf(total));
         }
     }
+    
+    public static void Eliminar_de_resumen(JTable set, JTextField Total){
+        int sl = set.getSelectedRow();
+        String mensaje = "Quiere Eliminar el servicio " + set.getValueAt(sl, 0) + " con precio " + set.getValueAt(sl, 1)+ "?";
+        int o = JOptionPane.showConfirmDialog(null, mensaje);
+        
+        if(o == JOptionPane.YES_OPTION){
+            
+            String[][] modelo = new String[set.getRowCount() - 1][2];
+            
+            int a = 0;
+            for(int i = 0; i < set.getRowCount(); i++){
+                if(i != sl){
+                    modelo[a][0] = set.getValueAt(i, 0).toString();
+                    modelo[a][1] = set.getValueAt(i, 1).toString();
+                    a++;
+                }
+            }
+                
+            set.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+        }
+            
+        int total = 0;
+            
+        for(int i = 0; i < set.getRowCount() - 1; i++){
+            total += Integer.parseInt(set.getValueAt(i, 1).toString());
+        }
+            
+        Total.setText(String.valueOf(total));
+    }
+    
+//    public static String[][] FiltrarCitas(int[] filtros, String[] values ,ArrayList<Citas> set){
+//        
+//        String[][] FR = null;
+//        ArrayList<Citas> rs = new ArrayList<>(set);
+//        
+//        
+//        if(filtros[0] == 1){
+//            var data = rs.stream()
+//                    .filter(p -> p.getId_cliente() == Integer.parseInt(values[0]))
+//                    .map(p -> new Object[] {p.getId(), p.getId_cliente(), p.getFecha()})
+//                    .collect(Collectors.toList());
+//            
+//            rs.clear();
+//            for(int i = 0; i < data.size(); i++){
+//                Object[] datap = data.get(i);
+//                //rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+//            }
+//        }
+//        
+//        if(filtros[1] == 1){
+//            var data = rs.stream()
+//                    .filter(p -> p.getTelefono().equals(values[1]))
+//                    .map(p -> new Object[] {p.getId_cliente(), p.getNombre(), p.getTelefono(), p.getCorreo()})
+//                    .collect(Collectors.toList());
+//            
+//            rs.clear();
+//            for(int i = 0; i < data.size(); i++){
+//                Object[] datap = data.get(i);
+//                rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+//            }
+//        }
+//        
+//        if(filtros[2] == 1){
+//            var data = rs.stream()
+//                    .filter(p -> p.getCorreo().equals(values[2]))
+//                    .map(p -> new Object[] {p.getId_cliente(), p.getNombre(), p.getTelefono(), p.getCorreo()})
+//                    .collect(Collectors.toList());
+//            
+//            rs.clear();
+//            for(int i = 0; i < data.size(); i++){
+//                Object[] datap = data.get(i);
+//                rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+//            }
+//        }
+//        
+//        FR = new String[rs.size()][4];
+//        
+//        for(int i = 0; i < rs.size(); i++){
+//            FR[i][0] = String.valueOf(rs.get(i).getId_cliente());
+//            FR[i][1] = rs.get(i).getNombre();
+//            FR[i][2] = rs.get(i).getTelefono();
+//            FR[i][3] = rs.get(i).getCorreo();
+//        }
+//        
+//        return FR;
+//    }
 }
+
