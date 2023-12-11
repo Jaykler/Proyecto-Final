@@ -269,7 +269,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
                 btn_EliminarMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 580, -1, 40));
+        panel_Main.add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 580, -1, 40));
 
         btn_Actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png"))); // NOI18N
         btn_Actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -280,7 +280,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
                 btn_ActualizarMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 580, -1, 40));
+        panel_Main.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 580, -1, 40));
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agregar_Usuario_White.png"))); // NOI18N
         btn_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -291,7 +291,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
                 btn_AgregarMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, -1, 40));
+        panel_Main.add(btn_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, -1, 40));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/Management_bg_MEDIUM.jpg"))); // NOI18N
