@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class Conexion {
     
     public static LinkedList<String> Queries = new LinkedList<>();
+    public static int acceso = 0;
     
     public static Connection getConexion(){
         String URL = "jdbc:sqlserver://localhost:1433;database=BeutyS;integratedSecurity=true;Encrypt=false";

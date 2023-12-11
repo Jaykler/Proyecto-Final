@@ -96,6 +96,7 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
         btn_Contabildad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Contabildad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Contabilidad_White.png"))); // NOI18N
         btn_Contabildad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Contabildad.setEnabled(false);
         btn_Contabildad.setFocusable(false);
         btn_Contabildad.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_Contabildad.setMaximumSize(new java.awt.Dimension(204, 36));
@@ -172,10 +173,8 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Manejo_UsuarioMouseExited
 
     private void btn_RecepcionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RecepcionMouseClicked
-        // TODO add your handling code here:
-        recepcionHomeCall();
-        
-        
+        new Home_Windows().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btn_RecepcionMouseClicked
 
     private void btn_RecepcionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RecepcionMouseEntered
