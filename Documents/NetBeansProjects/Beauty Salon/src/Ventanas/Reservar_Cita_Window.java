@@ -1,12 +1,15 @@
 package Ventanas;
 
 
+import Clases.Citas;
 import Clases.Intangible;
 import Clases.Utilidades;
 import java.awt.Color;
 import java.awt.JobAttributes;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.ButtonGroup;
@@ -582,6 +585,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tresumen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TresumenMouseClicked(evt);
+            }
+        });
         scrollpanel_Resumen.setViewportView(Tresumen);
         if (Tresumen.getColumnModel().getColumnCount() > 0) {
             Tresumen.getColumnModel().getColumn(1).setMinWidth(50);
@@ -708,9 +716,8 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_HOME_ICONMouseExited
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
-        // TODO add your handling code here:
-        
-        cw.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows().setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
@@ -819,12 +826,49 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
             int id = id_cliente;
             String fecha = "";
             
-            Date com = DCfecha.getDate();
-            System.out.println(com.toString());
+            LocalDate com = DCfecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             
+            int year = com.getYear();
+            int month = com.getMonthValue();
+            int day = com.getDayOfMonth();
             
+            String hora = CBhoras.getSelectedItem().toString() + ":00";
+            
+            fecha += year +"-";
+            
+            if(month < 10){
+                fecha += "0" + month + "-";
+            }else{
+                fecha += month + "-";
+            }
+            
+            if(day < 10){
+                fecha += "0" + day; 
+            }else{
+                fecha += day + " ";
+            }
+            
+            fecha += hora;
+            
+            ArrayList<Intangible> set = new ArrayList<>();
+            
+            for(int i = 0; i < Tresumen.getRowCount(); i++){
+                for(int y = 0; y < Intangible.intangibles.size(); y++){
+                    if(Intangible.intangibles.get(y).getNombre().equals(Tresumen.getValueAt(i, 0).toString())){
+                        Intangible dan = Intangible.intangibles.get(y);
+                        set.add(new Intangible(dan.getId_producto(), dan.getNombre(), dan.getPrecio(), dan.getTipo_servicio()));
+                        break;
+                    }
+                }
+            }
+            
+            new Citas().crear(set, id, fecha, Integer.parseInt(TFtotal.getText()));
         }
     }//GEN-LAST:event_btn_Agendar_CitaMouseClicked
+
+    private void TresumenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TresumenMouseClicked
+        Utilidades.Eliminar_de_resumen(Tresumen, TFtotal);
+    }//GEN-LAST:event_TresumenMouseClicked
 
     /**
      * @param args the command line arguments

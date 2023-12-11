@@ -133,4 +133,35 @@ public class Utilidades {
             Total.setText(String.valueOf(total));
         }
     }
+    
+    public static void Eliminar_de_resumen(JTable set, JTextField Total){
+        int sl = set.getSelectedRow();
+        String mensaje = "Quiere Eliminar el servicio " + set.getValueAt(sl, 0) + " con precio " + set.getValueAt(sl, 1)+ "?";
+        int o = JOptionPane.showConfirmDialog(null, mensaje);
+        
+        if(o == JOptionPane.YES_OPTION){
+            
+            String[][] modelo = new String[set.getRowCount() - 1][2];
+            
+            int a = 0;
+            for(int i = 0; i < set.getRowCount(); i++){
+                if(i != sl){
+                    modelo[a][0] = set.getValueAt(i, 0).toString();
+                    modelo[a][1] = set.getValueAt(i, 1).toString();
+                    a++;
+                }
+            }
+                
+            set.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+        }
+            
+        int total = 0;
+            
+        for(int i = 0; i < set.getRowCount() - 1; i++){
+            total += Integer.parseInt(set.getValueAt(i, 1).toString());
+        }
+            
+        Total.setText(String.valueOf(total));
+    }
 }
+
