@@ -93,7 +93,7 @@ public class Clientes implements IgestionRUD{
         }
         
         
-        if(gold[0] == false && gold[1] == false && gold[2] == false){
+        if(gold[0] == false || gold[1] == false || gold[2] == false){
             clientes.add(new Clientes(set[0], set[1], set[2]));
         
             SQL.Conexion.Queries.offer(String.format("INSERT INTO Cliente VALUES('%s', '%s', '%s')", set[0], set[1], set[2]));
@@ -146,7 +146,7 @@ public class Clientes implements IgestionRUD{
                 clientes.remove(i);
             }
         }
-        
+        SQL.Conexion.Queries.offer(Query);
         JOptionPane.showMessageDialog(null, "Cliente eliminado con exito");
     }
 }

@@ -7,6 +7,7 @@ package Ventanas;
 import Clases.Usuarios;
 import Clases.Utilidades;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -277,6 +278,9 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
 
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png"))); // NOI18N
         btn_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_EliminarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_EliminarMouseEntered(evt);
             }
@@ -299,6 +303,9 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agregar_Usuario_White.png"))); // NOI18N
         btn_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_AgregarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_AgregarMouseEntered(evt);
             }
@@ -342,15 +349,13 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
 
     private void label_Home_IconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_Home_IconMouseClicked
         // TODO add your handling code here:
-        Home_Windows_Administrador hwa = new Home_Windows_Administrador();
-        hwa.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_label_Home_IconMouseClicked
 
     private void label_Home_Icon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_Home_Icon1MouseClicked
         // TODO add your handling code here:
-        Home_Windows_Administrador hwa = new Home_Windows_Administrador();
-        hwa.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows_Administrador().setVisible(true);
         dispose();
     }//GEN-LAST:event_label_Home_Icon1MouseClicked
 
@@ -424,6 +429,36 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         
         Tusuarios.setModel(new DefaultTableModel(Clases.Utilidades.filtrarEmpleados(filtros,values, Usuarios.Lista_usuarios), Columna));
     }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void btn_AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AgregarMouseClicked
+        String nombre = TFnom2.getText();
+        String telefono = TFtel2.getText();
+        String correo = TFcorreo2.getText();
+        String Sueldo = TFsueldo.getText();
+        String rango = CBrol.getSelectedItem().toString();
+        String contraseña = JOptionPane.showInputDialog("Ingresa al contraseña del nuevo usuario");
+        String id_rol = String.valueOf(CBrol.getSelectedIndex() + 1);
+        
+        new Usuarios().agregar(new String[] {nombre, telefono, correo, Sueldo, rango, contraseña, id_rol});
+    }//GEN-LAST:event_btn_AgregarMouseClicked
+
+    private void btn_EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EliminarMouseClicked
+        if(Tusuarios.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione un usuario");
+        }else{
+            int o = JOptionPane.showConfirmDialog(null, "Esta seguro de que quiere eliminar este usuario?");
+            
+            if(o == JOptionPane.YES_OPTION){
+                new Usuarios().eliminar(new String[] {Tusuarios.getValueAt(Tusuarios.getSelectedRow(), 0).toString()});
+                Tusuarios.setModel(new DefaultTableModel(Utilidades.filtrarEmpleados(new int[] {0, 0, 0}, new String[] {"", "", ""}, Usuarios.Lista_usuarios), Columna));
+                TFnom2.setText("");
+                TFtel2.setText("");
+                TFcorreo2.setText("");
+                TFsueldo.setText("");
+                CBrol.setSelectedIndex(-1);
+            }
+        }
+    }//GEN-LAST:event_btn_EliminarMouseClicked
 
     /**
      * @param args the command line arguments

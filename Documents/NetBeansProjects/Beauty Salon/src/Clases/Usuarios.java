@@ -5,6 +5,7 @@
 package Clases;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,8 +46,32 @@ public class Usuarios implements IgestionRUD {
         
     }
     
-    public void agregar(){
-    
+    public void agregar(String[] set){
+        boolean[] gold = new boolean[3];
+        
+        for(int i = 0; i < Lista_usuarios.size(); i++){
+            gold[0] = false;
+            gold[1] = false;
+            gold[2] = false;
+            if(Lista_usuarios.get(i).getNombre().equals(set[0])) gold[0] = true;
+            
+            if(Lista_usuarios.get(i).getTelefono().equals(set[1])) gold[1] = true;
+            
+            if(Lista_usuarios.get(i).getCorreo().equals(set[2])) gold[2] = true;
+            
+            if(gold[0] == true && gold[1] == true && gold[2] == true) break;
+        }
+        
+        
+        if(gold[0] == false || gold[1] == false || gold[2] == false){
+            Lista_usuarios.add(new Usuarios(set[0], set[1], set[2], Integer.parseInt(set[3]), set[4]));
+        
+            SQL.Conexion.Queries.offer(String.format("INSERT INTO Empleados VALUES('%s', '%s', '%s', '%s', %d)", set[0], set[1], set[2], set[5], Integer.parseInt(set[6])));
+        
+            JOptionPane.showMessageDialog(null, String.format("Usuario %s, con numero de telefono %s y correo %s agregado con exito", set[0], set[1], set[2]));
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario ya existente");
+        }
     }
 
     @Override
@@ -61,12 +86,43 @@ public class Usuarios implements IgestionRUD {
 
     @Override
     public void modificar(Object[] set) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int id = Integer.parseInt(set[0].toString());
+        String nom = set[1].toString();
+        String tel = set[2].toString();
+        String correo = set[3].toString();
+        String rol = set[4].toString();
+        String sueldo = set[5].toString();
+        String id_rol = set[6].toString();
+        
+        for(int i = 0; i < Lista_usuarios.size(); i++){
+            if(Lista_usuarios.get(i).getId_usuario() == id){
+                Usuarios com = Lista_usuarios.get(i);
+                com.setNombre(nom);
+                com.setTelefono(tel);
+                com.setCorreo(correo);
+                com.setSueldo(Integer.parseInt(sueldo));
+                break;
+            }
+        }
+        
+        SQL.Conexion.Queries.offer(String.format("UPDATE cliente SET Nombre = '%s', telefono = '%s', Correo = '%s' WHERE Id_Cliente = %d", nom, tel, correo, id));
+        JOptionPane.showMessageDialog(null, "Usuario " + id + " Modificado");
     }
 
     @Override
     public void eliminar(String[] set) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int id = Integer.parseInt(set[0]);
+        
+        String Query = "DELETE FROM Empleados WHERE Id_Empleado = " + id;
+        
+        for(int i = 0; i < Lista_usuarios.size(); i++){
+            if(Lista_usuarios.get(i).getId_usuario() == id){
+                Lista_usuarios.remove(i);
+            }
+        }
+        
+        SQL.Conexion.Queries.offer(Query);
+        JOptionPane.showMessageDialog(null, "Usuario eliminado con exito");
     }
 
     public int getId_usuario() {
