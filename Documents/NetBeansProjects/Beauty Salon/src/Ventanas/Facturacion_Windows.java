@@ -56,7 +56,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         TextField_Monto_a_pagar = new javax.swing.JTextField();
         label_total = new javax.swing.JLabel();
         btn_Facturar = new javax.swing.JLabel();
-        btn_Modifica_Servicios = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,12 +122,10 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         panel_transparent.add(panel_Transparent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 60));
 
         Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Fecha.setForeground(new java.awt.Color(0, 0, 0));
         Label_Fecha.setText("FECHA:");
         panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 60, -1));
 
         jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser.setForeground(new java.awt.Color(0, 0, 0));
         jDateChooser.setDateFormatString("y,MMMM,d");
         jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
         jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
@@ -212,7 +209,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 470, 30));
 
         scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
-        scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
 
         tabla_Resumen_Servicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -254,7 +250,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         panel_ResumenServ.add(TextField_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 120, 30));
 
         label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_total.setForeground(new java.awt.Color(0, 0, 0));
         label_total.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_total.setText("TOTAL A PAGAR:");
         panel_ResumenServ.add(label_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 130, 20));
@@ -275,24 +270,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
             }
         });
         panel_transparent.add(btn_Facturar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 670, 200, -1));
-
-        btn_Modifica_Servicios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Modifica_Servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Servicios_White.png"))); // NOI18N
-        btn_Modifica_Servicios.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Modifica_Servicios.setMinimumSize(new java.awt.Dimension(200, 36));
-        btn_Modifica_Servicios.setPreferredSize(new java.awt.Dimension(204, 36));
-        btn_Modifica_Servicios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_Modifica_ServiciosMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_Modifica_ServiciosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_Modifica_ServiciosMouseExited(evt);
-            }
-        });
-        panel_transparent.add(btn_Modifica_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 230, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 720));
 
@@ -349,23 +326,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White_Facturacion.png"))); 
     }//GEN-LAST:event_btn_FacturarMouseExited
-
-    private void btn_Modifica_ServiciosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modifica_ServiciosMouseEntered
-        // TODO add your handling code here:
-        btn_Modifica_Servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Servicios_Brown.png")));
-    }//GEN-LAST:event_btn_Modifica_ServiciosMouseEntered
-
-    private void btn_Modifica_ServiciosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modifica_ServiciosMouseExited
-        // TODO add your handling code here:
-        btn_Modifica_Servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Servicios_White.png")));
-    }//GEN-LAST:event_btn_Modifica_ServiciosMouseExited
-
-    private void btn_Modifica_ServiciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modifica_ServiciosMouseClicked
-        // TODO add your handling code here:
-        new Servicios_Window(null).setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_btn_Modifica_ServiciosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -668,7 +628,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Facturar;
-    private javax.swing.JLabel btn_Modifica_Servicios;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

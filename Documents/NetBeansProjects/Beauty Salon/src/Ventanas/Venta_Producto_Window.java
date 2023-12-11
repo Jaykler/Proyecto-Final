@@ -438,7 +438,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_TproductosMouseClicked
 
     private void TresumenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TresumenMouseClicked
-        Utilidades.Eliminar_de_resumen(Tresumen, TFtotal);
+        Utilidades.Eliminar_de_resumen2(Tresumen, TFtotal);
     }//GEN-LAST:event_TresumenMouseClicked
 
     private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked

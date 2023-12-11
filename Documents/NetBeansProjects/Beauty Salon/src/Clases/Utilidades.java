@@ -256,6 +256,37 @@ public class Utilidades {
         }
     }
     
+    public static void Eliminar_de_resumen2(JTable set, JTextField Total){
+        int sl = set.getSelectedRow();
+        String mensaje = "Quiere eliminar el servicio o producto " + set.getValueAt(sl, 0) + " con precio " + set.getValueAt(sl, 1)+ "?";
+        int o = JOptionPane.showConfirmDialog(null, mensaje);
+        
+        if(o == JOptionPane.YES_OPTION){
+            
+            String[][] modelo = new String[set.getRowCount() - 1][3];
+            
+            int a = 0;
+            for(int i = 0; i < set.getRowCount(); i++){
+                if(i != sl){
+                    modelo[a][0] = set.getValueAt(i, 0).toString();
+                    modelo[a][1] = set.getValueAt(i, 1).toString();
+                    modelo[a][2] = set.getValueAt(i, 2).toString();
+                    a++;
+                }
+            }
+                
+            set.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio", "Producto"}));
+            
+            int total = 0;
+            
+            for(int i = 0; i < set.getRowCount(); i++){
+                total += Integer.parseInt(set.getValueAt(i, 1).toString()) * Integer.parseInt(set.getValueAt(i, 2).toString());
+            }
+            
+            Total.setText(String.valueOf(total));
+        }
+    }
+    
     public static String[][] FiltrarCitas(String values[] ,ArrayList<Citas> set){
         
         
