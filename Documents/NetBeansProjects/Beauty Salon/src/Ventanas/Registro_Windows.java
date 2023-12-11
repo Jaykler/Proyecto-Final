@@ -2,6 +2,7 @@ package Ventanas;
 
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -348,10 +349,18 @@ public class Registro_Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_HOME_ICONMouseExited
 
     private void btn_Agendar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseClicked
-        // TODO add your handling code here:
-        Reservar_Cita_Window ac = new Reservar_Cita_Window();
-        ac.setVisible(true);
-        dispose();
+        if(Tclientes.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione un cliente");
+        }else{
+            int sl = Tclientes.getSelectedRow();
+            String id = Tclientes.getValueAt(sl, 0).toString();
+            String nombre = Tclientes.getValueAt(sl, 1).toString();
+            String telefono = Tclientes.getValueAt(sl, 2).toString();
+            String correo = Tclientes.getValueAt(sl, 3).toString();
+            
+            new Reservar_Cita_Window(new String[] {id, nombre, telefono, correo}).setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btn_Agendar_CitaMouseClicked
 
     private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked

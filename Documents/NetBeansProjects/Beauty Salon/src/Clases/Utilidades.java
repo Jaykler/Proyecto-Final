@@ -6,6 +6,10 @@ package Clases;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -70,8 +74,8 @@ public class Utilidades {
         return FR;
     }
     
-    public static Object[][] Filtrarservicios(int sl, ArrayList<Intangible> set){
-        Object[][] FR = null;
+    public static String[][] Filtrarservicios(int sl, ArrayList<Intangible> set){
+        String[][] FR = null;
         ArrayList<Intangible> rs = new ArrayList<>(set);
         
         var data = rs.stream()
@@ -86,15 +90,47 @@ public class Utilidades {
             rs.add(new Intangible(Integer.parseInt(datap[0].toString()), datap[1].toString(), Integer.parseInt(datap[2].toString()), sl));
         }
         
-        FR = new String[rs.size()][5];
+        FR = new String[rs.size()][3];
         
         for(int i = 0; i < rs.size(); i++){
-            FR[i][0] = rs.get(i).getId_producto();
+            FR[i][0] = String.valueOf(rs.get(i).getId_producto());
             FR[i][1] = rs.get(i).getNombre();
-            FR[i][2] = rs.get(i).getPrecio();
-            FR[i][3] = false;
+            FR[i][2] = String.valueOf(rs.get(i).getPrecio());
         }
         
         return FR;
+    }
+    
+    public static void Agregar_a_resumen(JTable set, JTable objetivo, JTextField Total){
+        int sl = set.getSelectedRow();
+        String mensaje = "Quiere agregar el servicio " + set.getValueAt(sl, 1) + " con precio " + set.getValueAt(sl, 2)+ "?";
+        int o = JOptionPane.showConfirmDialog(null, mensaje);
+        
+        if(o == JOptionPane.YES_OPTION){
+            if(objetivo.getRowCount() == 0){
+                String[][] modelo = {{set.getValueAt(sl, 1).toString(), set.getValueAt(sl, 2).toString()}};
+                objetivo.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+            }else{
+                String[][] modelo = new String[objetivo.getRowCount() + 1][2];
+                
+                for(int i = 0; i < objetivo.getRowCount(); i++){
+                    modelo[i][0] = objetivo.getValueAt(i, 0).toString();
+                    modelo[i][1] = objetivo.getValueAt(i, 1).toString();
+                }
+                
+                modelo[objetivo.getRowCount()][0] = set.getValueAt(sl, 1).toString();
+                modelo[objetivo.getRowCount()][1] = set.getValueAt(sl, 2).toString();
+                
+                objetivo.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+            }
+            
+            int total = 0;
+            
+            for(int i = 0; i < objetivo.getRowCount(); i++){
+                total += Integer.parseInt(objetivo.getValueAt(i, 1).toString());
+            }
+            
+            Total.setText(String.valueOf(total));
+        }
     }
 }
