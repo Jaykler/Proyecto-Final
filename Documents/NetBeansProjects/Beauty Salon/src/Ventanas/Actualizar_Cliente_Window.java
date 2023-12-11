@@ -61,6 +61,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         label_Email2 = new javax.swing.JLabel();
         TFcorreo2 = new javax.swing.JTextField();
         btn_Actualizar = new javax.swing.JLabel();
+        btn_Eliminar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -261,7 +262,18 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
                 btn_ActualizarMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 590, -1, -1));
+        panel_transparent.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 600, -1, -1));
+
+        btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png"))); // NOI18N
+        btn_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_EliminarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_EliminarMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, -1, -1));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
@@ -359,6 +371,16 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(new int[] {0, 0, 0},new String[] {"", "", ""}, Clases.Clientes.clientes), columna));
     }//GEN-LAST:event_btn_ActualizarMouseClicked
 
+    private void btn_EliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EliminarMouseEntered
+        // TODO add your handling code here:
+        btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_Brown.png")));
+    }//GEN-LAST:event_btn_EliminarMouseEntered
+
+    private void btn_EliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EliminarMouseExited
+        // TODO add your handling code here:
+        btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png")));
+    }//GEN-LAST:event_btn_EliminarMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -424,6 +446,7 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Actualizar;
     private javax.swing.JLabel btn_Buscar;
+    private javax.swing.JLabel btn_Eliminar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Borered;
     private javax.swing.JLabel label_Email;
