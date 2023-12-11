@@ -85,6 +85,8 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         label_Nombre.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         panel_transparent.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
 
+        textField_Client_Name_input.setEditable(false);
+        textField_Client_Name_input.setBackground(new java.awt.Color(255, 255, 255));
         textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         textField_Client_Name_input.setText(" ");
         textField_Client_Name_input.setBorder(null);

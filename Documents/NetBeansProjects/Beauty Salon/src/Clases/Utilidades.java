@@ -164,25 +164,25 @@ public class Utilidades {
         Total.setText(String.valueOf(total));
     }
     
-    public static String[][] FiltrarCitas(int[] filtros, String[] values ,ArrayList<Citas> set){
-        
-        String[][] FR = null;
-        ArrayList<Citas> rs = new ArrayList<>(set);
-        
-        
-        if(filtros[0] == 1){
-            var data = rs.stream()
-                    .filter(p -> p.getId_cliente() == Integer.parseInt(values[0]))
-                    .map(p -> new Object[] {p.getId(), p.getId_cliente(), p.getFecha()})
-                    .collect(Collectors.toList());
-            
-            rs.clear();
-            for(int i = 0; i < data.size(); i++){
-                Object[] datap = data.get(i);
-                //rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
-            }
-        }
-        
+//    public static String[][] FiltrarCitas(int[] filtros, String[] values ,ArrayList<Citas> set){
+//        
+//        String[][] FR = null;
+//        ArrayList<Citas> rs = new ArrayList<>(set);
+//        
+//        
+//        if(filtros[0] == 1){
+//            var data = rs.stream()
+//                    .filter(p -> p.getId_cliente() == Integer.parseInt(values[0]))
+//                    .map(p -> new Object[] {p.getId(), p.getId_cliente(), p.getFecha()})
+//                    .collect(Collectors.toList());
+//            
+//            rs.clear();
+//            for(int i = 0; i < data.size(); i++){
+//                Object[] datap = data.get(i);
+//                //rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+//            }
+//        }
+//        
 //        if(filtros[1] == 1){
 //            var data = rs.stream()
 //                    .filter(p -> p.getTelefono().equals(values[1]))
@@ -218,7 +218,7 @@ public class Utilidades {
 //            FR[i][3] = rs.get(i).getCorreo();
 //        }
 //        
-        return FR;
-    }
+//        return FR;
+//    }
 }
 
