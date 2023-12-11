@@ -34,7 +34,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Transparent2.setBackground(new Color (255,255,255,200));
         panel_Transparent3.setBackground(new Color (255,255,255,200));
         //Tgeneral.setModel(new DefaultTableModel(Clases.Utilidades.Filtrarservicios(1, Clases.Intangible.intangibles)), columnas);
-        Tgeneral.set
+        //Tgeneral.set
         
     }
 

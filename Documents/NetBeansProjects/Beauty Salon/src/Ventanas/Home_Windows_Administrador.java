@@ -155,10 +155,10 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
 
     private void btn_Manejo_UsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Manejo_UsuarioMouseClicked
         // TODO add your handling code here:
-//        Registro_Windows ResgitrosW = new Registro_Windows();
-//        ResgitrosW.setVisible(true);
+        Manejo_Usuarios_Window muw = new Manejo_Usuarios_Window();
+        muw.setVisible(true);
         dispose();
-        //btn_Cliente_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_Registrar.png")));
+        
     }//GEN-LAST:event_btn_Manejo_UsuarioMouseClicked
 
     private void btn_Manejo_UsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Manejo_UsuarioMouseEntered
