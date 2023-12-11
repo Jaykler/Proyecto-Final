@@ -289,7 +289,6 @@ public class Utilidades {
     
     public static String[][] FiltrarCitas(String values[] ,ArrayList<Citas> set){
         
-        
         String[][] FR = null;
         if(values[0].equals("")){
             var data = set.stream()

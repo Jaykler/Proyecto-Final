@@ -45,7 +45,6 @@ public class Home_Windows extends javax.swing.JFrame {
         btn_Editar_Client = new javax.swing.JLabel();
         btn_Cliente_Registrado = new javax.swing.JLabel();
         btn_Productos = new javax.swing.JLabel();
-        btn_Facturar = new javax.swing.JLabel();
         panel_Transparent3 = new javax.swing.JPanel();
         bgImage = new javax.swing.JLabel();
 
@@ -109,7 +108,7 @@ public class Home_Windows extends javax.swing.JFrame {
                 btn_Cliente_NuevoMouseExited(evt);
             }
         });
-        panel_Transparent1.add(btn_Cliente_Nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 280, 200));
+        panel_Transparent1.add(btn_Cliente_Nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 280, 200));
 
         btn_Editar_Client.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Editar_Client.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Editar_Cliente_White.png"))); // NOI18N
@@ -130,7 +129,7 @@ public class Home_Windows extends javax.swing.JFrame {
                 btn_Editar_ClientMouseExited(evt);
             }
         });
-        panel_Transparent1.add(btn_Editar_Client, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 280, 200));
+        panel_Transparent1.add(btn_Editar_Client, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 280, 200));
 
         btn_Cliente_Registrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Cliente_Registrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/Btn_Cliente_Registrado.png"))); // NOI18N
@@ -151,7 +150,7 @@ public class Home_Windows extends javax.swing.JFrame {
                 btn_Cliente_RegistradoMouseExited(evt);
             }
         });
-        panel_Transparent1.add(btn_Cliente_Registrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 280, 200));
+        panel_Transparent1.add(btn_Cliente_Registrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 280, 200));
 
         btn_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Productos_White.png"))); // NOI18N
@@ -172,28 +171,7 @@ public class Home_Windows extends javax.swing.JFrame {
                 btn_ProductosMouseExited(evt);
             }
         });
-        panel_Transparent1.add(btn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 280, 200));
-
-        btn_Facturar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White.png"))); // NOI18N
-        btn_Facturar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_Facturar.setFocusable(false);
-        btn_Facturar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_Facturar.setMaximumSize(new java.awt.Dimension(204, 36));
-        btn_Facturar.setMinimumSize(new java.awt.Dimension(204, 36));
-        btn_Facturar.setPreferredSize(new java.awt.Dimension(200, 36));
-        btn_Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_FacturarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_FacturarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_FacturarMouseExited(evt);
-            }
-        });
-        panel_Transparent1.add(btn_Facturar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 280, 200));
+        panel_Transparent1.add(btn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 280, 200));
 
         panel_Transparent3.setBackground(new java.awt.Color(255, 255, 255));
         panel_Transparent3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
@@ -281,23 +259,6 @@ public class Home_Windows extends javax.swing.JFrame {
         btn_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Productos_White.png")));
     }//GEN-LAST:event_btn_ProductosMouseExited
 
-    private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked
-        // TODO add your handling code here:
-        Facturacion_Windows fw = new Facturacion_Windows();
-        fw.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btn_FacturarMouseClicked
-
-    private void btn_FacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseEntered
-        // TODO add your handling code here:
-        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_Brown.png"))); 
-    }//GEN-LAST:event_btn_FacturarMouseEntered
-
-    private void btn_FacturarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseExited
-        // TODO add your handling code here:
-        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White.png"))); 
-    }//GEN-LAST:event_btn_FacturarMouseExited
-
     private void label_HomeM_IconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_HomeM_IconMouseClicked
         // TODO add your handling code here:
         Home_Windows_Administrador hwa = new Home_Windows_Administrador();
@@ -376,7 +337,6 @@ public class Home_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel btn_Cliente_Nuevo;
     private javax.swing.JLabel btn_Cliente_Registrado;
     private javax.swing.JLabel btn_Editar_Client;
-    private javax.swing.JLabel btn_Facturar;
     private javax.swing.JLabel btn_Productos;
     public javax.swing.JLabel label_HomeM_Icon;
     private javax.swing.JLabel label_Home_Icon;

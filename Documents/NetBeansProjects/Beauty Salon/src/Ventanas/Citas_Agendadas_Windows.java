@@ -317,6 +317,9 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         btn_Eliminar_Cita.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Eliminar_Cita.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Eliminar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Eliminar_CitaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_Eliminar_CitaMouseEntered(evt);
             }
@@ -392,9 +395,8 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_HOME_ICONMouseExited
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
-        // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
-        cw.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows().setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
@@ -449,6 +451,19 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         
         Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {fecha, id_cliente}, Citas.citas), columnas));
     }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void btn_Eliminar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Eliminar_CitaMouseClicked
+        if(Tcitas.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione una cita");
+        }else{
+            int o = JOptionPane.showConfirmDialog(null, "Esta seguro de que quiere eliminar esta cita?");
+            
+            if(o == JOptionPane.YES_OPTION){
+                new Citas().eliminar(new String[] {Tcitas.getValueAt(Tcitas.getSelectedRow(), 0).toString()});
+                Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {"", id_cliente}, Citas.citas), columnas));
+            }
+        }
+    }//GEN-LAST:event_btn_Eliminar_CitaMouseClicked
 
     /**
      * @param args the command line arguments

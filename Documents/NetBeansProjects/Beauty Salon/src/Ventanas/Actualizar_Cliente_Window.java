@@ -4,6 +4,7 @@ package Ventanas;
 import Clases.Clientes;
 import Clases.Utilidades;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -266,6 +267,9 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
 
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png"))); // NOI18N
         btn_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_EliminarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_EliminarMouseEntered(evt);
             }
@@ -380,6 +384,22 @@ public class Actualizar_Cliente_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png")));
     }//GEN-LAST:event_btn_EliminarMouseExited
+
+    private void btn_EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EliminarMouseClicked
+        if(Tclientes.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione una cita");
+        }else{
+            int o = JOptionPane.showConfirmDialog(null, "Esta seguro de que quiere eliminar esta cita?");
+            
+            if(o == JOptionPane.YES_OPTION){
+                new Clientes().eliminar(new String[] {Tclientes.getValueAt(Tclientes.getSelectedRow(), 0).toString()});
+                Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(new int[] {0, 0, 0},new String[] {"", "", ""}, Clases.Clientes.clientes), columna));
+                TFnom.setText("");
+                TFtel.setText("");
+                TFcorreo.setText("");
+            }
+        }
+    }//GEN-LAST:event_btn_EliminarMouseClicked
 
     /**
      * @param args the command line arguments

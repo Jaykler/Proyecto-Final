@@ -55,6 +55,7 @@ public class Registro_Windows extends javax.swing.JFrame {
         btn_Agendar_Cita = new javax.swing.JLabel();
         btn_Modificar_Cita = new javax.swing.JLabel();
         panel_Transparent2 = new javax.swing.JPanel();
+        btn_Facturar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -235,7 +236,7 @@ public class Registro_Windows extends javax.swing.JFrame {
                 btn_Agendar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, -1, -1));
+        panel_transparent.add(btn_Agendar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
 
         btn_Modificar_Cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Modificar_Cita_White.png"))); // NOI18N
         btn_Modificar_Cita.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -249,7 +250,7 @@ public class Registro_Windows extends javax.swing.JFrame {
                 btn_Modificar_CitaMouseExited(evt);
             }
         });
-        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, -1));
+        panel_transparent.add(btn_Modificar_Cita, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, -1, -1));
 
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -265,6 +266,27 @@ public class Registro_Windows extends javax.swing.JFrame {
         );
 
         panel_transparent.add(panel_Transparent2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 669, 1120, 50));
+
+        btn_Facturar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White.png"))); // NOI18N
+        btn_Facturar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Facturar.setFocusable(false);
+        btn_Facturar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Facturar.setMaximumSize(new java.awt.Dimension(204, 36));
+        btn_Facturar.setMinimumSize(new java.awt.Dimension(204, 36));
+        btn_Facturar.setPreferredSize(new java.awt.Dimension(200, 36));
+        btn_Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_FacturarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_FacturarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_FacturarMouseExited(evt);
+            }
+        });
+        panel_transparent.add(btn_Facturar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 260, 140));
 
         getContentPane().add(panel_transparent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 720));
 
@@ -390,6 +412,31 @@ public class Registro_Windows extends javax.swing.JFrame {
         Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(filtros,values, Clases.Clientes.clientes), columna));
     }//GEN-LAST:event_btn_BuscarMouseClicked
 
+    private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked
+        if(Tclientes.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione un cliente");
+        }else{
+            int sl = Tclientes.getSelectedRow();
+            String id = Tclientes.getValueAt(sl, 0).toString();
+            String nombre = Tclientes.getValueAt(sl, 1).toString();
+            String telefono = Tclientes.getValueAt(sl, 2).toString();
+            String correo = Tclientes.getValueAt(sl, 3).toString();
+            
+            new Facturacion_Windows(new String[] {id, nombre, telefono, correo}).setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btn_FacturarMouseClicked
+
+    private void btn_FacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseEntered
+        // TODO add your handling code here:
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_Brown.png")));
+    }//GEN-LAST:event_btn_FacturarMouseEntered
+
+    private void btn_FacturarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseExited
+        // TODO add your handling code here:
+        btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White.png")));
+    }//GEN-LAST:event_btn_FacturarMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -444,6 +491,7 @@ public class Registro_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Agendar_Cita;
     private javax.swing.JLabel btn_Buscar;
+    private javax.swing.JLabel btn_Facturar;
     private javax.swing.JLabel btn_Modificar_Cita;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_Borered;

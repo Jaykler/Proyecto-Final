@@ -1,7 +1,14 @@
 package Ventanas;
 
 
+import Clases.Citas;
+import Clases.Utilidades;
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,12 +24,30 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public Facturacion_Windows() {
+    String[] columnas = {"Id", "Fecha", "Hora"};
+    String id_cliente;
+    String nombre;
+    String telefono;
+    String correo;
+    public Facturacion_Windows(String[] set) {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         //panel_Transparent2.setBackground(new Color (255,255,255,200));
         //panel_Transparent3.setBackground(new Color (255,255,255,200));
+        this.id_cliente = set[0];
+        this.nombre = set[1];
+        this.telefono = set[2];
+        this.correo = set[3];
+        
+        TFnom.setText(set[1]);
+        TFtel.setText(set[2]);
+        
+        String fecha = "";
+            
+        DCfecha.setMinSelectableDate(new Date());
+        
+        Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {"", id_cliente}, Citas.citas), columnas));
     }
 
     /**
@@ -40,20 +65,20 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         HOME_ICON = new javax.swing.JLabel();
         label_titulo_Facturacion1 = new javax.swing.JLabel();
         Label_Fecha = new javax.swing.JLabel();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
-        TextField_Nombre = new javax.swing.JTextField();
+        DCfecha = new com.toedter.calendar.JDateChooser();
+        TFnom = new javax.swing.JTextField();
         Label_No_Contacto = new javax.swing.JLabel();
         Panel_Tab = new javax.swing.JPanel();
         Label_Lista_clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tcitas = new javax.swing.JTable();
         btn_Buscar = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TFtel = new javax.swing.JTextField();
         panel_ResumenServ = new javax.swing.JPanel();
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
-        tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_Monto_a_pagar = new javax.swing.JTextField();
+        Tresumen = new javax.swing.JTable();
+        TFtotal = new javax.swing.JTextField();
         label_total = new javax.swing.JLabel();
         btn_Facturar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
@@ -125,12 +150,14 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         Label_Fecha.setText("FECHA:");
         panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 60, -1));
 
-        jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser.setDateFormatString("y,MMMM,d");
-        jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
-        jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
-        panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 170, 40));
-        panel_transparent.add(TextField_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 630, 40));
+        DCfecha.setBackground(new java.awt.Color(255, 255, 255));
+        DCfecha.setDateFormatString("y,MMMM,d");
+        DCfecha.setMaxSelectableDate(new java.util.Date(1717218081000L));
+        DCfecha.setMinSelectableDate(new java.util.Date(1672549281000L));
+        panel_transparent.add(DCfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 170, 40));
+
+        TFnom.setEditable(false);
+        panel_transparent.add(TFnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 630, 40));
 
         Label_No_Contacto.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         Label_No_Contacto.setText("NO. CONTACTO:");
@@ -143,7 +170,7 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         Label_Lista_clientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Lista_clientes.setText("Lista de Citas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tcitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -155,7 +182,12 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
                 "ID", "Cliente_Nombre", "Numero_Tel", "Servicios", "Compras de productos", "Total", "Fecha"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        Tcitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TcitasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Tcitas);
 
         javax.swing.GroupLayout Panel_TabLayout = new javax.swing.GroupLayout(Panel_Tab);
         Panel_Tab.setLayout(Panel_TabLayout);
@@ -181,6 +213,9 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_BuscarMouseEntered(evt);
             }
@@ -190,12 +225,13 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         });
         panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 120, 220, 40));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TFtel.setEditable(false);
+        TFtel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TFtelActionPerformed(evt);
             }
         });
-        panel_transparent.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 340, 40));
+        panel_transparent.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 340, 40));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
         panel_ResumenServ.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
@@ -210,13 +246,9 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
 
         scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
 
-        tabla_Resumen_Servicios.setModel(new javax.swing.table.DefaultTableModel(
+        Tresumen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Producto", "Precio"
@@ -237,17 +269,17 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
-        if (tabla_Resumen_Servicios.getColumnModel().getColumnCount() > 0) {
-            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMinWidth(60);
-            tabla_Resumen_Servicios.getColumnModel().getColumn(1).setMaxWidth(80);
+        scrollpanel_Resumen.setViewportView(Tresumen);
+        if (Tresumen.getColumnModel().getColumnCount() > 0) {
+            Tresumen.getColumnModel().getColumn(1).setMinWidth(60);
+            Tresumen.getColumnModel().getColumn(1).setMaxWidth(80);
         }
 
         panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 870, 160));
 
-        TextField_Monto_a_pagar.setEditable(false);
-        TextField_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
-        panel_ResumenServ.add(TextField_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 120, 30));
+        TFtotal.setEditable(false);
+        TFtotal.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.add(TFtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 120, 30));
 
         label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         label_total.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -262,6 +294,9 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         btn_Facturar.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Facturar.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_FacturarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_FacturarMouseEntered(evt);
             }
@@ -307,15 +342,14 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
     }//GEN-LAST:event_HOME_ICONMouseExited
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
-        // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
-        cw.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows().setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TFtelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFtelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TFtelActionPerformed
 
     private void btn_FacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseEntered
         // TODO add your handling code here:
@@ -326,6 +360,78 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White_Facturacion.png"))); 
     }//GEN-LAST:event_btn_FacturarMouseExited
+
+    private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
+        String fecha = "";
+            
+        LocalDate com = DCfecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+        int year = com.getYear();
+        int month = com.getMonthValue();
+        int day = com.getDayOfMonth();
+            
+        String hora = "00:00";
+            
+        fecha += year +"-";
+            
+        if(month < 10){
+            fecha += "0" + month + "-";
+        }else{
+            fecha += month + "-";
+        }
+            
+        if(day < 10){
+            fecha += "0" + day; 
+        }else{
+            fecha += day;
+        }
+            
+        fecha += " " + hora;
+        
+        Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {fecha, id_cliente}, Citas.citas), columnas));
+    }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void TcitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TcitasMouseClicked
+        int sl = Tcitas.getSelectedRow();
+        
+        Citas cita = new Citas();
+        for(int i = 0; i < Citas.citas.size(); i++){
+            if(Citas.citas.get(i).getId() == Integer.parseInt(Tcitas.getValueAt(sl, 0).toString())){
+                cita = Citas.citas.get(i);
+                break;
+            }
+        }
+        
+        String[][] modelo = new String[cita.getLista_servicios().size()][2];
+        for(int i = 0; i < cita.getLista_servicios().size(); i++){
+            modelo[i][0] = cita.getLista_servicios().get(i).getNombre();
+            modelo[i][1] = String.valueOf(cita.getLista_servicios().get(i).getPrecio());
+        }
+        
+        Tresumen.setModel(new DefaultTableModel(modelo, new String[] {"Servicio", "Precio"}));
+        
+        int total = 0;
+        
+        for(int i = 0; i < Tresumen.getRowCount(); i++){
+            total += Integer.parseInt(Tresumen.getValueAt(i, 1).toString());
+        }
+            
+        TFtotal.setText(String.valueOf(total));
+        
+    }//GEN-LAST:event_TcitasMouseClicked
+
+    private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked
+        if(Tcitas.getSelectedRow() == - 1){
+            JOptionPane.showMessageDialog(null, "Seleccione una cita");
+        }else{
+            for(int i = 0; i < Citas.citas.size(); i++){
+                if(Citas.citas.get(i).getId() == Integer.parseInt(Tcitas.getValueAt(Tcitas.getSelectedRow(), 0).toString())){
+                    Citas.citas.get(i).concretar(Integer.parseInt(TFtotal.getText()));
+                }
+            }
+            Tcitas.setModel(new DefaultTableModel(Utilidades.FiltrarCitas(new String[] {"", id_cliente}, Citas.citas), columnas));
+        }
+    }//GEN-LAST:event_btn_FacturarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -612,26 +718,27 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Facturacion_Windows().setVisible(true);
+                new Facturacion_Windows(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DCfecha;
     private javax.swing.JLabel HOME_ICON;
     private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Lista_clientes;
     private javax.swing.JLabel Label_No_Contacto;
     private javax.swing.JPanel Panel_Tab;
-    private javax.swing.JTextField TextField_Monto_a_pagar;
-    private javax.swing.JTextField TextField_Nombre;
+    private javax.swing.JTextField TFnom;
+    private javax.swing.JTextField TFtel;
+    private javax.swing.JTextField TFtotal;
+    private javax.swing.JTable Tcitas;
+    private javax.swing.JTable Tresumen;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Facturar;
-    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo_Facturacion1;
@@ -640,7 +747,6 @@ public class Facturacion_Windows  extends javax.swing.JFrame {
     private javax.swing.JPanel panel_Transparent1;
     private javax.swing.JPanel panel_transparent;
     private javax.swing.JScrollPane scrollpanel_Resumen;
-    private javax.swing.JTable tabla_Resumen_Servicios;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }

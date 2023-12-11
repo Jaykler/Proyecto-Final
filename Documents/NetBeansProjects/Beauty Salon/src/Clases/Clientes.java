@@ -116,6 +116,16 @@ public class Clientes implements IgestionRUD{
 
     @Override
     public void eliminar(String[] set) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int id = Integer.parseInt(set[0]);
+        
+        String Query = "DELETE FROM Cliente WHERE Id_Cliente = " + id;
+        
+        for(int i = 0; i < clientes.size(); i++){
+            if(clientes.get(i).getId_cliente() == id){
+                clientes.remove(i);
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "Cliente eliminado con exito");
     }
 }

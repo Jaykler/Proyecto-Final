@@ -84,13 +84,22 @@ public class Citas {
         this.id_cliente = id_cliente;
     }
     
-    public void concretar(){
-    
+    public void concretar(int Ganancias){
+        Finanzas.ganancias += Ganancias;
+        
+        String Query = "DELETE FROM Citas WHERE Id_Cita = " + id;
+        
+        SQL.Conexion.Queries.offer(Query);
+        
+        for(int i = 0; i < citas.size(); i++){
+            if(citas.get(i).getId() == id){
+                citas.remove(i);
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "Cita concretada con exito");
     }
     
-    public void cancelar(){
-    
-    }
     
     public void crear(ArrayList<Intangible> set, int id_cliente, String fecha, int PrecTotal){
         citas.add(new Citas(set, id_cliente, fecha));
@@ -170,7 +179,19 @@ public class Citas {
     }
 
     public void eliminar(String[] set) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int id = Integer.parseInt(set[0]);
+        
+        String Query = "DELETE FROM Citas WHERE Id_Cita = " + id;
+        
+        SQL.Conexion.Queries.offer(Query);
+        
+        for(int i = 0; i < citas.size(); i++){
+            if(citas.get(i).getId() == id){
+                citas.remove(i);
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "Cita cancelada con exito");
     }
 
     public String getFecha() {

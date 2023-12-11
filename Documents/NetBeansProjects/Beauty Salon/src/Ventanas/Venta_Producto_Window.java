@@ -1,6 +1,7 @@
 package Ventanas;
 
 
+import Clases.Finanzas;
 import Clases.Intangible;
 import Clases.Tangible;
 import Clases.Utilidades;
@@ -457,7 +458,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
                         }
                     }
                 }
-            
+                Finanzas.ganancias += Integer.parseInt(TFtotal.getText());
                 JOptionPane.showMessageDialog(null, "Compra realizada");
                 Tproductos.setModel(new DefaultTableModel(Utilidades.FiltrarProductos(Tangible.tangibles), columna1));
             }
