@@ -4,7 +4,10 @@
  */
 package Ventanas;
 
+import Clases.Usuarios;
+import Clases.Utilidades;
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,11 +18,16 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
     /**
      * Creates new form Manejo_Usuarios_Window
      */
+    String[] Columna = {"Id", "Nombre", "Telefono", "Correo", "Rol", "Sueldo"};
     public Manejo_Usuarios_Window() {
         initComponents();
         panel_Main.setBackground(new Color (145,153,149,200));
         panel_Transparent2.setBackground(new Color (255,255,255,100));
         panel_Transparent3.setBackground(new Color (255,255,255,100));
+        
+        Tusuarios.setModel(new DefaultTableModel(Utilidades.filtrarEmpleados(new int[] {0, 0, 0}, new String[] {"", "", ""}, Usuarios.Lista_usuarios), Columna));
+        
+        
     }
 
     /**
@@ -48,17 +56,17 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         Panel_Tabla = new javax.swing.JPanel();
         Label_Lista_Clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tclientes = new javax.swing.JTable();
+        Tusuarios = new javax.swing.JTable();
         label_Nombre2 = new javax.swing.JLabel();
         label_No_Contacto = new javax.swing.JLabel();
         label_Email2 = new javax.swing.JLabel();
         label_Sueldo1 = new javax.swing.JLabel();
         label_Sueldo = new javax.swing.JLabel();
-        textField_Client_Name_input2 = new javax.swing.JTextField();
-        textField_No_contacto_input = new javax.swing.JTextField();
-        textField_Email_input2 = new javax.swing.JTextField();
-        textField_Direccion_Input = new javax.swing.JTextField();
-        CBB_Rol_Empleado = new javax.swing.JComboBox<>();
+        TFnom2 = new javax.swing.JTextField();
+        TFtel2 = new javax.swing.JTextField();
+        TFcorreo2 = new javax.swing.JTextField();
+        TFsueldo = new javax.swing.JTextField();
+        CBrol = new javax.swing.JComboBox<>();
         btn_Eliminar = new javax.swing.JLabel();
         btn_Actualizar = new javax.swing.JLabel();
         btn_Agregar = new javax.swing.JLabel();
@@ -111,7 +119,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         panel_Transparent3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         panel_Main.add(panel_Transparent3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1160, 50));
 
-        panel_Busqueda.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empleados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        panel_Busqueda.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empleados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
         panel_Busqueda.setForeground(new java.awt.Color(255, 255, 255));
         panel_Busqueda.setEnabled(false);
         panel_Busqueda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,6 +128,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         label_Nombre.setText("NOMBRE:");
         panel_Busqueda.add(label_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
+        TFnom.setBackground(new java.awt.Color(204, 204, 204));
         TFnom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TFnom.setBorder(null);
         TFnom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -133,18 +142,24 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         label_No_contacto.setText("NO. CONTACTO:");
         panel_Busqueda.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
 
+        TFtel.setBackground(new java.awt.Color(204, 204, 204));
         TFtel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TFtel.setBorder(null);
         TFtel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_Busqueda.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 229, 39));
 
+        TFcorreo.setBackground(new java.awt.Color(204, 204, 204));
         TFcorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TFcorreo.setBorder(null);
         TFcorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel_Busqueda.add(TFcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 420, 40));
 
+        btn_Buscar.setBackground(new java.awt.Color(153, 153, 153));
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_BuscarMouseEntered(evt);
             }
@@ -163,7 +178,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
 
-        Tclientes.setModel(new javax.swing.table.DefaultTableModel(
+        Tusuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null}
             },
@@ -186,7 +201,12 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(Tclientes);
+        Tusuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TusuariosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Tusuarios);
 
         javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
         Panel_Tabla.setLayout(Panel_TablaLayout);
@@ -232,28 +252,28 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         label_Sueldo.setText("SUELDO:");
         panel_Main.add(label_Sueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, 60, 40));
 
-        textField_Client_Name_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input2.setBorder(null);
-        textField_Client_Name_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_Main.add(textField_Client_Name_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 740, 40));
+        TFnom2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFnom2.setBorder(null);
+        TFnom2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_Main.add(TFnom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 740, 40));
 
-        textField_No_contacto_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_No_contacto_input.setBorder(null);
-        textField_No_contacto_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_Main.add(textField_No_contacto_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, 260, 40));
+        TFtel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFtel2.setBorder(null);
+        TFtel2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_Main.add(TFtel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, 260, 40));
 
-        textField_Email_input2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Email_input2.setBorder(null);
-        textField_Email_input2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_Main.add(textField_Email_input2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 330, 40));
+        TFcorreo2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFcorreo2.setBorder(null);
+        TFcorreo2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_Main.add(TFcorreo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 330, 40));
 
-        textField_Direccion_Input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Direccion_Input.setBorder(null);
-        textField_Direccion_Input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panel_Main.add(textField_Direccion_Input, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 270, 40));
+        TFsueldo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFsueldo.setBorder(null);
+        TFsueldo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        panel_Main.add(TFsueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 330, 40));
 
-        CBB_Rol_Empleado.setBackground(new java.awt.Color(255, 255, 255));
-        panel_Main.add(CBB_Rol_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 500, 260, 40));
+        CBrol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "recepcionista", "Gerente" }));
+        panel_Main.add(CBrol, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 500, 260, 40));
 
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png"))); // NOI18N
         btn_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -375,6 +395,36 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agregar_Usuario_White.png")));
     }//GEN-LAST:event_btn_AgregarMouseExited
 
+    private void TusuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TusuariosMouseClicked
+        int sl = Tusuarios.getSelectedRow();
+        switch(sl){
+            case -1 -> {
+                TFnom2.setText("");
+                TFtel2.setText("");
+                TFcorreo2.setText("s");
+            }
+            default -> {
+                TFnom2.setText(Tusuarios.getValueAt(sl, 1).toString());
+                TFtel2.setText(Tusuarios.getValueAt(sl, 2).toString());
+                TFcorreo2.setText(Tusuarios.getValueAt(sl, 3).toString());
+                TFsueldo.setText(Tusuarios.getValueAt(sl, 5).toString());
+                CBrol.setSelectedItem(Tusuarios.getValueAt(sl, 4));
+            }
+        }
+    }//GEN-LAST:event_TusuariosMouseClicked
+
+    private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
+        int f1 = TFnom.getText().equals("")? 0: 1;
+        int f2 = TFtel.getText().equals("")? 0: 1;
+        int f3 = TFcorreo.getText().equals("")? 0: 1;
+        
+        int[] filtros = {f1, f2, f3};
+        
+        String[] values = {TFnom.getText(), TFtel.getText(), TFcorreo.getText()};
+        
+        Tusuarios.setModel(new DefaultTableModel(Clases.Utilidades.filtrarEmpleados(filtros,values, Usuarios.Lista_usuarios), Columna));
+    }//GEN-LAST:event_btn_BuscarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -411,13 +461,17 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CBB_Rol_Empleado;
+    private javax.swing.JComboBox<String> CBrol;
     private javax.swing.JLabel Label_Lista_Clientes;
     private javax.swing.JPanel Panel_Tabla;
     private javax.swing.JTextField TFcorreo;
+    private javax.swing.JTextField TFcorreo2;
     private javax.swing.JTextField TFnom;
+    private javax.swing.JTextField TFnom2;
+    private javax.swing.JTextField TFsueldo;
     private javax.swing.JTextField TFtel;
-    private javax.swing.JTable Tclientes;
+    private javax.swing.JTextField TFtel2;
+    private javax.swing.JTable Tusuarios;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Actualizar;
     private javax.swing.JLabel btn_Agregar;
@@ -439,9 +493,5 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
     private javax.swing.JPanel panel_Main;
     private javax.swing.JPanel panel_Transparent2;
     private javax.swing.JPanel panel_Transparent3;
-    private javax.swing.JTextField textField_Client_Name_input2;
-    private javax.swing.JTextField textField_Direccion_Input;
-    private javax.swing.JTextField textField_Email_input2;
-    private javax.swing.JTextField textField_No_contacto_input;
     // End of variables declaration//GEN-END:variables
 }

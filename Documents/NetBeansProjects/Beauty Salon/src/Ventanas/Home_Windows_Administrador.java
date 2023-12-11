@@ -189,7 +189,7 @@ public class Home_Windows_Administrador extends javax.swing.JFrame {
 
     private void btn_ContabildadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ContabildadMouseClicked
         // TODO add your handling code here:
-        contabilidadHomeCall();
+        //contabilidadHomeCall();
     }//GEN-LAST:event_btn_ContabildadMouseClicked
 
     private void btn_ContabildadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ContabildadMouseEntered

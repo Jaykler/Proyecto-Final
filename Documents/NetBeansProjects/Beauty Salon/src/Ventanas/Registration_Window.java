@@ -256,7 +256,6 @@ public class Registration_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_RegistraMouseExited
 
     private void btn_RegistraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegistraMouseClicked
-        // TODO add your handling code here:
        new Clases.Clientes().agregar(new String[] {TFnombre.getText(), TFtel.getText(), TFmail.getText()});
        clearRegistration_Window();
     }//GEN-LAST:event_btn_RegistraMouseClicked
@@ -282,8 +281,8 @@ public class Registration_Window extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentHidden
     private void clearRegistration_Window(){
         TFnombre.setText("");
-         TFtel.setText("");
-         TFmail.setText("");
+        TFtel.setText("");
+        TFmail.setText("");
     }
     /**
      * @param args the command line arguments

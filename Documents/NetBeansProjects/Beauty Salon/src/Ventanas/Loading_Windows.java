@@ -157,6 +157,7 @@ public class Loading_Windows extends javax.swing.JFrame {
                 }
             }
             new Clases.Clientes().cargar();
+            new Clases.Usuarios().cargar();
             new Clases.Intangible().cargar();
             new Clases.Tangible().cargar();
             new Clases.Citas().cargar();

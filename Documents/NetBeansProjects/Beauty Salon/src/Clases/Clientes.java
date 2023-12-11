@@ -76,11 +76,32 @@ public class Clientes implements IgestionRUD{
     }
     
     public void agregar(String[] set){
-        clientes.add(new Clientes(set[0], set[1], set[2]));
         
-        SQL.Conexion.Queries.offer(String.format("INSERT INTO Cliente VALUES('%s', '%s', '%s')", set[0], set[1], set[2]));
+        boolean[] gold = new boolean[3];
         
-        JOptionPane.showMessageDialog(null, String.format("Cliente %s, con numero de telefono %s y correo %s agregado con exito", set[0], set[1], set[2]));
+        for(int i = 0; i < clientes.size(); i++){
+            gold[0] = false;
+            gold[1] = false;
+            gold[2] = false;
+            if(clientes.get(i).getNombre().equals(set[0])) gold[0] = true;
+            
+            if(clientes.get(i).getTelefono().equals(set[1])) gold[1] = true;
+            
+            if(clientes.get(i).getCorreo().equals(set[2])) gold[2] = true;
+            
+            if(gold[0] == true && gold[1] == true && gold[2] == true) break;
+        }
+        
+        
+        if(gold[0] == false && gold[1] == false && gold[2] == false){
+            clientes.add(new Clientes(set[0], set[1], set[2]));
+        
+            SQL.Conexion.Queries.offer(String.format("INSERT INTO Cliente VALUES('%s', '%s', '%s')", set[0], set[1], set[2]));
+        
+            JOptionPane.showMessageDialog(null, String.format("Cliente %s, con numero de telefono %s y correo %s agregado con exito", set[0], set[1], set[2]));
+        }else{
+            JOptionPane.showMessageDialog(null, "Cliente ya existente");
+        }
     }
     
     @Override

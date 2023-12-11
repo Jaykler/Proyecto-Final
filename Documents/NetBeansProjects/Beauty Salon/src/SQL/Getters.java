@@ -142,4 +142,31 @@ public class Getters extends Conexion {
         }
         return productos;
     }
+    
+    public static String[][] getUsuarios(){
+        String[][] users = new String[1][1];
+        ArrayList<String[]> usersAp = new ArrayList<>();
+        
+        try{
+            Statement consultar = getConexion().createStatement();
+            
+            String Query = "SELECT * FROM Empleados inner join Cargos on Empleados.Id_Cargo = Cargos.Id_Cargo";
+            
+            ResultSet consulta = consultar.executeQuery(Query);
+            
+            while(consulta.next()){
+                usersAp.add(new String[] {consulta.getString("Id_Empleado"), consulta.getString("Nombre"), consulta.getString("Telefono"), consulta.getString("Correo"), consulta.getString("Nombre_cargos"), consulta.getString("Sueldo")});
+            }
+            
+            users = new String[usersAp.size()][6];
+            
+            for(int i = 0; i < users.length; i++){
+                users[i] = usersAp.get(i);
+            }
+            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+        return users;
+    }
 }
