@@ -1,7 +1,13 @@
 package Ventanas;
 
 
+import Clases.Intangible;
+import Clases.Tangible;
+import Clases.Utilidades;
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,12 +23,16 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    String[] columna = {"Id Cliente", "Nombre", "Telefono", "Correo"};
+    String[] columna1 = {"Id Producto", "Nombre", "Precio", "Cantidad"};
     public Venta_Producto_Window() {
         initComponents();
         panel_transparent.setBackground(new Color (212,176,155,200));
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         //panel_Transparent2.setBackground(new Color (255,255,255,200));
         Panel_Busqueda_Cliente.setBackground(new Color (212,176,155,200));
+        Tclientes.setModel(new DefaultTableModel(Utilidades.FiltrarClientes(new int[] {0, 0, 0},new String[] {"", "", ""}, Clases.Clientes.clientes), columna));
+        Tproductos.setModel(new DefaultTableModel(Utilidades.FiltrarProductos(Tangible.tangibles), columna1));
     }
 
     /**
@@ -41,26 +51,24 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         Panel_Busqueda_Cliente = new javax.swing.JPanel();
         label_Nombre = new javax.swing.JLabel();
         label_No_contacto = new javax.swing.JLabel();
-        jLabel_Direccion = new javax.swing.JLabel();
-        textField_Client_Name_input = new javax.swing.JTextField();
-        TextField_No_contacto = new javax.swing.JTextField();
-        jTextField_Direccion = new javax.swing.JTextField();
+        TFnom = new javax.swing.JTextField();
+        TFtel = new javax.swing.JTextField();
         Label_Email = new javax.swing.JLabel();
-        jTextField_Email = new javax.swing.JTextField();
+        TFcorreo = new javax.swing.JTextField();
         btn_Buscar = new javax.swing.JLabel();
         Panel_Tabla = new javax.swing.JPanel();
         Label_Lista_Clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tab_R_Client = new javax.swing.JTable();
+        Tclientes = new javax.swing.JTable();
         panel_Productos = new javax.swing.JPanel();
         label_Productos = new javax.swing.JLabel();
         scrollpanel_6 = new javax.swing.JScrollPane();
-        tabla_Productos = new javax.swing.JTable();
+        Tproductos = new javax.swing.JTable();
         panel_ResumenServ = new javax.swing.JPanel();
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
-        tabla_Resumen_Servicios = new javax.swing.JTable();
-        TextField_Monto_a_pagar = new javax.swing.JTextField();
+        Tresumen = new javax.swing.JTable();
+        TFtotal = new javax.swing.JTextField();
         label_total = new javax.swing.JLabel();
         btn_Facturar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
@@ -129,44 +137,34 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         label_No_contacto.setText("NO. CONTACTO:");
         Panel_Busqueda_Cliente.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 130, 40));
 
-        jLabel_Direccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel_Direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Direccion.setText("DIRECCIÓN:");
-        Panel_Busqueda_Cliente.add(jLabel_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 130, 40));
+        TFnom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TFnom.setBorder(null);
+        TFnom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Panel_Busqueda_Cliente.add(TFnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 750, 40));
 
-        textField_Client_Name_input.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        textField_Client_Name_input.setText(" ");
-        textField_Client_Name_input.setBorder(null);
-        textField_Client_Name_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        Panel_Busqueda_Cliente.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 750, 40));
-
-        TextField_No_contacto.addActionListener(new java.awt.event.ActionListener() {
+        TFtel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_No_contactoActionPerformed(evt);
+                TFtelActionPerformed(evt);
             }
         });
-        Panel_Busqueda_Cliente.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 300, 40));
-
-        jTextField_Direccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_DireccionActionPerformed(evt);
-            }
-        });
-        Panel_Busqueda_Cliente.add(jTextField_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 500, 40));
+        Panel_Busqueda_Cliente.add(TFtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 300, 40));
 
         Label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         Label_Email.setText("CORREO ELECTRONICO:");
         Panel_Busqueda_Cliente.add(Label_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, 40));
 
-        jTextField_Email.addActionListener(new java.awt.event.ActionListener() {
+        TFcorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_EmailActionPerformed(evt);
+                TFcorreoActionPerformed(evt);
             }
         });
-        Panel_Busqueda_Cliente.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, 240, 40));
+        Panel_Busqueda_Cliente.add(TFcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, 240, 40));
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Buscar_White.png"))); // NOI18N
         btn_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BuscarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_BuscarMouseEntered(evt);
             }
@@ -185,7 +183,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
 
-        Tab_R_Client.setModel(new javax.swing.table.DefaultTableModel(
+        Tclientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -201,7 +199,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(Tab_R_Client);
+        jScrollPane1.setViewportView(Tclientes);
 
         javax.swing.GroupLayout Panel_TablaLayout = new javax.swing.GroupLayout(Panel_Tabla);
         Panel_Tabla.setLayout(Panel_TablaLayout);
@@ -237,9 +235,7 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         label_Productos.setText("Productos");
         panel_Productos.add(label_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
 
-        scrollpanel_6.setForeground(new java.awt.Color(0, 0, 0));
-
-        tabla_Productos.setModel(new javax.swing.table.DefaultTableModel(
+        Tproductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -266,7 +262,12 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollpanel_6.setViewportView(tabla_Productos);
+        Tproductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TproductosMouseClicked(evt);
+            }
+        });
+        scrollpanel_6.setViewportView(Tproductos);
 
         panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
 
@@ -284,25 +285,20 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         panel_ResumenServ.add(label_Titlulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 30));
 
         scrollpanel_Resumen.setBackground(new java.awt.Color(128, 76, 46));
-        scrollpanel_Resumen.setForeground(new java.awt.Color(0, 0, 0));
 
-        tabla_Resumen_Servicios.setModel(new javax.swing.table.DefaultTableModel(
+        Tresumen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Producto", "Precio"
+                "Producto", "Precio", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -313,16 +309,20 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollpanel_Resumen.setViewportView(tabla_Resumen_Servicios);
+        Tresumen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TresumenMouseClicked(evt);
+            }
+        });
+        scrollpanel_Resumen.setViewportView(Tresumen);
 
         panel_ResumenServ.add(scrollpanel_Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 160));
 
-        TextField_Monto_a_pagar.setEditable(false);
-        TextField_Monto_a_pagar.setBackground(new java.awt.Color(255, 255, 255));
-        panel_ResumenServ.add(TextField_Monto_a_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 110, 30));
+        TFtotal.setEditable(false);
+        TFtotal.setBackground(new java.awt.Color(255, 255, 255));
+        panel_ResumenServ.add(TFtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 110, 30));
 
         label_total.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_total.setForeground(new java.awt.Color(0, 0, 0));
         label_total.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_total.setText("TOTAL A PAGAR:");
         panel_ResumenServ.add(label_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 130, 20));
@@ -335,6 +335,9 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         btn_Facturar.setMinimumSize(new java.awt.Dimension(200, 36));
         btn_Facturar.setPreferredSize(new java.awt.Dimension(204, 36));
         btn_Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_FacturarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_FacturarMouseEntered(evt);
             }
@@ -373,17 +376,13 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         Venta_Producto_Window.this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_panel_transparentMouseDragged
 
-    private void jTextField_DireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DireccionActionPerformed
+    private void TFcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFcorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_DireccionActionPerformed
+    }//GEN-LAST:event_TFcorreoActionPerformed
 
-    private void jTextField_EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EmailActionPerformed
+    private void TFtelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFtelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_EmailActionPerformed
-
-    private void TextField_No_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_No_contactoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_No_contactoActionPerformed
+    }//GEN-LAST:event_TFtelActionPerformed
 
     private void HOME_ICONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseExited
         // TODO add your handling code here:
@@ -397,8 +396,8 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
 
     private void HOME_ICONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_ICONMouseClicked
         // TODO add your handling code here:
-        Home_Windows cw = new Home_Windows();
-        cw.setVisible(true);
+        SQL.Guardar.guardar();
+        new Home_Windows().setVisible(true);
         dispose();
     }//GEN-LAST:event_HOME_ICONMouseClicked
 
@@ -421,6 +420,52 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         btn_Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Facturar_White_Facturacion.png")));
     }//GEN-LAST:event_btn_FacturarMouseExited
+
+    private void btn_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BuscarMouseClicked
+        int f1 = TFnom.getText().equals("")? 0: 1;
+        int f2 = TFtel.getText().equals("")? 0: 1;
+        int f3 = TFcorreo.getText().equals("")? 0: 1;
+        
+        int[] filtros = {f1, f2, f3};
+        
+        String[] values = {TFnom.getText(), TFtel.getText(), TFcorreo.getText()};
+        
+        Tclientes.setModel(new DefaultTableModel(Clases.Utilidades.FiltrarClientes(filtros,values, Clases.Clientes.clientes), columna));
+    }//GEN-LAST:event_btn_BuscarMouseClicked
+
+    private void TproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TproductosMouseClicked
+        Utilidades.Agregar_a_resumen2(Tproductos, Tresumen, TFtotal);
+    }//GEN-LAST:event_TproductosMouseClicked
+
+    private void TresumenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TresumenMouseClicked
+        Utilidades.Eliminar_de_resumen(Tresumen, TFtotal);
+    }//GEN-LAST:event_TresumenMouseClicked
+
+    private void btn_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FacturarMouseClicked
+        
+        if(Tclientes.getSelectedRow() != -1){
+            int o = JOptionPane.showConfirmDialog(null, "Realizar compra?");
+        
+            if(o == JOptionPane.YES_OPTION){
+            
+                for(int i = 0; i < Tresumen.getRowCount(); i++){
+                    for(int y = 0; y < Tangible.tangibles.size(); y++){
+                        if(Tangible.tangibles.get(y).getNombre().equals(Tresumen.getValueAt(i, 0).toString())){
+                            Tangible dan = Tangible.tangibles.get(y);
+                            dan.modificar(new Object[] {dan.getId_producto(), Tresumen.getValueAt(i, 2)});
+                            break;
+                        }
+                    }
+                }
+            
+                JOptionPane.showMessageDialog(null, "Compra realizada");
+                Tproductos.setModel(new DefaultTableModel(Utilidades.FiltrarProductos(Tangible.tangibles), columna1));
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Elija el cliente que realiza la compra");
+        }
+        
+    }//GEN-LAST:event_btn_FacturarMouseClicked
     
    
     /**
@@ -591,16 +636,17 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Lista_Clientes;
     private javax.swing.JPanel Panel_Busqueda_Cliente;
     private javax.swing.JPanel Panel_Tabla;
-    private javax.swing.JTable Tab_R_Client;
-    private javax.swing.JTextField TextField_Monto_a_pagar;
-    private javax.swing.JTextField TextField_No_contacto;
+    private javax.swing.JTextField TFcorreo;
+    private javax.swing.JTextField TFnom;
+    private javax.swing.JTextField TFtel;
+    private javax.swing.JTextField TFtotal;
+    private javax.swing.JTable Tclientes;
+    private javax.swing.JTable Tproductos;
+    private javax.swing.JTable Tresumen;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Facturar;
-    private javax.swing.JLabel jLabel_Direccion;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField_Direccion;
-    private javax.swing.JTextField jTextField_Email;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
     private javax.swing.JLabel label_Productos;
@@ -613,9 +659,6 @@ public class Venta_Producto_Window extends javax.swing.JFrame {
     private javax.swing.JPanel panel_transparent;
     private javax.swing.JScrollPane scrollpanel_6;
     private javax.swing.JScrollPane scrollpanel_Resumen;
-    private javax.swing.JTable tabla_Productos;
-    private javax.swing.JTable tabla_Resumen_Servicios;
-    private javax.swing.JTextField textField_Client_Name_input;
     // End of variables declaration//GEN-END:variables
     private int xx, xy;
 }

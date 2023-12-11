@@ -11,15 +11,5 @@ import java.util.ArrayList;
  * @author vladi
  */
 public class Finanzas {
-    static int ganancias = 0;
-    static int perdidas = 0;
-    static ArrayList<Productos> pagos = new ArrayList<>();
-    
-    static void calcular_ganancias(){
-    
-    }
-    
-    static void calcular_perdidas(){
-    
-    }
+    public static int ganancias = 0;
 } 

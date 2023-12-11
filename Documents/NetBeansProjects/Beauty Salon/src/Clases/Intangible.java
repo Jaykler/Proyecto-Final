@@ -26,7 +26,7 @@ public class Intangible extends Productos implements IgestionRUD{
     }
     
     public Intangible(){
-        super(1, "", 1);
+        super("", 1);
     }
 
     @Override

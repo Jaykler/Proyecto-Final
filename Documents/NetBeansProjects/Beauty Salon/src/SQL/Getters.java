@@ -115,4 +115,31 @@ public class Getters extends Conexion {
         }
         return Citas;
     }
+    
+    public static String[][] getProductos(){
+        String[][] productos = new String[1][1];
+        ArrayList<String[]> productosAp = new ArrayList<>();
+        
+        try{
+            Statement consultar = getConexion().createStatement();
+            
+            String Query = "SELECT * FROM Productos";
+            
+            ResultSet consulta = consultar.executeQuery(Query);
+            
+            while(consulta.next()){
+                productosAp.add(new String[] {consulta.getString("Id_producto"), consulta.getString("Nombre"), consulta.getString("Precio"), consulta.getString("Cantidad")});
+            }
+            
+            productos = new String[productosAp.size()][4];
+            
+            for(int i = 0; i < productos.length; i++){
+                productos[i] = productosAp.get(i);
+            }
+            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+        return productos;
+    }
 }

@@ -62,7 +62,6 @@ public class Log_in_window extends javax.swing.JFrame {
         label_Usuario.setText("Usuario");
 
         TFuser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TFuser.setText(" ");
         TFuser.setBorder(null);
         TFuser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
