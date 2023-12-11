@@ -23,6 +23,8 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_Transparent1.setBackground(new Color (255,255,255,200));
         panel_Transparent2.setBackground(new Color (255,255,255,200));
         panel_Transparent3.setBackground(new Color (255,255,255,200));
+        
+        //Id_cita | Nombre_cliente | Numero_cliente | Fecha | Hora
     }
 
     /**
@@ -46,7 +48,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         Panel_Tab = new javax.swing.JPanel();
         Label_Lista_clientes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tcitas = new javax.swing.JTable();
         jDateChooser = new com.toedter.calendar.JDateChooser();
         btn_Buscar = new javax.swing.JLabel();
         label_Borered = new javax.swing.JLabel();
@@ -77,7 +79,6 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_transparent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Nombre.setForeground(new java.awt.Color(0, 0, 0));
         label_Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_Nombre.setText("NOMBRE:");
         label_Nombre.setFocusable(false);
@@ -91,7 +92,6 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_transparent.add(textField_Client_Name_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 760, 40));
 
         label_No_contacto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_No_contacto.setForeground(new java.awt.Color(0, 0, 0));
         label_No_contacto.setText("NO. CONTACTO:");
         panel_transparent.add(label_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 120, -1));
 
@@ -151,7 +151,6 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_transparent.add(TextField_No_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 300, 40));
 
         Label_Fecha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        Label_Fecha.setForeground(new java.awt.Color(0, 0, 0));
         Label_Fecha.setText("FECHA:");
         panel_transparent.add(Label_Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 60, -1));
 
@@ -162,9 +161,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         Label_Lista_clientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Lista_clientes.setText("Lista de Citas agendadas");
 
-        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tcitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -176,8 +173,8 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
                 "ID", "Cliente_nombre", "No_telefono", "Correo_electeronico", "Fecha", "Hora"
             }
         ));
-        jTable1.setToolTipText("");
-        jScrollPane1.setViewportView(jTable1);
+        Tcitas.setToolTipText("");
+        jScrollPane1.setViewportView(Tcitas);
 
         javax.swing.GroupLayout Panel_TabLayout = new javax.swing.GroupLayout(Panel_Tab);
         Panel_Tab.setLayout(Panel_TabLayout);
@@ -201,8 +198,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_transparent.add(Panel_Tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 920, -1));
 
         jDateChooser.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser.setForeground(new java.awt.Color(0, 0, 0));
-        jDateChooser.setDateFormatString("y,MMMM,d");
+        jDateChooser.setDateFormatString("YYYY-MM-dd");
         jDateChooser.setMaxSelectableDate(new java.util.Date(1717218081000L));
         jDateChooser.setMinSelectableDate(new java.util.Date(1672549281000L));
         panel_transparent.add(jDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 170, 40));
@@ -219,8 +215,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
         panel_transparent.add(btn_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, -1, 40));
 
         label_Borered.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        label_Borered.setForeground(new java.awt.Color(0, 0, 0));
-        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar cita", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        label_Borered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Buscar cita", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
         panel_transparent.add(label_Borered, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 940, 380));
 
         panel_Transparent2.setBackground(new java.awt.Color(255, 255, 255));
@@ -385,8 +380,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
 
     private void btn_Modificar_CitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Modificar_CitaMouseClicked
         // TODO add your handling code here:
-        Servicios_Windonw sw = new Servicios_Windonw();
-        sw.setVisible(true);
+        new Servicios_Window(null).setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_Modificar_CitaMouseClicked
 
@@ -557,6 +551,7 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Fecha;
     private javax.swing.JLabel Label_Lista_clientes;
     private javax.swing.JPanel Panel_Tab;
+    private javax.swing.JTable Tcitas;
     private javax.swing.JTextField TextField_No_contacto;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Buscar;
@@ -564,7 +559,6 @@ public class Citas_Agendadas_Windows extends javax.swing.JFrame {
     private javax.swing.JLabel btn_Modificar_Cita;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel label_Borered;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;

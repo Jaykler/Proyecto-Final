@@ -88,4 +88,31 @@ public class Getters extends Conexion {
         }
         return Servicios;
     }
+    
+    public static String[][] getCitas(){
+        String[][] Citas = new String[1][1];
+        ArrayList<String[]> CitasAp = new ArrayList<>();
+        
+        try{
+            Statement consultar = getConexion().createStatement();
+            
+            String Query = "SELECT * FROM citas";
+            
+            ResultSet consulta = consultar.executeQuery(Query);
+            
+            while(consulta.next()){
+                CitasAp.add(new String[] {consulta.getString("Id_Cita"), consulta.getString("Id_Cliente"), consulta.getString("Servicios"), consulta.getString("Fecha_Horas"), consulta.getString("Precio_Total")});
+            }
+            
+            Citas = new String[CitasAp.size()][5];
+            
+            for(int i = 0; i < Citas.length; i++){
+                Citas[i] = CitasAp.get(i);
+            }
+            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+        return Citas;
+    }
 }

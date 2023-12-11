@@ -163,5 +163,62 @@ public class Utilidades {
             
         Total.setText(String.valueOf(total));
     }
+    
+    public static String[][] FiltrarCitas(int[] filtros, String[] values ,ArrayList<Citas> set){
+        
+        String[][] FR = null;
+        ArrayList<Citas> rs = new ArrayList<>(set);
+        
+        
+        if(filtros[0] == 1){
+            var data = rs.stream()
+                    .filter(p -> p.getId_cliente() == Integer.parseInt(values[0]))
+                    .map(p -> new Object[] {p.getId(), p.getId_cliente(), p.getFecha()})
+                    .collect(Collectors.toList());
+            
+            rs.clear();
+            for(int i = 0; i < data.size(); i++){
+                Object[] datap = data.get(i);
+                //rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+            }
+        }
+        
+//        if(filtros[1] == 1){
+//            var data = rs.stream()
+//                    .filter(p -> p.getTelefono().equals(values[1]))
+//                    .map(p -> new Object[] {p.getId_cliente(), p.getNombre(), p.getTelefono(), p.getCorreo()})
+//                    .collect(Collectors.toList());
+//            
+//            rs.clear();
+//            for(int i = 0; i < data.size(); i++){
+//                Object[] datap = data.get(i);
+//                rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+//            }
+//        }
+//        
+//        if(filtros[2] == 1){
+//            var data = rs.stream()
+//                    .filter(p -> p.getCorreo().equals(values[2]))
+//                    .map(p -> new Object[] {p.getId_cliente(), p.getNombre(), p.getTelefono(), p.getCorreo()})
+//                    .collect(Collectors.toList());
+//            
+//            rs.clear();
+//            for(int i = 0; i < data.size(); i++){
+//                Object[] datap = data.get(i);
+//                rs.add(new Clientes(Integer.parseInt(datap[0].toString()), datap[1].toString(), datap[2].toString(), datap[3].toString()));
+//            }
+//        }
+//        
+//        FR = new String[rs.size()][4];
+//        
+//        for(int i = 0; i < rs.size(); i++){
+//            FR[i][0] = String.valueOf(rs.get(i).getId_cliente());
+//            FR[i][1] = rs.get(i).getNombre();
+//            FR[i][2] = rs.get(i).getTelefono();
+//            FR[i][3] = rs.get(i).getCorreo();
+//        }
+//        
+        return FR;
+    }
 }
 

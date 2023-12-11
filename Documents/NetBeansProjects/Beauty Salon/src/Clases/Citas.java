@@ -109,7 +109,28 @@ public class Citas implements IgestionRUD{
     
     @Override
     public void cargar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String[][] Cit = SQL.Getters.getCitas();
+        citas.clear();
+        for (String[] Cita : Cit) {
+            ArrayList<Intangible> set = new ArrayList<>();
+            
+            String servs = Cita[2];
+            
+            String[] servicios = servs.split(",");
+            
+            for(int i = 0; i < servicios.length; i++){
+                for(int y = 0; y < Intangible.intangibles.size(); y++){
+                    if(Intangible.intangibles.get(y).getNombre().equals(servicios[i])){
+                        Intangible con = Intangible.intangibles.get(y);
+                        set.add(new Intangible(con.getId_producto(), con.getNombre(), con.getPrecio(), con.getTipo_servicio()));
+                        break;
+                    }
+                }
+            }
+            
+            citas.add(new Citas(set, Integer.parseInt(Cita[1]), Integer.parseInt(Cita[0]), Cita[3]));
+            id_count = Integer.parseInt(Cita[0]);
+        }
     }
 
     @Override
