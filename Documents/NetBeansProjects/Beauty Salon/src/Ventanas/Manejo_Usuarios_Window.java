@@ -123,11 +123,6 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         TFnom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TFnom.setBorder(null);
         TFnom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TFnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TFnomActionPerformed(evt);
-            }
-        });
         panel_Busqueda.add(TFnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 390, 39));
 
         label_Email.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -331,10 +326,6 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         hwa.setVisible(true);
         dispose();
     }//GEN-LAST:event_label_Home_IconMouseClicked
-
-    private void TFnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFnomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TFnomActionPerformed
 
     private void label_Home_Icon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_Home_Icon1MouseClicked
         // TODO add your handling code here:
