@@ -61,6 +61,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         CBB_Rol_Empleado = new javax.swing.JComboBox<>();
         btn_Eliminar = new javax.swing.JLabel();
         btn_Actualizar = new javax.swing.JLabel();
+        btn_Agregar = new javax.swing.JLabel();
         bgImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -268,7 +269,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
                 btn_EliminarMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 580, -1, 40));
+        panel_Main.add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 580, -1, 40));
 
         btn_Actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Actualizar_White.png"))); // NOI18N
         btn_Actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -279,7 +280,18 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
                 btn_ActualizarMouseExited(evt);
             }
         });
-        panel_Main.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 580, -1, 40));
+        panel_Main.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 580, -1, 40));
+
+        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agregar_Usuario_White.png"))); // NOI18N
+        btn_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_AgregarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_AgregarMouseExited(evt);
+            }
+        });
+        panel_Main.add(btn_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, -1, 40));
 
         bgImage.setBackground(new java.awt.Color(212, 176, 155));
         bgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds_Fondo/Management_bg_MEDIUM.jpg"))); // NOI18N
@@ -362,6 +374,16 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Eliminar_Cliente_White.png")));
     }//GEN-LAST:event_btn_EliminarMouseExited
 
+    private void btn_AgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AgregarMouseEntered
+        // TODO add your handling code here:
+        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agregar_Usuario_Brown.png")));
+    }//GEN-LAST:event_btn_AgregarMouseEntered
+
+    private void btn_AgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AgregarMouseExited
+        // TODO add your handling code here:
+        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/btn_Agregar_Usuario_White.png")));
+    }//GEN-LAST:event_btn_AgregarMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -407,6 +429,7 @@ public class Manejo_Usuarios_Window extends javax.swing.JFrame {
     private javax.swing.JTable Tclientes;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Actualizar;
+    private javax.swing.JLabel btn_Agregar;
     private javax.swing.JLabel btn_Buscar;
     private javax.swing.JLabel btn_Eliminar;
     private javax.swing.JScrollPane jScrollPane1;
