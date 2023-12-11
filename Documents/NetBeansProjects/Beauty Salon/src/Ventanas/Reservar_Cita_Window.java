@@ -98,7 +98,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         Label_Hora = new javax.swing.JLabel();
         CBhoras = new javax.swing.JComboBox<>();
         label_Bordered = new javax.swing.JLabel();
-        tbtn_Productos = new javax.swing.JToggleButton();
         tbtn_Depilacion = new javax.swing.JToggleButton();
         tbtn_Cortes = new javax.swing.JToggleButton();
         tbtn_Servicios_generales = new javax.swing.JToggleButton();
@@ -125,10 +124,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         label_Depilacion = new javax.swing.JLabel();
         scrollpanel_5 = new javax.swing.JScrollPane();
         Tdepilacion = new javax.swing.JTable();
-        panel_Productos = new javax.swing.JPanel();
-        label_Productos = new javax.swing.JLabel();
-        scrollpanel_6 = new javax.swing.JScrollPane();
-        Tproductos = new javax.swing.JTable();
         panel_ResumenServ = new javax.swing.JPanel();
         label_Titlulo = new javax.swing.JLabel();
         scrollpanel_Resumen = new javax.swing.JScrollPane();
@@ -243,17 +238,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         label_Bordered.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Palatino Linotype", 0, 12))); // NOI18N
         panel_Main.add(label_Bordered, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 1020, 130));
 
-        buttonGroup.add(tbtn_Productos);
-        tbtn_Productos.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        tbtn_Productos.setForeground(new java.awt.Color(128, 76, 46));
-        tbtn_Productos.setText("Productos");
-        tbtn_Productos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbtn_ProductosMouseClicked(evt);
-            }
-        });
-        panel_Main.add(tbtn_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 140, 40));
-
         buttonGroup.add(tbtn_Depilacion);
         tbtn_Depilacion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         tbtn_Depilacion.setForeground(new java.awt.Color(128, 76, 46));
@@ -263,7 +247,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 tbtn_DepilacionMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 180, 40));
+        panel_Main.add(tbtn_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 300, 180, 40));
 
         buttonGroup.add(tbtn_Cortes);
         tbtn_Cortes.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -274,7 +258,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 tbtn_CortesMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
+        panel_Main.add(tbtn_Cortes, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 180, 40));
 
         buttonGroup.add(tbtn_Servicios_generales);
         tbtn_Servicios_generales.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -285,7 +269,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 tbtn_Servicios_generalesMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 160, 40));
+        panel_Main.add(tbtn_Servicios_generales, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 180, 40));
 
         buttonGroup.add(tbtn_Limpieza_Cejas);
         tbtn_Limpieza_Cejas.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -296,7 +280,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 tbtn_Limpieza_CejasMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 150, 40));
+        panel_Main.add(tbtn_Limpieza_Cejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 180, 40));
 
         buttonGroup.add(tbtn_Maquillaje);
         tbtn_Maquillaje.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -307,7 +291,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
                 tbtn_MaquillajeMouseClicked(evt);
             }
         });
-        panel_Main.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, 40));
+        panel_Main.add(tbtn_Maquillaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 180, 40));
 
         Panel_Servicios.setBackground(new java.awt.Color(128, 76, 46));
         Panel_Servicios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -560,49 +544,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
 
         Panel_Servicios.add(panel_Depilacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
 
-        panel_Productos.setBackground(new java.awt.Color(128, 76, 46));
-        panel_Productos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        label_Productos.setBackground(new java.awt.Color(255, 255, 255));
-        label_Productos.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        label_Productos.setForeground(new java.awt.Color(255, 255, 255));
-        label_Productos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_Productos.setText("Productos");
-        panel_Productos.add(label_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 160, 30));
-
-        Tproductos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Producto", "Precio", "Agregar"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        scrollpanel_6.setViewportView(Tproductos);
-
-        panel_Productos.add(scrollpanel_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 490, 196));
-
-        Panel_Servicios.add(panel_Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, -1, 240));
-
         panel_Main.add(Panel_Servicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 490, 250));
 
         panel_ResumenServ.setBackground(new java.awt.Color(255, 255, 255));
@@ -782,7 +723,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
-         panel_Productos.setVisible(false);
         
     }//GEN-LAST:event_tbtn_Servicios_generalesMouseClicked
 
@@ -793,7 +733,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
-         panel_Productos.setVisible(false);
         
     }//GEN-LAST:event_tbtn_Limpieza_CejasMouseClicked
 
@@ -804,7 +743,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Cortes.setVisible(true);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(false);
-         panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_CortesMouseClicked
 
     private void tbtn_MaquillajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_MaquillajeMouseClicked
@@ -814,7 +752,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(false);
         panel_Maquillaje.setVisible(true);
-        panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_MaquillajeMouseClicked
 
     private void tbtn_DepilacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_DepilacionMouseClicked
@@ -824,18 +761,7 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         panel_Cortes.setVisible(false);
         panel_Depilacion.setVisible(true);
         panel_Maquillaje.setVisible(false);
-        panel_Productos.setVisible(false);
     }//GEN-LAST:event_tbtn_DepilacionMouseClicked
-
-    private void tbtn_ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtn_ProductosMouseClicked
-        // TODO add your handling code here:
-        panel_ServiciosGen.setVisible(false);
-        panel_LimpiezaCeja.setVisible(false);
-        panel_Cortes.setVisible(false);
-        panel_Depilacion.setVisible(false);
-        panel_Maquillaje.setVisible(false);
-        panel_Productos.setVisible(true);
-    }//GEN-LAST:event_tbtn_ProductosMouseClicked
 
     private void btn_Agendar_CitaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Agendar_CitaMouseEntered
         // TODO add your handling code here:
@@ -890,6 +816,12 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
         }else if(Tresumen.getRowCount() == 0){
             JOptionPane.showMessageDialog(null, "Seleccione un servicio");
         }else{
+            int id = id_cliente;
+            String fecha = "";
+            
+            Date com = DCfecha.getDate();
+            System.out.println(com.toString());
+            
             
         }
     }//GEN-LAST:event_btn_Agendar_CitaMouseClicked
@@ -1202,7 +1134,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JTable Tdepilacion;
     private javax.swing.JTable Tgeneral;
     private javax.swing.JTable Tmaquillaje;
-    private javax.swing.JTable Tproductos;
     private javax.swing.JTable Tresumen;
     private javax.swing.JLabel bgImage;
     private javax.swing.JLabel btn_Agendar_Cita;
@@ -1215,7 +1146,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JLabel label_Maquillaje;
     private javax.swing.JLabel label_No_contacto;
     private javax.swing.JLabel label_Nombre;
-    private javax.swing.JLabel label_Productos;
     private javax.swing.JLabel label_ServiceGen;
     private javax.swing.JLabel label_Titlulo;
     private javax.swing.JLabel label_titulo;
@@ -1226,7 +1156,6 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JPanel panel_LimpiezaCeja;
     private javax.swing.JPanel panel_Main;
     private javax.swing.JPanel panel_Maquillaje;
-    private javax.swing.JPanel panel_Productos;
     private javax.swing.JPanel panel_ResumenServ;
     private javax.swing.JPanel panel_ServiciosGen;
     private javax.swing.JPanel panel_Transparent1;
@@ -1237,13 +1166,11 @@ public class Reservar_Cita_Window extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollpanel_3;
     private javax.swing.JScrollPane scrollpanel_4;
     private javax.swing.JScrollPane scrollpanel_5;
-    private javax.swing.JScrollPane scrollpanel_6;
     private javax.swing.JScrollPane scrollpanel_Resumen;
     private javax.swing.JToggleButton tbtn_Cortes;
     private javax.swing.JToggleButton tbtn_Depilacion;
     private javax.swing.JToggleButton tbtn_Limpieza_Cejas;
     private javax.swing.JToggleButton tbtn_Maquillaje;
-    private javax.swing.JToggleButton tbtn_Productos;
     private javax.swing.JToggleButton tbtn_Servicios_generales;
     // End of variables declaration//GEN-END:variables
     private Home_Windows cw = new Home_Windows();

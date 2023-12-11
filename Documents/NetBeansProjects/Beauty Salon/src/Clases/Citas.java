@@ -11,31 +11,34 @@ import java.util.ArrayList;
  * @author vladi
  */
 public class Citas implements IgestionRUD{
-    private ArrayList<Intangible> Lista_productos = new ArrayList<>();
+    private ArrayList<Intangible> Lista_servicios = new ArrayList<>();
     static int id_count = 0;
     private int precio_total;
     private int id;
     private int id_cliente;
+    private String fecha;
 
-    public Citas(ArrayList<Intangible> set, int id_cliente){
-        this.Lista_productos =  new ArrayList<>(set);
+    public Citas(ArrayList<Intangible> set, int id_cliente, String fecha){
+        this.Lista_servicios =  new ArrayList<>(set);
         this.id_cliente = id_cliente;
         id_count++;
+        this.fecha = fecha;
         this.id = id_count;
     }
-    public Citas(ArrayList<Intangible> set, int id_cliente, int ID){
-        this.Lista_productos = new ArrayList<>(set);
+    public Citas(ArrayList<Intangible> set, int id_cliente, int ID, String fecha){
+        this.Lista_servicios = new ArrayList<>(set);
         this.id_cliente = id_cliente;
         id_count = ID;
+        this.fecha = fecha;
         this.id = id_count;
     }
 
-    public ArrayList<Intangible> getLista_productos() {
-        return Lista_productos;
+    public ArrayList<Intangible> getLista_servicios() {
+        return Lista_servicios;
     }
 
-    public void setLista_productos(ArrayList<Intangible> Lista_productos) {
-        this.Lista_productos = Lista_productos;
+    public void setLista_servicios(ArrayList<Intangible> Lista_servicios) {
+        this.Lista_servicios = Lista_servicios;
     }
 
     public int getPrecio_total() {
@@ -83,5 +86,13 @@ public class Citas implements IgestionRUD{
     @Override
     public void eliminar(String[] set) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 }
